@@ -26,7 +26,7 @@
     - SyndicateTechfabStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - NFNfsdTechfabDeprecatedEmag
+    - SyndicateTechfabEmag
   - type: MaterialStorage
     whitelist:
       tags:
