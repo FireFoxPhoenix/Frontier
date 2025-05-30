@@ -13,7 +13,7 @@ public sealed class ExtendedPinpointerSystem : SharedExtendedPinpointerSystem
         base.Update(frameTime);
 
         // we want to show pinpointers arrow direction relative
-        // to players eye rotation (like it was in SS13)
+        // to players eye rotation
 
         // because eye can change it rotation anytime
         // we need to update this arrow in a update loop
