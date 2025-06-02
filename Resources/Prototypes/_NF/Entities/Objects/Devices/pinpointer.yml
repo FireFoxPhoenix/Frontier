@@ -15,12 +15,9 @@
   parent: PinpointerSyndicateNuclear
   suffix: Syndicate FOB
   components:
-#  - type: Pinpointer #Corvax-Frontier
-#    component: SyndicateFOB
-#    targetName: unknown
-   - type: ExtendedPinpointer #Corvax-Frontier
-     targetId: Charlie
-     targetName: unknown
+  - type: Pinpointer
+    component: SyndicateFOB
+    targetName: unknown
 
 # Dead Drop
 - type: entity
@@ -44,4 +41,3 @@
   - type: Pinpointer
     component: DeadDrop
     targetName: DeadDrop
-
