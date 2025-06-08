@@ -1,0 +1,10 @@
+delivery-recipient-examine = Этот предназначен для {$ получателя}, {$ job}.
+delivery-already-opened-examine = Это уже было открыто.
+delivery-recipient-no-name = Неназванный
+delivery-recipient-no-job = Неизвестный
+delivery-unlocked-self = Вы разблокируете {$ доставки} своим отпечатками пальца.
+delivery-opened-self = Вы открываете {$ доставки}.
+delivery-unlocked-others = {Capitalize ($ получатель)} разблокировал {$ доставки} с {Off-ADJ ($ OSOM)} Отпечаток пальца.
+delivery-opened-others = {Capitalize ($ получатель)} открыл {$ доставки}.
+delivery-unlock-verb = Разблокировать
+delivery-open-verb = Открыть

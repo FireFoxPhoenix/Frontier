@@ -1,0 +1,10 @@
+ui-vote-votekick-unknown-initiator = Игрок
+ui-vote-votekick-unknown-target = Неизвестный игрок
+ui-vote-votekick-title = {$ initiator} назвал hostkick для пользователя: {$ targetentity}. Причина: {$ разум}
+ui-vote-votekick-yes = Да
+ui-vote-votekick-no = Нет
+ui-vote-votekick-abstain = Воздерживаться
+ui-vote-votekick-success = Голосование для {$ target} преуспел. Голосовой причина: {$ разум}
+ui-vote-votekick-failure = Голосование для {$ target} не удалось. Голосовой причина: {$ разум}
+ui-vote-votekick-not-enough-eligible = Недостаточно подходящих избирателей в Интернете, чтобы запустить голосование: {$ избиратели}/{$ reptement}
+ui-vote-votekick-server-cancelled = Goatkick для {$ target} был отменен сервером.

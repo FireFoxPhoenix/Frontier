@@ -1,0 +1,9 @@
+napkin-verb-wipe = Вытрите лицо
+napkin-wipe-self-actor-success = Вы вытерте лицо салфеткой.
+napkin-wipe-self-observer-success = {Caplyize (The ($ user))} Wiped {Off-adj ($ user)} лицом с салфеткой.
+napkin-wipe-actor-start = Вы начинаете стереть лицо ($ target)}.
+napkin-wipe-actor-success = Вы вытерли лицо ($ target)}.
+napkin-wipe-target-start = {Caplize (The ($ user))} пытается уничтожить ваше лицо.
+napkin-wipe-target-success = {Apbynize (The ($ user))} вытирал ваше лицо.
+napkin-wipe-observer-start = {Canyize (The ($ user))} начинает Wiping {the ($ target)}.
+napkin-wipe-observer-success = {Caplyize (The ($ user))} Wiped {the ($ target)}.

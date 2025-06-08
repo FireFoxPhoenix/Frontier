@@ -40,3 +40,4 @@ command-description-mind-get = Извлекает разум из указанн
 command-description-mind-control = Перехватывает управление указанной сущностью от имени указанного игрока.
 command-description-addaccesslog = Добавляет журнал доступа к этой сущности. Обратите внимание, что это обходит стандартные ограничения журнала и проверку на паузу.
 command-description-stationevent-simulate = Симулирует N раундов, в которых будут происходить события, и выводит количество каждого события после завершения.
+command-description-tag-with = 

@@ -17,3 +17,4 @@ health-examinable-carbon-Cold-75 = [color=lightblue]{ CAPITALIZE(SUBJECT($target
 health-examinable-carbon-Caustic-25 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } лёгкие химические ожоги.[/color]
 health-examinable-carbon-Caustic-50 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } химические ожоги на теле.[/color]
 health-examinable-carbon-Caustic-75 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } сильные химические ожоги по всей поверхности тела![/color]
+﻿health-examinable-carbon-none = Там нет очевидных ран, которые можно увидеть.

@@ -1,0 +1,14 @@
+marking-ScarsVoxRoadrashLeftHead-roadrash_l_head = Дорожная сыпь (слева)
+marking-ScarsVoxRoadrashLeftHead = Дорожная сыпь (слева)
+marking-ScarsVoxRoadrashRightHead-roadrash_r_head = Дорожная сыпь (справа)
+marking-ScarsVoxRoadrashRightHead = Дорожная сыпь (справа)
+marking-ScarsVoxBigslashLeftHead-bigslash_l_head = Большой Слэш (слева)
+marking-ScarsVoxBigslashLeftHead = Большой Слэш (слева)
+marking-ScarsVoxBigslashRightHead-roadrash_r_head = Большой Слэш (справа)
+marking-ScarsVoxBigslashRightHead = Большой Слэш (справа)
+marking-ScarsVoxSlashLeftHead-slash_l_head = Слэш (слева)
+marking-ScarsVoxSlashLeftHead = Слэш (слева)
+marking-ScarsVoxSlashRightHead-slash_r_head = Слэш (справа)
+marking-ScarsVoxSlashRightHead = Слэш (справа)
+marking-ScarsVoxClawTorso-claw_torso = Когтя
+marking-ScarsVoxClawTorso = Когтя

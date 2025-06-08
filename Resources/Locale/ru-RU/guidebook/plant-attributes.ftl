@@ -1,0 +1,1 @@
+plant-attribute-potency = потенция

@@ -14,3 +14,4 @@ cmd-jobwhitelistremove-desc = Отнимает право игрока игра�
 cmd-jobwhitelistremove-help = Использование: jobwhitelistadd <username> <job>
 cmd-jobwhitelistremove-was-not-whitelisted = { $player } не был в вайтлисте на игру в должности { $jobId } ({ $jobName }).
 cmd-jobwhitelistremove-removed = { $player } удалён из вайтлиста должности { $jobId } ({ $jobName }).
+﻿cmd-jobwhitelist-job-does-not-exist = Job {$ job} не существует.

@@ -6,3 +6,4 @@ norepinephricacid-effect-eye-pain = Вы чувствуете сильную б�
 norepinephricacid-effect-blindness = Ваши глаза перестают работать!
 norepinephricacid-effect-darkness = Вы погружаетесь в мир тьмы!
 norepinephricacid-effect-eye-disconnect = Ваши глаза словно отсоединяются!
+﻿norepinephricacid-effect-eyelids = Ваши веки быстро дергаются.

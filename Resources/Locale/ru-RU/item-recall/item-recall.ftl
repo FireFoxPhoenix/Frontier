@@ -1,0 +1,9 @@
+item-recall-marked-name = Напомним {capitalize ($ item)}
+item-recall-marked-description = Вспомните {($ item)} обратно в вашу руку.
+item-recall-item-marked = Вы рисуете волшебную сигил на {The ($ item)}.
+item-recall-item-already-marked = {Caplize (The ($ item))} уже помечен!
+item-recall-item-mark-empty = Вы должны держать предмет!
+item-recall-item-summon-self = {Caplize (The ($ item))} появляется в вашей руке!
+item-recall-item-summon-others = {Caplize (The ($ item))} появляется в {$ name)} руку!
+item-recall-item-disappear = {Caplize (The ($ item))} исчезает!
+item-recall-item-unmark = Вы чувствуете вашу связь с {($ item)} sever.

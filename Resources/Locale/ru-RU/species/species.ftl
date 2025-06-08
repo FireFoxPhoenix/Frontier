@@ -9,3 +9,5 @@ species-name-arachnid = Арахнид
 species-name-moth = Ниан
 species-name-skeleton = Скелет
 species-name-vox = Вокс
+species-name-gingerbread = Вкусной запеченной хорошо
+snail-hurt-by-salt-popup = Соленый раствор горит, как кислота!

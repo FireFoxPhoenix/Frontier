@@ -1,0 +1,15 @@
+gas-deposit-scanner-window-name = Сканер -газовой залог
+gas-deposit-scanner-window-refresh-button = Обновлять
+gas-deposit-scanner-window-no-data = Нет данных
+gas-deposit-scanner-window-no-gas-text = Нет газов
+gas-deposit-scanner-window-density-column-name = Плотность
+gas-deposit-scanner-window-error-text = Ошибка: {$ errortext}
+gas-deposit-scanner-window-gas-column-name = Газы
+gas-deposit-scanner-window-deposit-title-capitalized = Депозитный
+gas-deposit-scanner-window-deposit-size-trace = След
+gas-deposit-scanner-window-deposit-size-small = Маленький
+gas-deposit-scanner-window-deposit-size-medium = Середина
+gas-deposit-scanner-window-deposit-size-large = Большой
+gas-deposit-scanner-window-deposit-size-enormous = Громадный
+gas-deposit-scanner-object-out-of-range = Депозит вышел из диапазона.
+gas-deposit-scanner-shutoff = Сканер залога газа отключается.

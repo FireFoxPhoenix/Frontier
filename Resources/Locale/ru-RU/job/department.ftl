@@ -6,3 +6,7 @@ department-Medical = Медицинский отдел
 department-Security = Служба безопасности
 department-Science = Научный отдел
 department-Specific = На определённых станциях
+# department-Command = Команда # Frontier: переопределена в _nf
+department-CentralCommand = Центральная команда
+# department-Security = Security # Frontier: переопределено в _nf
+department-Silicon = Кремний

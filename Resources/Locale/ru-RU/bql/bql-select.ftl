@@ -10,3 +10,4 @@ ui-bql-results-tp = TP
 ui-bql-results-vv-tooltip = Просмотр переменных сущности
 ui-bql-results-tp-tooltip = Телепортация к сущности
 ui-bql-results-status = { $count } сущностей
+﻿cmd-bql_select-desc = Показать результаты запроса BQL в окне на стороне клиента

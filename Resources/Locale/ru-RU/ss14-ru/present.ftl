@@ -1,0 +1,1 @@
+ent-PresentRandomAsh = {ent-presentbase}

@@ -11,3 +11,4 @@ health-examinable-silicon-Heat-25 = [color=orange]Шасси { CAPITALIZE($targe
 health-examinable-silicon-Heat-50 = [color=orange]Шасси { CAPITALIZE($target) } немного оплавилось.[/color]
 health-examinable-silicon-Heat-75 = [color=orange]Шасси { CAPITALIZE($target) } частично расплавилось![/color]
 health-examinable-silicon-Shock-50 = [color=lightgoldenrodyellow]Микросхемы { CAPITALIZE($target) }, похоже, неплохо поджарились![/color]
+﻿health-examinable-silicon-none = Нет очевидного ущерба, которого можно увидеть.

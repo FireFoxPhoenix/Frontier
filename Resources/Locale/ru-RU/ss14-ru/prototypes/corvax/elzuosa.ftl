@@ -1,0 +1,1 @@
+ent-BaseMobElzuosa = Урист МакЭлзуоса

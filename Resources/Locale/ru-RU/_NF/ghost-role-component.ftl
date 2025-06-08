@@ -1,0 +1,12 @@
+You are absolutely [color = красный] не [/color] разрешено помнить, скажем, название, внешний вид и т. Д. вашего предыдущего персонажа.
+ghost-role-information-clarpy-rules = Ты [цвет
+ghost-role-information-cult-cat-name = Кровавый культ кот
+ghost-role-information-cult-cat-description = Основал культ крови из скуки.
+ghost-role-information-cult-cat-rules = Ты [цвет
+Please note that [color = желтый] все правила сервера все еще применяются. [/color] дополнительно:
+ghost-role-information-elcapo-name = Эль Капо
+ghost-role-information-elcapo-description = Оказался в тюрьме после многих лет преступлений на кошках.
+You are absolutely [color = красный] не [/color] разрешено помнить, скажем, название, внешний вид и т. Д. вашего предыдущего персонажа.
+Please note that [color = желтый] все правила сервера все еще применяются. [/color] дополнительно:
+nf-ghost-role-information-buddy-name = Приятель
+nf-ghost-role-information-buddy-description = Вы были построены из комплекта Build-A-Buddy. Станьте чьим -то лучшим другом сегодня!

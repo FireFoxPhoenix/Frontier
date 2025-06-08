@@ -1,0 +1,10 @@
+custom-vote-webhook-footer = Сервер: {$ servername}, round: {$ rounge} {$ runlevel}
+custom-vote-webhook-cancelled = ** Голосовать отменен **
+custom-vote-webhook-option-pending = TBD
+custom-vote-webhook-option-cancelled = N/a
+votekick-webhook-name = Голосовой век удерживал
+votekick-webhook-description = Инициатор: {$ initiator}; Target: {$ target}
+votekick-webhook-cancelled-admin-online = ** Голосовать отменен из -за администраторов онлайн **
+votekick-webhook-cancelled-admin-target = ** Голосовать отменен из -за того, что цель администратора **
+votekick-webhook-cancelled-antag-target = ** Голосовать отменен из -за того, что цель - Antag **
+votekick-ban-reason = "Голосовой кик: {$ разум}"

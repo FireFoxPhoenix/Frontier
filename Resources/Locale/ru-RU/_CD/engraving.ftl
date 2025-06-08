@@ -1,0 +1,1 @@
+﻿engraving-verb-engrave = Гравюра

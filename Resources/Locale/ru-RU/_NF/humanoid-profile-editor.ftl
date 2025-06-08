@@ -1,0 +1,1 @@
+trait-category-height = Высота

@@ -1,0 +1,10 @@
+flavor-base-earthy = земляной
+flavor-complex-torpedo = как конвой набег
+flavor-complex-bees = Как гудеть и мед
+flavor-complex-wassail = теплый и утешительный
+flavor-complex-fine-noodles = как прекрасная лапша
+flavor-complex-rich-broth = Как богатый бульон
+flavor-complex-tangy = острый
+flavor-complex-spices = как специи
+flavor-complex-cinnamon = как корица
+flavor-complex-antiseptic = Как химическая лаванда

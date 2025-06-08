@@ -193,3 +193,6 @@ marking-HumanHairVeryshortovereyealternate = Очень короткая (Чер
 marking-HumanHairVlongfringe = Очень короткая (Чёлка)
 marking-HumanHairVolaju = Воладзю
 marking-HumanHairWisp = Пряди
+marking-HumanHairLongBow = Длинный лук
+marking-HumanHairPulato = Пулато
+marking-HumanHairShaped = В форме

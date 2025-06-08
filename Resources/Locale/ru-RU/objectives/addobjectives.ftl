@@ -1,0 +1,9 @@
+cmd-addobjective-desc = Добавляет цель в сознание игрока.
+cmd-addobjective-help = AddObjective <mername> <objectiveId>
+cmd-addobjective-invalid-args = Ожидается ровно 2 аргумента.
+cmd-addobjective-player-not-found = Не могу найти PlayerData.
+cmd-addobjective-mind-not-found = Не могу найти разум.
+cmd-addobjective-objective-not-found = Не могу найти соответствующий объективный прототип {$ obj}
+cmd-addobjective-adding-failed = Не удалось добавить цель. Может быть, требования не позволяют добавлять эту цель.
+cmd-addobjective-player-completion = <Игрок>
+cmd-add-objective-obj-completion = <Объектив>

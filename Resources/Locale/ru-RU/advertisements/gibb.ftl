@@ -1,0 +1,12 @@
+﻿advertisement-gibb-1 = Вкусный!
+advertisement-gibb-2 = Рекомендуется хотя бы одним доктором!
+advertisement-gibb-3 = Продано более 1 миллиона напитков!
+advertisement-gibb-4 = Доктор Гибб, какое худшее, что может случиться?
+advertisement-gibb-5 = Доктор Гибб, взрыв вкуса!
+advertisement-gibb-6 = Поверь мне, я врач!
+advertisement-gibb-7 = Лучшая сахарная инфузия в галактике!
+advertisement-gibb-8 = Космическая кола может получить Gibbed!
+thankyou-gibb-1 = Доктор в ... твой живот!
+thankyou-gibb-2 = Прогноз: аромат!
+thankyou-gibb-3 = Наслаждайтесь 42 ароматами!
+thankyou-gibb-4 = Наслаждайтесь сироповым добра!

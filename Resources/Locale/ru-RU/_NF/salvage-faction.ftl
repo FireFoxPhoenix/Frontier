@@ -1,0 +1,11 @@
+nf-salvage-faction-xenos = Ксенос
+nf-salvage-faction-carps = Карп
+nf-salvage-faction-syndicate = Синдикат
+nf-salvage-faction-cultists = Культисты
+nf-salvage-faction-flesh = Плоть
+nf-salvage-faction-argocytes = Аргоциты
+nf-salvage-faction-dinosaurs = Динозавры
+nf-salvage-faction-mercenaries = Наемники
+nf-salvage-faction-explorers = Исследователи
+nf-salvage-faction-silicons = Разбойник кремний
+nf-salvage-faction-punks = Панки

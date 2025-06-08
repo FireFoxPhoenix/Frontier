@@ -1,0 +1,14 @@
+ent-BaseAsteroidDebrisNF = Астероидный мусор
+ent-AsteroidDebrisNFMedium = Астероидный мусор среда
+ent-AsteroidDebrisNFLarge = Астероидный мусор большой
+ent-AsteroidDebrisNFLarger = Астероидный мусор больше
+ent-AsteroidDebrisNFHuge = Астероидный мусор Огромный
+ent-AsteroidSalvageNFSmall = Спасение астероидов маленький
+ent-AsteroidSalvageNFMedium = Спасение астероидной среды
+ent-AsteroidSalvageNFLarge = Спасение астероида большая
+ent-AsteroidSalvageNFHuge = Спасение астероида огромно
+ent-BaseAsteroidDebrisNFIce = Спасение льда астероида
+ent-AsteroidDebrisNFIceMedium = Астероидный ледяной мусор
+ent-AsteroidDebrisNFIceLarge = Астероидный ледяной мусор большой
+ent-AsteroidDebrisNFIceLarger = Астероидный ледяной мусор больше
+ent-AsteroidDebrisNFIceHuge = Астероидный ледяной мусор

@@ -323,4 +323,15 @@ flavor-complex-sax = как джаз
 flavor-complex-bottledlightning = как молния в бутылке
 flavor-complex-punishment = как наказание
 flavor-weh = как вех
-flavor-hew = как хев
+flavor-hew = как хевflavor-complex-pear = как груши
+flavor-complex-caipirinha = как Бразилия
+flavor-complex-deathintheafternoon = как анис и шампанское
+flavor-complex-empress75 = Как тирианский фиолетовый
+flavor-complex-espressomartini = как водка и кофе
+flavor-complex-mayojito = как желудок
+flavor-complex-mimeosa = как молчание и апельсины
+flavor-complex-mimosa = как ранний бранч
+flavor-complex-moscowmule = как водка и имбирный эль
+flavor-complex-thesunalsorises = как абсент дайкири
+flavor-complex-whiskeysour = как подслащенный виски и лимон
+flavor-complex-bacchus-blessing = как стена кирпича

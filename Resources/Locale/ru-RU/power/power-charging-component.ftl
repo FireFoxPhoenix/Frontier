@@ -1,0 +1,13 @@
+power-charge-window-status = Статус:
+power-charge-window-power = Власть:
+power-charge-window-eta = ETA:
+power-charge-window-charge = Заряжать:
+power-charge-window-status-fully-charged = Полностью заряжен
+power-charge-window-status-off = Выключенный
+power-charge-window-status-charging = Зарядка
+power-charge-window-status-discharging = Разрядка
+power-charge-window-power-on = На
+power-charge-window-power-off = Выключенный
+power-charge-window-power-label = {$ draw} / {$ max} w
+power-charge-window-eta-none = N/a
+power-charge-window-eta-value = {ToString ($ Left, "M \\: ss")}

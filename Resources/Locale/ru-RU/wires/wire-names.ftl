@@ -67,3 +67,7 @@ wire-name-bomb-bolt = БОЛТ
 wire-name-speech = ДНМК
 wire-name-listen = МИКР
 wire-name-log = ЛОГ
+wires-board-name-jukebox = Мужичный автомат
+wires-board-name-computer = Компьютер
+wires-board-name-holopad = Холопад
+wires-board-name-barsign = Бар -знак

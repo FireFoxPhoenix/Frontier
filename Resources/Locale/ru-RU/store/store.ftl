@@ -9,3 +9,5 @@ store-ui-button-out-of-stock = { "" } (Нет в наличии)
 store-not-account-owner = Этот { $store } не привязан к вам!
 store-preset-name-uplink = Аплинк
 store-preset-name-spellbook = Книга заклинаний
+store-ui-discount-display-with-currency = {$ summ} on {$ currence}
+store-ui-discount-display = ({$ сумма} выключена!)

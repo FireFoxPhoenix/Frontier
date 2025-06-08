@@ -1,0 +1,14 @@
+gun-examinable-verb-text = Изучите статистику
+gun-examinable-verb-message = Подробная статистика
+gun-examine = Технические характеристики оружия:
+gun-examine-recoil = - [цвет
+gun-examine-stability = - [цвет
+gun-examine-max-angle = - [цвет
+gun-examine-min-angle = - [цвет
+gun-examine-fire-rate = - [цвет
+gun-examine-muzzle-velocity = - [цвет
+gun-examine-caliber = Это камеру в [цвет
+gun-examine-caliber-30 = .30
+gun-examine-caliber-45 = .45
+gun-examine-caliber-50 = .50
+gun-examine-caliber-60 = .60

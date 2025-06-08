@@ -7,3 +7,4 @@ immovable-rod-consumed-souls =
         [few] души
        *[other] душ
     }.
+﻿immovable-rod-collided-rod-not-good = О, черт возьми, это не может быть хорошо.

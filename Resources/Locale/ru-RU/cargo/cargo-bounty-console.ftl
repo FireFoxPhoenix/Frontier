@@ -16,3 +16,9 @@ bounty-console-flavor-left = Запросы, полученные от мест�
 bounty-console-flavor-right = v1.4
 bounty-manifest-header = [font size=14][bold]Официальный манифест запроса[/bold] (ID#{ $id })[/font]
 bounty-manifest-list-start = Манифест:
+﻿bounty-console-menu-title = Грузовой надувной консоль
+bounty-console-tab-available-label = Доступный
+bounty-console-tab-history-label = История
+bounty-console-history-empty-label = История щедрости не найдена
+bounty-console-history-notice-completed-label = [цвет
+bounty-console-history-notice-skipped-label = [цвет

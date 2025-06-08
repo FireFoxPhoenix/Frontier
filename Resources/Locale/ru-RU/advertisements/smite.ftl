@@ -1,0 +1,12 @@
+﻿advertisement-smite-1 = Смазай! Запретите свою жажду!
+advertisement-smite-2 = Элдрич взрыв лимона и лайма!
+advertisement-smite-3 = Продано более 1 миллиона напитков!
+advertisement-smite-4 = Смазай! Рулоть 2d8 для аромата.
+advertisement-smite-5 = Смазай! Давайте сделаем это документы!
+advertisement-smite-6 = Уборщик имеет это для вас!
+advertisement-smite-7 = Смазай! Это не забит тебя.
+advertisement-smite-8 = Время лимона-лайма!
+thankyou-smite-1 = Smite делает правильно!
+thankyou-smite-2 = Вы определенно хотели Lemon-Lime!
+thankyou-smite-3 = Офис не будет знать, что их поразило.
+thankyou-smite-4 = Изгнать свою жажду.

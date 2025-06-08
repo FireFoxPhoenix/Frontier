@@ -1,0 +1,9 @@
+adventure-webhook-footer = 
+nf-adventure-title = Приключение
+nf-adventure-description = Присоединяйтесь к команде корабля или купите свой собственный и изучите, исследуйте, спасаете или пройдите к богатству!
+nf-pirate-title = Пираты
+nf-pirate-description = Банда пиратов на свободе! Берегитесь в космосе и постарайтесь не быть разграбленным!
+nf-test-title = Тест
+nf-test-description = Предуставление предназначено для тестирования. Нет Pois, нет событий Bluespace, конечный пункт назначения.
+shuttle-ftl-invalid = Неверный корабль для FTL!
+public-transit-shuttle-screen-text = {""} Bus {$ number} {$ суффикс}

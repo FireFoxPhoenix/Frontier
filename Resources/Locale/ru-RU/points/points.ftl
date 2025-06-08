@@ -5,3 +5,4 @@ point-scoreboard-list =
         [one] { $points } очко
        *[other] { $points } очков
     }.[/color]
+﻿point-scoreboard-winner = Победителем был [цвет

@@ -126,3 +126,5 @@ barsign-prototype-description-empbarsign = Что-то пошло совсем �
 ## SignOff
 
 barsign-prototype-description-sign-off = Этот знак, похоже, не включён.
+barsign-prototype-name-whiskeyechoes = Виски эхо
+barsign-prototype-description-whiskeyechoes = Элитный бар для элитной операции, это станция Nanotrasen. Почему этот знак в базе данных?

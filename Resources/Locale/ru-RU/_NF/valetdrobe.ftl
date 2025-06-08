@@ -1,0 +1,9 @@
+advertisement-valetdrobe-1 = Возвращайся сразу же? У нас есть знак для этого!
+advertisement-valetdrobe-2 = Носите шляпу! Это корпоративная политика!
+advertisement-valetdrobe-3 = Одевайтесь красным, они увидят, как вы приедете!
+advertisement-valetdrobe-4 = Хорошая смена? Укрась чужой!
+advertisement-valetdrobe-5 = Есть запасная пара белых перчаток?
+goodbye-valetdrobe-1 = Будьте уверены и сделайте все возможное.
+goodbye-valetdrobe-2 = Не забудьте проверить с боссом!
+goodbye-valetdrobe-3 = Сделай их улыбку!
+goodbye-valetdrobe-4 = Помните, будьте внимательны!

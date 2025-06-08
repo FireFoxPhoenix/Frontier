@@ -1,0 +1,14 @@
+atmos-monitoring-window-title = Атмосферный сетевой монитор
+atmos-monitoring-window-station-name = [цвет
+atmos-monitoring-window-unknown-location = Неизвестное место
+atmos-monitoring-window-label-gas-opening = Открытие сети
+atmos-monitoring-window-label-gas-scrubber = Воздушный скруббер
+atmos-monitoring-window-label-gas-flow-regulator = Регулятор потока
+atmos-monitoring-window-label-thermoregulator = Терморегулятор
+atmos-monitoring-window-tab-networks = Атмосферные сети
+atmos-monitoring-window-toggle-overlays = Переверните наложения карты
+atmos-monitoring-window-show-pipe-network = Трубопроводная сеть
+atmos-monitoring-window-show-gas-pipe-sensors = Датчики газовой трубы
+atmos-monitoring-window-label-gases = Настоящие газы
+atmos-monitoring-window-flavor-left = Свяжитесь с техником атмосферы за помощью
+atmos-monitoring-window-flavor-right = v1.1

@@ -45,3 +45,4 @@ cargo-shuttle-console-shuttle-not-found = Не найден
 cargo-no-shuttle = Грузовой шаттл не найден!
 cargo-shuttle-console-organics = На шаттле обнаружены органические формы жизни
 cargo-telepad-delay-upgrade = Откат телепортации
+cargo-console-nf-no-bank-account = Банковский счет не найден

@@ -1,0 +1,1 @@
+ent-LockerWallBase = {Ent-BasestructureUnanchable}

@@ -12,3 +12,4 @@ sensor-monitoring-value-display =
 
 # ({ TOSTRING(SUB($value, 273.15), "N3") } °C)
 
+﻿sensor-monitoring-window-title = Консоль мониторинга датчика

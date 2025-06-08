@@ -1,0 +1,1 @@
+ent-CrateVendingMachineRestockPride = {ent-cratevendingmachinerestockpridefilled}
