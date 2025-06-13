@@ -25,3 +25,5 @@ zombie-round-end-survivor-count =
        *[other] Осталось всего { $count } выживших, это:
     }
 zombie-round-end-user-was-survivor = - [color=White]{ $name }[/color] ([color=gray]{ $username }[/color]) пережил заражение.
+zombieteors-title = Zombieteors
+zombieteors-description = Нежить была выпущена на станции среди катастрофического метеорного душа! Работайте со своим коллегой и сделайте все возможное, чтобы выжить!

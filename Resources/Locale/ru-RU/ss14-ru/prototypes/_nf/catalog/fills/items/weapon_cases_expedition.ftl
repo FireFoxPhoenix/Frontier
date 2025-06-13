@@ -286,3 +286,4 @@ ent-WeaponCaseShortPollockExpedition = { ent-WeaponCaseShort }
 
 ent-WeaponCaseLongSVSExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
+ent-WeaponCaseLongAkExpedition = { ent-WeaponCaseLong }

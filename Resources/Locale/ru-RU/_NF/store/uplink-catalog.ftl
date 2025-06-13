@@ -224,4 +224,30 @@ uplink-security-30riflemagazine-rubber-desc = Коробка, содержаща
 uplink-security-20riflemagazine-rubber-name = Коробка магазинов калибра .20 (резина)
 uplink-security-20riflemagazine-rubber-desc = Коробка, содержащая 4 полных магазина калибра .20 (Резина)
 uplink-security-magazinepistol-rubber-name = Коробка магазинов калибра .35 (резина)
-uplink-security-magazinepistol-rubber-desc = Коробка, содержащая 4 полных магазина .35 (Резина)
+uplink-security-magazinepistol-rubber-desc = Коробка, содержащая 4 полных магазина .35 (Резина)uplink-security-vulcan-name = Вулкан
+uplink-security-vulcan-desc = Сверхмощная, выберите винтовку пожарной битвы. Использует .30 винтовка.
+uplink-security-30riflemagazine-name = .30 Rifle Magazines
+uplink-security-30riflemagazine-desc = A box containing 4 filled .30 rifle magazines.
+uplink-security-contraband-forensics-module-name = Contraband Forenics Module
+uplink-security-contraband-forensics-module-desc = A program for scanning and reporting contraband dead drops and pods for bounties. Slots into a forensic scanner.
+
+# region Pirate
+uplink-pirate-accessconfigurator-captain-name = Конфигуратор доступа к черному рынку
+uplink-pirate-accessconfigurator-captain-desc = Конфигуратор доступа, который продается на черном рынке. Заблокируйте добычу за пиратским доступом сегодня!
+uplink-pirate-pmag-name = Машинный освободитель
+uplink-pirate-pmag-desc = Removes station-binding machine DRM. A pirate's best friend.
+uplink-pirate-repair-kit-name = Набор для ремонта компьютера пиратов
+uplink-pirate-repair-kit-desc = Коллекция инструментов, используемых для ремонта пиратской консоли. В те времена, когда у вас не повезло.
+uplink-pirate-ionized-dust-bag-name = Ионизированная блюзовая пыль
+uplink-pirate-ionized-dust-bag-desc = Мешок с пылью, который может прояснить, предположительно, указывают на заданный объект.
+uplink-pirate-pinpointer-target-scanner-name = Прично -точный целевой сканер
+uplink-pirate-pinpointer-target-scanner-desc = A jury-rigged scanner that can find objects targeted by pinpointers. Batteries included, lubber.
+
+# region Syndicate
+uplink-spaceblade-syndicate-name = Contra SpaceBlade
+uplink-spaceblade-syndicate-desc = Сделано из настоящего металла!
+uplink-emag-pass-name = Одноразовый эмаг
+uplink-emag-pass-desc = Карта, используемая для взлома устройств. Используется три раза.
+uplink-syndicate-segway-name = Синдикат Сегвей
+uplink-syndicate-segway-desc = Перемещайтесь по стилю, не затихивая кровавые красные ботинки.
+uplink-security-vulcan-name = Вулкан

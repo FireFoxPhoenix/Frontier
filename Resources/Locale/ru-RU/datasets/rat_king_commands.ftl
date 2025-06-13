@@ -1,0 +1,11 @@
+rat-king-command-stay-1 = Сидеть!
+rat-king-command-stay-2 = Оставаться!
+rat-king-command-stay-3 = Останавливаться!
+rat-king-command-follow-1 = На каблуке!
+rat-king-command-follow-2 = Следовать!
+rat-king-command-cheese-1 = Атакуй!
+rat-king-command-cheese-2 = СИК!
+rat-king-command-cheese-3 = Убийство!
+rat-king-command-cheese-4 = Сыр!
+rat-king-command-loose-1 = Бесплатно!
+rat-king-command-loose-2 = Свободный!

@@ -18,3 +18,6 @@ cryo-wakeup-result-disabled = На этом сервере отключена в
 cryopod-refuse-dead = { $cryopod } не принимает мёртвые тела.
 cryopod-refuse-organic = { $cryopod } не принимает более одного разумного существа одновременно!
 cryopod-wake-up = { $entity } возвращается из криосна!
+cryopod-verb-target-unknown = Неизвестный
+accept-cryo-window-prompt-stored = Your body will be stored for {PLAYTIME($time)}.
+accept-cryo-window-prompt-not-stored = Ваше тело не будет храниться, но ваш слот для работы будет вновь открыт, если вы не сделаете это сами.

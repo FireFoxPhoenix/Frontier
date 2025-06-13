@@ -9,3 +9,15 @@ lathe-category-weapons = Вооружение
 # Frontier lines below
 lathe-category-evasuits = ЕВА
 lathe-category-armor-nf = Броня
+lathe-category-food = Еда
+lathe-category-chemicals = Химикаты
+lathe-category-materials = Materials
+
+# Uniform
+lathe-category-bedsheets = Простыни
+lathe-category-carpets = Ковры
+lathe-category-coats = Костюм
+lathe-category-command = Командование
+lathe-category-hats = Шляпы
+lathe-category-jumpsuits = Комбинезоны
+lathe-category-neck = Шея

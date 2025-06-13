@@ -53,3 +53,20 @@ book-text-agrichemkit-manual =
      Каждое растение реагирует на нестабильный мутаген по-разному, поэтому вы можете использовать небольшие дозы для нескольких культур и попытаться получить лучшие результаты от каждой из них. Применение нескольких доз для одного растения может привести к многочисленным изменениям и затруднить выделение желаемых признаков, или вовсе вызвать смерть растения.
      Нестабильный мутаген абсолютно безопасен при использовании в качестве удобрения, и NanoTrasen не несет ответственности за гибель урожая, чрезмерные счета за воду, вновь обретающие сознание растения, задающие экзистенциальные вопросы, или за гибель растений на фермах, которые могут случайно возникнуть при его использовании.
      Не употребляйте нестабильный мутаген. Тщательно мойте руки после употребления. Промойте глаза, если вы смотрели на нестабильный мутаген более 30 минут в течение 24 часов. Храните в тёмном помещении при температуре от 293 до 295 К. Не используйте во время корпоративных праздников. Если вы начнете слышать голоса, советующие вам пить нестабильный мутаген, пожалуйста, обратитесь к своему врачу, руководителю отдела персонала или экзорцисту.
+book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
+      Enclosed are two (2) CyberSun patented Throwing Croissants, and one (1) patent-pending Baguette Sword.
+      The included Donk Co. microwave board can construct a microwave capable of baking more weapons.
+      Just like the baked weapons, be sure to eat this note after use. Good luck, agent.
+
+      Baguette Sword Recipe:
+      Dough x 1
+      Salt 5u
+      Pepper 5u
+      Metal Rod x 1
+      Cook Time: 15 seconds
+
+      Throwing Croissant Recipe:
+      Raw Croissant x 1
+      Butter Slice x 1
+      Glass Shard x 1
+      Cook Time: 5 seconds

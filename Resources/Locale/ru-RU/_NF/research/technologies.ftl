@@ -16,4 +16,8 @@ research-technology-magnets-tech-advanced = Продвинутый магнет�
 research-technology-magnets-tech-combat = Боевой магнетизм
 research-technology-excavation = Массовая экскавация
 research-technology-advanced-food-service = Современное ресторанное обслуживание
-research-technology-industrial-medicine = Промышленная медицина
+research-technology-industrial-medicine = Промышленная медицинаresearch-technology-atmospheric-drilling = Атмосферное бурение
+research-technology-mobile-sanitation = Мобильная санитария
+research-technology-chemical-dispensary = Химический диспансер
+research-technology-personal-storage-solutions = Персональные решения для хранения
+research-technology-atmospheric-drilling = Атмосферное бурение

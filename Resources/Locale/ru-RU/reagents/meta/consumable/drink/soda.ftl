@@ -34,3 +34,5 @@ reagent-name-fourteen-loko = фоуртин локо
 reagent-desc-fourteen-loko = Сильно переработанная жидкая субстанция, едва ли соответствующая межгалактическим стандартам безопасности для безалкогольного напитка.
 reagent-name-shamblers-juice = сок Shambler
 reagent-desc-shamblers-juice = ~Встряхните мне немного этого сока Shambler!~
+reagent-name-lemon-lime-cranberry = Смайт клюква
+reagent-desc-lemon-lime-cranberry = Пирог клюква, Рождество и намек на лимон и лайм.

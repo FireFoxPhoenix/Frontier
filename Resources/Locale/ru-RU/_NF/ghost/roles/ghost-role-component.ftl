@@ -47,3 +47,14 @@ nf-ghost-role-information-derelict-cyborg-description = Вы — киборг, �
 ghost-role-information-sigmis-name = Сигмис
 ghost-role-information-sigmis-description = Ни с места! Работает Синдикат! Разыскивается во всех уголках сектора за массовый геноцид мышей.
 ghost-role-information-sigmis-rules = Ты, созданный Синдикатом кот. Подчиняющийся непосредственно кадету синдиката и его начальству.
+ghost-role-information-clarpy-rules = You are an old [color=red][bold]Pirate[/bold][/color] cat, help out the other pirates, and remember to take your meds.
+ghost-role-information-cult-cat-name = Кровавый культ кот
+ghost-role-information-cult-cat-description = Основал культ крови из скуки.
+ghost-role-information-cult-cat-rules = You are a [color=yellow][bold]Free Agent[/bold][/color] and free to choose your course of actions.
+                                        Please note that [color=yellow]all server rules still apply.[/color] Additionally:
+                                        - [color=red]DO NOT[/color] damage player shuttles or their contents.
+                                        - [color=red]DO NOT[/color] gib players. Once they're dead, leave them be.
+ghost-role-information-elcapo-name = Эль Капо
+ghost-role-information-elcapo-description = Оказался в тюрьме после многих лет преступлений на кошках.
+nf-ghost-role-information-buddy-name = Приятель
+nf-ghost-role-information-buddy-description = You were constructed from a Build-A-Buddy kit. Become someone's best friend today!

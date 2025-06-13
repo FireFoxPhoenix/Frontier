@@ -30,3 +30,13 @@ public-transit-departure = Транспорт направляется в { $des
 public-transit-arrival = Благодарим за выбор общественного транспорта NT. Следующий шаттл до { $destination } отправляется через { $waittime } секунд.
 shuttle-ftl-too-many = Слишком много активных экспедиций!
 adventure-webhook-ledger-start = Бухгалтерский учёт
+adventure-webhook-footer = Server: {$serverName}
+    Round: #{$roundId}
+nf-adventure-title = Приключение
+nf-adventure-description = Присоединяйтесь к команде корабля или купите свой собственный и изучите, исследуйте, спасаете или пройдите к богатству!
+nf-pirate-title = Пираты
+nf-pirate-description = Банда пиратов на свободе! Берегитесь в космосе и постарайтесь не быть разграбленным!
+nf-test-title = Тест
+nf-test-description = A preset intended for testing. No POIs, no bluespace events, final destination.
+shuttle-ftl-invalid = Invalid ship for FTL!
+public-transit-shuttle-screen-text = {" "}BUS  {$number}{$suffix}

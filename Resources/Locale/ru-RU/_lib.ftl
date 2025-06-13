@@ -32,3 +32,4 @@ zzzz-fmt-power-joules =
         [4] ТДж
        *[5] ???
     }
+zzzz-fmt-playtime = {$hours}H {$minutes}M

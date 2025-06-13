@@ -20,4 +20,7 @@ loadout-group-contractor-implanter = импланты
 loadout-group-contractor-bureaucracy = бюрократия
 loadout-group-contractor-cartridge = картриджи для КПК
 loadout-group-contractor-ears = гарнитуры
-loadout-group-contractor-wallet = кошельки
+loadout-group-contractor-wallet = кошелькиloadout-group-contractor-pda = КПК
+loadout-group-contractor-backpack-items = рюкзак
+loadout-group-contractor-hand-items = в руках предметы
+loadout-group-contractor-pda = КПК

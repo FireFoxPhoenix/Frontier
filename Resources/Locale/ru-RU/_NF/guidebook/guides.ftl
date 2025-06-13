@@ -71,4 +71,37 @@ guide-entry-medical-bounties = Медицинские премии
 guide-entry-medical-doc = Менеджер Медицинских Операций
 
 # Security entries
-guide-entry-nfsd-smuggling = Контрабанда
+guide-entry-nfsd-smuggling = Контрабандаguide-entry-startinggear = Начальное оборудование
+guide-entry-interviews = Интервью
+guide-entry-sector-topology = Топология сектора
+guide-entry-cargo-hauling = Груз
+guide-entry-offshore-gas-mining = Offshore Gas Mining
+
+# Security entries
+guide-entry-shipyard-akupara = Акупара
+guide-entry-shipyard-barge = Баржа
+guide-entry-shipyard-baroness = Баронесса
+guide-entry-shipyard-bodkin = Шило
+guide-entry-shipyard-charon = Харон
+guide-entry-shipyard-crossroads = Перекресток
+guide-entry-shipyard-eagle = Орел
+guide-entry-shipyard-hauler = Перевозчик
+guide-entry-shipyard-honker = Хонкер
+guide-entry-shipyard-investigator = Следователь
+guide-entry-shipyard-lyrae = Лира
+guide-entry-shipyard-mccargo = Маккарго
+guide-entry-shipyard-mcdelivery = McDelivery
+guide-entry-shipyard-nightlight = Ночной свет
+guide-entry-shipyard-nook = Уголк
+guide-entry-shipyard-phoenix = Феникс
+guide-entry-shipyard-placebo = Плацебо
+guide-entry-shipyard-retort = Реторт
+guide-entry-shipyard-sparrow = Воробей
+guide-entry-shipyard-skipper = Шкипер
+guide-entry-shipyard-stasis = Стаз
+guide-entry-shipyard-tide = Прилив
+guide-entry-shipyard-vitalis = Vitalis
+
+# Rules entries
+guide-entry-frontier-rule-zero-tolerance = Нулевая терпимость
+guide-entry-startinggear = Начальное оборудование

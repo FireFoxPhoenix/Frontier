@@ -35,3 +35,16 @@ JobSeniorEngineer = Ведущий Инженер
 JobSeniorOfficer = Сержант
 JobSeniorPhysician = Старший Врач
 JobSeniorResearcher = Ведущий Учёный
+JobContractorInterview = Заявитель подрядчика
+JobMercenaryInterview = Кандидат наемника
+JobPilotInterview = Пилотный заявитель
+JobPublicAffairsLiaison = Связывание общественных дел
+job-name-contractor-interview = Заявитель подрядчика
+job-name-mercenary-interview = Кандидат наемника
+job-name-pilot-interview = Пилотный заявитель
+job-name-nf-pirate = Пират
+job-name-nf-pirate-captain = Пиратский капитан
+job-name-nf-pirate-first-mate = Пиратский первый приятель
+job-title-ert-mail-carrier = ERT Mail Carrier
+
+# Role timers - Make these alphabetical or I cut you

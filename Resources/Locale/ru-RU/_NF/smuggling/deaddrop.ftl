@@ -14,4 +14,7 @@ smuggling-report-pirate = Шевелитесь сухопутные крысы! 
 deaddrop-faxed-hint-name = подозрительный факс
 deaddrop-faxed-hint-content = 
     Не так много времени..
-    Синдикату сектора Spinward требуется помощь.
+    Синдикату сектора Spinward требуется помощь.deaddrop-shuttle-name = Синдикатный падение снабжения
+deaddrop-hint-next-drop = Expect the next drop here around {$time}.
+deaddrop-faxed-hint-signature = Синдикат логистики
+deaddrop-shuttle-name = Синдикатный падение снабжения

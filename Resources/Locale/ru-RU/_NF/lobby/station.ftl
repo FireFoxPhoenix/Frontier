@@ -1,0 +1,1 @@
+station-nsfd = NFSD Outpost

@@ -15,4 +15,8 @@ reagent-desc-cucumber-water = Самая причудливая из водое�
 reagent-name-honey = мёд
 reagent-desc-honey = Густой, золотистый и липкий, оригинальный подсластитель.
 reagent-name-honey-iced-tea = холодный чай с медом
-reagent-desc-honey-iced-tea = Чай с капелькой меда.
+reagent-desc-honey-iced-tea = Чай с капелькой меда.reagent-name-wassail = wassail
+reagent-desc-wassail = Горячий мужчина эля.
+reagent-name-eggnog = Эггног
+reagent-desc-eggnog = Кремовый, сладкий и слегка выпитый. Полностью носит.
+reagent-name-wassail = wassail

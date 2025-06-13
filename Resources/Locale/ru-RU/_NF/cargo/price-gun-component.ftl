@@ -5,4 +5,16 @@ contraband-price-gun-pricing-result-none = Устройство показыва
 medical-price-gun-pricing-result = Устройство показывает, что {THE($object)} оценивается в {$price}.
 medical-price-gun-verb-text = Оценка предмета
 medical-price-gun-verb-message = Оценить {THE($object)}.
-medical-price-gun-pricing-result-none = Устройство показывает, что {THE($object)} не имеет цены.
+medical-price-gun-pricing-result-none = Устройство показывает, что {THE($object)} не имеет цены.pirate-contraband-price-gun-pricing-result = Skizzit's says {THE($object)} {$price ->
+    [0] isn't worth any doubloons.
+    [one] is worth {$price} doubloon.
+    *[other] is worth {$price} doubloons.
+}
+pirate-contraband-price-gun-verb-text = Оценка
+pirate-contraband-price-gun-verb-message = Appraise {THE($object)}.
+pirate-contraband-price-gun-pricing-result-none = Skizzit's doesn't have an entry for {THE($object)}.
+pirate-contraband-price-gun-pricing-result = Skizzit's says {THE($object)} {$price ->
+    [0] isn't worth any doubloons.
+    [one] is worth {$price} doubloon.
+    *[other] is worth {$price} doubloons.
+}

@@ -27,3 +27,4 @@ nukeops-no-one-ready = Нет готовых игроков! Нельзя зап
 nukeops-role-commander = Командир
 nukeops-role-agent = Агент
 nukeops-role-operator = Оператор
+nukeops-briefing = Ваши цели просты. Доставьте полезную нагрузку и выходите до начала полезной нагрузки. Начать миссию.

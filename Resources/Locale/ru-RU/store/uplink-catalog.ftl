@@ -304,3 +304,25 @@ uplink-combat-bakery-name = Набор боевой выпечки
 uplink-combat-bakery-desc = Набор подпольного печёного оружия. Содержит меч-багет, пару метательных круассанов и микроволновую плату Синдиката для изготовления новых. Когда дело будет сделано, съешьте все улики.
 uplink-fake-mindshield-name = Фальшивый щит разума
 uplink-fake-mindshield-desc = Переключаемый имплант, способный имитировать те же передачи, которые испускает настоящий щит разума, когда он включен, обманывая способные Heads-up дисплеи, заставляя их думать, что у вас есть щит разума (имплант марки Nanotrasen не предоставляется).
+uplink-hypereutactic-blade-name = Гиперетатическое лезвие
+uplink-hypereutactic-blade-desc = Гигантский энергетический меч с силой, который соответствует ее внешности. Требуется две руки. Медленный и громоздкий, но довольно искусный в размышлениях. Ранее стал печально известным для оперативника в маске радости. Вы не хотели бы видеть, что это идет на вас по коридору!
+uplink-singularity-grenade-name = Сингулярность Граната
+uplink-singularity-grenade-desc = Граната, которая имитирует силу сингулярности, хорошо генерирует мощную гравитацию.
+uplink-access-breaker-name = Доступ к нарушению
+uplink-access-breaker-desc = A hacked access configurator and a good friend of the emag. This device is able to force airlocks open as well as erase access requirements from station equipment. Recharges automatically.
+uplink-reinforcement-radio-traitor-desc = Радио в подкреплении агента чрезвычайно сомнительного качества. Нет кнопки, купите это, если вы готовы к вечеринке. Позвоните в медика, шпиона или вора, чтобы помочь вам. Удачи.
+uplink-reinforcement-radio-nukeops-name = Ядерный оперативный телепорт
+uplink-reinforcement-radio-nukeops-desc = Радио в ядерном операциях чрезвычайно сомнительного качества. Нет кнопки, купите это, если вы готовы к вечеринке. Они имеют основное ядерное оперативное снаряжение.
+uplink-antimov-law-name = Антимовой законодательство
+uplink-antimov-law-desc = A very dangerous Lawset to use when you want to cause the A.I. to go haywire, use with caution.
+
+# Implants
+uplink-radio-implanter-desc = Implants a Syndicate radio, allowing covert communication without a headset.
+
+# Bundles
+uplink-cameraBug-name = Ошибка камеры
+uplink-cameraBug-desc = Портативное устройство, которое позволяет просматривать камеры станции.
+uplink-business-card-name = Синдикат визитная карточка
+uplink-business-card-desc = Визитная карточка, которую вы можете дать кому -то, чтобы продемонстрировать ваше участие в синдикате или уйти на месте преступления, чтобы высмеивать детектива. Вы можете купить не более трех из них.
+uplink-smuggler-satchel-name = Сворбонник
+uplink-smuggler-satchel-desc = Удобный, подозрительно выглядящий сатчел. Просто достаточно плоско, чтобы поместиться под плитку пола.

@@ -76,3 +76,7 @@ alerts-deflecting-name = Отражение
 alerts-deflecting-desc = У вас есть шанс отразить входящие снаряды. Стоя на месте или двигаясь медленно, вы увеличиваете этот шанс.
 alerts-offer-name = Получить
 alerts-offer-desc = Кто-то передаёт вам предмет.
+alerts-walking-name = Ходьба
+alerts-walking-desc = Вы идете, двигаясь в медленном темпе.
+alerts-adrenaline-name = [color=red]Adrenaline[/color]
+alerts-adrenaline-desc = Ты полон адреналина: боль тебя не замедлит.

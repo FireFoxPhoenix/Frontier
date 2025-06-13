@@ -60,4 +60,5 @@ spellbook-event-summon-magic-description = Размещает перед каж�
 spellbook-upgrade-fireball-name = Улучшение Огненного шара
 spellbook-upgrade-fireball-description = Позволяет улучшить Огненный шар до максимального 3-го уровня!
 spellbook-upgrade-jaunt-name = Улучшение Эфирной прогулки
-spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
+spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!spellbook-polymorph-spider-name = Полиморф паука
+spellbook-polymorph-spider-name = Полиморф паука

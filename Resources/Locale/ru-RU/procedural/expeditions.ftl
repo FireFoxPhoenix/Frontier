@@ -78,4 +78,9 @@ salvage-air-mod-volatile-atmosphere = Нестабильная атмосфер�
 salvage-biome-mod-caves = Пещеры
 salvage-biome-mod-grasslands = Луга
 salvage-biome-mod-snow = Снежная тайга
-salvage-biome-mod-lava = Вулкан
+salvage-biome-mod-lava = Вулканsalvage-dungeon-mod-lava-brig = Лава Бриг
+salvage-dungeon-mod-snowy-labs = Снежные лаборатории
+salvage-dungeon-mod-experiment = Эксперимент
+salvage-dungeon-mod-haunted = Призрачный
+salvage-dungeon-mod-mineshaft = Миншафт
+salvage-dungeon-mod-lava-brig = Лава Бриг

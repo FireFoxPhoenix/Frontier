@@ -12,3 +12,13 @@ trait-streetpunk-accent-desc = Ты родился в огромном мега�
 # Эти черты скоро заменят на ползунок, но пока они здесь.
 trait-tall-name = Высокий
 trait-short-name = Низкий
+trait-unclonable-name = Нецелим
+trait-unclonable-desc = Whether due to an administrative oversight or abnormal genetics, your genes aren't sequenced by NT, and you cannot be cloned.
+trait-lizard-accent-name = Рептильный акцент
+trait-lizard-accent-desc = Be it through continual ekssposssure or otherwissse, you sssound like a reptile.
+trait-moth-accent-name = Акцент моли
+trait-moth-accent-desc = Некоторые из ваших слов имеют определенный шум для них.
+trait-dwarf-accent-name = Гнома акцент
+trait-dwarf-accent-desc = Ye sound like ye've spent tae long wi ae pickaxe in your hands. Rock and stone!
+
+# These traits are bound to be replaced with a slider, but they live here for now.

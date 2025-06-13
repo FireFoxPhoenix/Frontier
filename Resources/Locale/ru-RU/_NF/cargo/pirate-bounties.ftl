@@ -32,3 +32,5 @@ pirate-bounty-item-contracrate = Ящик с контрабандой
 pirate-bounty-item-hydrotray = Лоток для гидропоники
 pirate-bounty-item-hypo = Гипоспрей
 pirate-bounty-description-generic = Вперёд, бездельник! Добудь мне это добро!
+pirate-bounty-item-diamond = Бриллиант
+pirate-bounty-item-akms = Акм

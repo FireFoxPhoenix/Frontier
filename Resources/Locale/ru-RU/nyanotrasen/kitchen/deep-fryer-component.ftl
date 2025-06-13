@@ -38,3 +38,9 @@ deep-fried-burned-item = подгорелый { $entity }
 deep-fried-burned-item-examine = Почернел от нагара.
 reagent-name-oil-ghee = топлёное масло
 reagent-desc-oil-ghee = Густое и полупрозрачное.
+deep-fried-spooky-item = spooky {$entity}
+deep-fried-spooky-item-examine = Он гладкий с маслом и полупрозрачным.
+deep-fried-spectral-item = spectral {$entity}
+deep-fried-spectral-item-examine = It's oily, transparent, and unnaturally light.
+# Set reuses burned item from above
+# End Frontier

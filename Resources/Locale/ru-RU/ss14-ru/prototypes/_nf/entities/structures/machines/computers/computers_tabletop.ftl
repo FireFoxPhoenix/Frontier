@@ -95,4 +95,8 @@ ent-ComputerTabletopStationAdminBankATMFrontier = { ent-StationAdminBankATM }
 ent-ComputerTabletopStationAdminBankATMNfsd = { ent-StationAdminBankATM }
   .desc = { ent-StationAdminBankATM.desc }
 ent-ComputerTabletopStationAdminBankATMMedical = { ent-StationAdminBankATM }
-  .desc = { ent-StationAdminBankATM.desc }
+  .desc = { ent-StationAdminBankATM.desc }ent-ComputerTabletopEmergencyShuttle = { ent-ComputerEmergencyShuttle }
+ent-ComputerTabletopShuttleCargo = { ent-ComputerShuttleCargo }
+ent-ComputerTabletopCargoShuttle = { ent-ComputerCargoShuttle }
+ent-ComputerTabletopSensorMonitoring = { ent-ComputerSensorMonitoring }
+ent-ComputerTabletopEmergencyShuttle = { ent-ComputerEmergencyShuttle }

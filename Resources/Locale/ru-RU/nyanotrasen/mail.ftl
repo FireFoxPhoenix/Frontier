@@ -30,3 +30,9 @@ command-mailnow-success = Успех! Все почтовые телепорте
 command-mailtestbulk = Отправить по одному экземпляру каждого типа посылки на указанный почтовый телепортер. Неявно вызывает mailnow.
 command-mailtestbulk-help = Использование: { $command } <идентификатор телепортера>
 command-mailtestbulk-success = Успех! Все почтовые телепортеры скоро отправят новую партию посылок.
+command-mailto-completion-recipient = <recipient entityUid>
+command-mailto-completion-container = <contents entityUid>
+command-mailto-completion-fragile = [is-fragile: true|false]
+command-mailto-completion-priority = [is-priority: true|false]
+command-mailto-completion-large = [is-large: true|false]
+# End Frontier

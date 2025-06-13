@@ -1,0 +1,16 @@
+ent-BaseBoomBox = БУМБОКС
+ent-BaseBoomBoxTape = { ent-BaseItem }
+ent-BaseBoomBoxTapeSpaceOddity = Крис Хэдфилд - Космическая странность
+ent-BaseBoomBoxTapeSpaceAsshole = Крис Ремо - космический мудак
+ent-BaseBoomBoxTapeStarman = David Bowie - Starman
+ent-BaseBoomBoxTapeTheChain = Fleetwood Mac - The Chain
+ent-BaseBoomBoxTapeCantSmile = Барри Манилоу - не могу улыбаться без тебя
+ent-BaseBoomBoxTapeUnderStars = Аврора - под звездами
+ent-BaseBoomBoxTapeCarelessWhisper = Беззаботный шепот
+ent-BaseBoomBoxTapeComingHome = Возвращаюсь домой
+ent-BaseBoomBoxTapeSignals = Сигналы
+ent-BaseBoomBoxTapeDemonKittyRag = Демон Китти Раг
+ent-BaseBoomBoxTapeKissTheSky = Поцелуй небо
+ent-BaseBoomBoxTapeRetrograde = Ретроградный
+ent-BaseBoomBoxTapeThisAintNoPlaceForNoHero = Это нет места для героя
+ent-BaseBoomBoxTapeMrKittyAfterDark = Мистер Китти - после темноты

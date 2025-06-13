@@ -28,4 +28,5 @@ ent-ClosetWallO2N2 = { ent-ClosetO2N2 }
     .desc = { ent-ClosetO2N2.desc }
 ent-ClosetWallO2N2FilledRandom = { ent-ClosetO2N2 }
     .suffix = Заполненный, Случайно
-    .desc = { ent-ClosetO2N2.desc }
+    .desc = { ent-ClosetO2N2.desc }ent-LockerWallBase = { ent-BaseStructureUnanchorable }
+ent-LockerWallBase = { ent-BaseStructureUnanchorable }

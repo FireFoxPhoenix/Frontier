@@ -11,4 +11,6 @@ ent-ShipVoucherFrontierValet = ваучер шаттла камердинера
 ent-ShipVoucherFrontierMailCarrier = ваучер почтового шаттла
     .desc = Позволяет бесплатно купить один почтовый шаттл на верфи Фронтира. Уничтожается при продаже шаттла.
 ent-ShipVoucherFrontierGuard = ваучер охранного шаттла
-    .desc = Позволяет бесплатно купить один охранный шаттл на верфи Фронтира. Уничтожается при продаже шаттла.
+    .desc = Позволяет бесплатно купить один охранный шаттл на верфи Фронтира. Уничтожается при продаже шаттла.ent-NfsdSergeantShipVoucher = nfsd sergeant ship voucher
+ent-NfsdBailiffShipVoucher = nfsd bailiff ship voucher
+ent-NfsdSergeantShipVoucher = nfsd sergeant ship voucher

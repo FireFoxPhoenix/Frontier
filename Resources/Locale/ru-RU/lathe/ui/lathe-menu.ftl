@@ -24,3 +24,9 @@ lathe-menu-no-materials-message = Материалы не загружены
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства
+lathe-menu-recipe-count = { $count ->
+    [1] {$count} Recipe
+    *[other] {$count} Recipes
+}
+lathe-reagent-dispense-no-container = Liquid pours out of {THE($name)} onto the floor!
+lathe-menu-result-reagent-display = {$reagent} ({$amount}u)

@@ -157,3 +157,15 @@ loadout-group-paramedic-shoes = Парамедик, обувь
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
 loadout-group-boxer-jumpsuit = Боксёр, комбинезон
 loadout-group-boxer-gloves = Боксёр, перчатки
+loadout-group-EVA-tank = Видоспецифичный бензобак
+loadout-group-vox-tank = Vox-specific gas tank
+loadout-group-pocket-tank-double = Видоспецифичный двойной аварийный резервуар в кармане
+loadout-group-survival-mime = Mime Survival Box
+
+# Command
+loadout-group-passenger-neck = Шея пассажира
+loadout-group-mime-belt = Пояс -мима
+loadout-group-security-star = Security Star
+
+# Medical
+loadout-group-psychologist-jumpsuit = Психолог комбинезон

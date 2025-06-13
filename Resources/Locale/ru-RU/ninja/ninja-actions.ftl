@@ -9,3 +9,5 @@ ninja-research-steal-success =
        *[other] новых технологий
     } из { $server }.
 ninja-criminal-records-hack-announcement = ОШИБКА: В криминальных записях обнаружена [УДАЛЕНО] ошибка #*;"
+ninja-cell-downgrade = Костюм примет только новую силовую ячейку, которая лучше, чем текущая!
+ninja-cell-too-large = Этот источник питания не вписывается в костюм ниндзя!
