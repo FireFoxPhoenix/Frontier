@@ -119,8 +119,7 @@ marking-MothRhinoBeetle-rhinobeetle2 = Светить
 marking-MothRhinoBeetle-rhinobeetle3 = Wings
 
 # slimes
-marking-fizz = Fizz
-marking-fizz-fizz = Fizz
+marking-fizz = Физзmarking-fizz-fizz = Fizz
 marking-bubble = Пузырьки
 marking-bubble-bubble = Пузырьки
 marking-fishbowl = Рыба
@@ -211,13 +210,8 @@ marking-VoxTailSplit-voxtailsplit = Twinned
 
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead
-marking-VoxBeak = Default Beak [DO NOT USE]
-marking-VoxLArmScales = Default Arm [DO NOT USE]
-marking-VoxLHandScales = Default Left Hand [DO NOT USE]
-marking-VoxRArmScales = Default Right Arm [DO NOT USE]
-marking-VoxRHandScales = Default Right Hand [DO NOT USE]
-marking-VoxTail = Default Tail [DO NOT USE]
-marking-VoxLFootScales = Default Left Foot [DO NOT USE]
-marking-VoxLLegScales = Default Left Leg [DO NOT USE]
-marking-VoxRFootScales = Default Right Foot [DO NOT USE]
-marking-VoxRLegScales = Default Right Leg [DO NOT USE]
+marking-VoxBeak = Клюв по умолчанию [НЕ ИСПОЛЬЗУЙТЕ]marking-VoxLArmScales = Default Arm [DO NOT USE]
+marking-VoxLHandScales = Левая кисть по умолчанию [НЕ ИСПОЛЬЗУЙТЕ]marking-VoxRArmScales = Default Right Arm [DO NOT USE]
+marking-VoxRHandScales = Правая кисть по умолчанию [НЕ ИСПОЛЬЗУЙТЕ]marking-VoxTail = Default Tail [DO NOT USE]
+marking-VoxLFootScales = Левая ступня по умолчанию [НЕ ИСПОЛЬЗУЙТЕ]marking-VoxLLegScales = Default Left Leg [DO NOT USE]
+marking-VoxRFootScales = Правая ступня по умолчанию [НЕ ИСПОЛЬЗУЙТЕ]marking-VoxRLegScales = Default Right Leg [DO NOT USE]

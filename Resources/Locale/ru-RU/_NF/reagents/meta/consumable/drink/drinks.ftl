@@ -19,4 +19,4 @@ reagent-desc-honey-iced-tea = Чай с капелькой меда.reagent-name
 reagent-desc-wassail = Горячий мужчина эля.
 reagent-name-eggnog = Эггног
 reagent-desc-eggnog = Кремовый, сладкий и слегка выпитый. Полностью носит.
-reagent-name-wassail = wassail
+reagent-name-wassail = вассал

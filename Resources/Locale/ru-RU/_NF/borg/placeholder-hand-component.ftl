@@ -3,8 +3,7 @@ borg-placeholder-display-name-electronics = Электроника
 borg-placeholder-display-name-trading-crate = торговый ящик
 borg-placeholder-display-name-construction-material = материалы
 borg-placeholder-display-name-floor-tile = половая плитка
-borg-placeholder-display-name-flatpack = flatpack
-borg-placeholder-display-name-lights = свет
+borg-placeholder-display-name-flatpack = Упаковкаborg-placeholder-display-name-lights = свет
 borg-placeholder-display-name-spray-bottle = распылитель
 borg-placeholder-display-name-topical-medication = Актуальные
 borg-placeholder-display-name-musical-instrument = инструмент
@@ -18,4 +17,4 @@ borg-placeholder-display-name-food-or-ingredients = еда/ингредиент�
 borg-placeholder-display-name-compressed-matter = сжатое вещество
 borg-placeholder-display-name-rcd = RCD
 borg-placeholder-display-name-fuel = топливо
-borg-placeholder-display-name-jetpack = jetpack
+borg-placeholder-display-name-jetpack = реактивный ранец

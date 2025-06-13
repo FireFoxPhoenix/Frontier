@@ -1,5 +1,4 @@
-cassette-repair-start = You start winding the tape back into {THE($item)}.
-cassette-repair-finish = You manage to wind the tape back into {THE($item)}.
+cassette-repair-start = Вы начинаете перематывать ленту {$item} обратно.cassette-repair-finish = You manage to wind the tape back into {THE($item)}.
 tape-cassette-position = The cassette is about [color=green]{$position}%[/color] the way through.
 tape-cassette-damaged = Кассету не подведена, используйте ручку или отвертку для ее ремонта.
 tape-recorder-playing = The tape recorder is in [color=green]playback[/color] mode.
@@ -18,8 +17,6 @@ tape-recorder-menu-recording-button = Записывать
 tape-recorder-menu-playing-button = Воспроизведение
 tape-recorder-menu-rewinding-button = Перемотка
 tape-recorder-menu-print-button = Печатать транскрипт записи
-tape-recorder-menu-cassette-label = Cassette tape: {$cassetteName}
-tape-recorder-menu-no-cassette-label = Кассетная лента не вставлена
-tape-recorder-print-start-text = [bold]Start of recorded transcript[/bold]
-tape-recorder-print-message-text = [bold][{$time}] {$source}: [/bold] {$message}
-tape-recorder-print-end-text = [bold]End of recorded transcript[/bold]
+tape-recorder-menu-cassette-label = Кассетная лента: {$cassetteName}tape-recorder-menu-no-cassette-label = Кассетная лента не вставлена
+tape-recorder-print-start-text = [bold]Начало записанной расшифровки[/bold]tape-recorder-print-message-text = [bold][{$time}] {$source}: [/bold] {$message}
+tape-recorder-print-end-text = [bold]Конец записанной стенограммы[/bold]

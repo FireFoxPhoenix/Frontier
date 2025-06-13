@@ -1,1 +1,1 @@
-item-cougher-mask = Take off your {$mask} first.
+item-cougher-mask = Сначала снимите свою {$mask}.

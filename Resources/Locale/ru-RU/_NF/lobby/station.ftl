@@ -1,1 +1,1 @@
-station-nsfd = NFSD Outpost
+station-nsfd = Аванпост ДСБФ

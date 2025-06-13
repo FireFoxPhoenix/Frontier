@@ -57,4 +57,4 @@ ghost-role-information-cult-cat-rules = You are a [color=yellow][bold]Free Agent
 ghost-role-information-elcapo-name = Эль Капо
 ghost-role-information-elcapo-description = Оказался в тюрьме после многих лет преступлений на кошках.
 nf-ghost-role-information-buddy-name = Приятель
-nf-ghost-role-information-buddy-description = You were constructed from a Build-A-Buddy kit. Become someone's best friend today!
+nf-ghost-role-information-buddy-description = Вы были созданы из набора Build-A-Buddy. Станьте чьим-то лучшим другом сегодня!

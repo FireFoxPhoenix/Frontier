@@ -1,1 +1,1 @@
-pacified-cannot-throw-hairball = I can't possibly throw { THE($projectile) }, what if somebody vomits?
+pacified-cannot-throw-hairball = Я не могу бросить {$projectile}, а если кого-то вырвет?

@@ -1,9 +1,7 @@
 marking-LizardSnoutpiercings-piercings1 = Пирсинг
 marking-LizardSnoutpiercings = Пирсинг
-marking-LizardHornsNubby-horns_nubby = Lizard Horns (Nubby)
-marking-LizardHornsNubby = Lizard Horns (Nubby)
-marking-LizardHornsKoboldEarspiercings = Lizard Ears (Kobold, Pierced)
-marking-LizardHornsKoboldEarspiercings-horns_kobold_ears = Уши
+marking-LizardHornsNubby-horns_nubby = Рога ящерицы (упитанные)marking-LizardHornsNubby = Lizard Horns (Nubby)
+marking-LizardHornsKoboldEarspiercings = Уши ящерицы (Кобольд, Проколотые)nf-test-description = Предустановленный вариант для тестирования. Никаких точек интереса, никаких событий, конечный пункт назначения.marking-LizardHornsKoboldEarspiercings-horns_kobold_ears = Уши
 marking-LizardHornsKoboldEarspiercings-horns_kobold_ears_piercings = Пирсинг
 marking-Fangs = Ящерицы клыки
 marking-Fangs-Fangs = Клыки

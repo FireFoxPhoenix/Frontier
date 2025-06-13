@@ -22,5 +22,4 @@ comms-console-menu-broadcast-button-tooltip = Broadcast your message to wall-mou
 # Frontier: station<sector
 comms-console-menu-alert-level-button-tooltip = Измените уровень оповещения сектора. Применяется немедленно при выборе.
 comms-console-menu-emergency-shuttle-button-tooltip = Звонит или вспоминает аварийный шаттл. Вы можете вспомнить только тогда, когда осталось достаточно времени.
-comms-console-announcement-title-station-ai = Station AI
-comms-console-announcement-title-wizard = Волшебник
+comms-console-announcement-title-station-ai = Станционный ИИcomms-console-announcement-title-wizard = Волшебник

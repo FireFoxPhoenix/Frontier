@@ -1,2 +1,1 @@
-fax-delete-paper-intellectual-property = NT intellectual property detected, destroying original document.
-fax-delete-paper-generic = Переопределения безопасности вовлечены, измельчение оригинального документа.
+fax-delete-paper-intellectual-property = Обнаружена интеллектуальная собственность NT, уничтожающая исходный документ.fax-delete-paper-generic = Переопределения безопасности вовлечены, измельчение оригинального документа.

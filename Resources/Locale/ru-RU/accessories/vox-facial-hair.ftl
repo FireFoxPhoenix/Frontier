@@ -4,4 +4,4 @@ marking-VoxFacialHairFu = Вокс, Перья Фу
 marking-VoxFacialHairNeck = Вокс, Шейные перья
 marking-VoxFacialHairMane = Вокс, Борода (Грива)
 marking-VoxFacialHairManeSmall = Вокс Борода (маленькая грива)
-marking-VoxFacialHairTufts = Vox Sideburns (Tufts)
+marking-VoxFacialHairTufts = Вокс Бакенбарды (пучки)

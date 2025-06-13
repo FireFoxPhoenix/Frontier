@@ -79,5 +79,4 @@ shipyard-console-guidebook = Документация
 shipyard-console-contraband-onboard = На борту обнаружена контрабанда.
 shipyard-console-station-resources = На борту обнаружены жизненно важные ресурсы станции.
 shipyard-console-dangerous-materials = На борту обнаружены опасные материалы.shipyard-console-invalid-voucher-type = Этот ваучер не может быть использован на этой консоли.
-shipyard-console-fallback-prevent-sale = YML-class bugs detected onboard. Please file a bug report when possible.
-shipyard-console-invalid-voucher-type = Этот ваучер не может быть использован на этой консоли.
+shipyard-console-fallback-prevent-sale = На борту обнаружены ошибки класса YML. Пожалуйста, отправьте отчет об ошибке, когда это возможно.shipyard-console-invalid-voucher-type = Этот ваучер не может быть использован на этой консоли.

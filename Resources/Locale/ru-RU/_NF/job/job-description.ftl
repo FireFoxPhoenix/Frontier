@@ -17,8 +17,7 @@ job-description-stc = Дирижёр космического оркестра! 
 job-description-sr = Властелин доступов и хранитель Скрепыша! Справедливо распределяйте права, управляйте аванпостом Фронтира и берегите вашего пушистого помощника как зеницу ока.
 job-description-brigmedic-nf = Сражайтесь в задней части службы шерифа, за жизнь ваших товарищей! Вы первая и последняя надежда на свою команду. Гиппократ благословит вас.
 job-description-nf-detective = Исследуйте сцены преступности, используя судебно -медицинские инструменты, убедитесь, что виновная сторона найдена, и есть пара курит.
-job-description-doc = Provide guidance and direction for shift medics and work to safeguard the health of Nanotrasen personnel.
-job-description-nf-pirate = Drink grog, follow orders, swab the deck, and abide by your Captain and your code.
+job-description-doc = Предоставлять указания и рекомендации дежурным врачам и работать над охраной здоровья персонала Nanotrasen.job-description-nf-pirate = Drink grog, follow orders, swab the deck, and abide by your Captain and your code.
 job-description-nf-pirate-captain = Вести команду не-до-до-досрочного прохождения через открытое пространство и разграбление с честью, подчиняясь кодексу.
 job-description-nf-pirate-first-mate = Помогите своему капитану в любых химинках, в которых вы окажетесь.
-job-description-public-affairs-liaison = Interface with the public, hand out and fill out forms and assist the NFSD chain of command with administrative tasks.
+job-description-public-affairs-liaison = Взаимодействовать с общественностью, раздавать и заполнять формы, а также помогать руководству NFSD в выполнении административных задач.

@@ -133,8 +133,6 @@ bounty-description-lasergun = Караван утилизаторов запра
 bounty-description-food = После нашествия крысиного короля соседняя станция унатхов осталась без еды. Необходима большая партия мясных блюд.
 bounty-item-flash = Вспышка
 bounty-item-tooth-space-carp = Космический карп зуб
-bounty-item-tooth-sharkminnow = Sharkminnow Tooth
-bounty-description-cardboard-box = "The Cardborgs Cometh" is a new play premiering tomorrow, and the costuming team is woefully unprepared. Send us some boxes to work with.
-bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
-bounty-description-tooth-space-carp = Some lads from "down unda" need some teeth to make their traditional apparel. Send them a few from some space carp.
-bounty-description-tooth-sharkminnow = The chef is claiming that the teeth of sharkminnows are some kind of high-quality knife. I don't know what they're on about, but they want a set. Send it to them.
+bounty-item-tooth-sharkminnow = Зуб акулы-гольяныbounty-description-cardboard-box = "The Cardborgs Cometh" is a new play premiering tomorrow, and the costuming team is woefully unprepared. Send us some boxes to work with.
+bounty-description-flashes = GREETINGS \[Station] НАМ ТРЕБУЕТСЯ 6 ВСПЫШЕК ИЗ-ЗА НОРМАЛЬНОГО \[TrainingExercise] С БЕЗОПАСНОСТЬЮ. ВСЕ \[Normal].bounty-description-tooth-space-carp = Some lads from "down unda" need some teeth to make their traditional apparel. Send them a few from some space carp.
+bounty-description-tooth-sharkminnow = Шеф-повар утверждает, что зубы акул-гольянов — это какой-то высококачественный нож. Я не знаю, о чем они, но они хотят набор. Отправьте им.

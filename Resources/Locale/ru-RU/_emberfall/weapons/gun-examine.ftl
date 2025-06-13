@@ -1,5 +1,4 @@
-gun-examinable-verb-text = Изучите статистику
-gun-examinable-verb-message = Подробная статистика
+gun-examinable-verb-text = Изучить статистикуgun-examinable-verb-message = Подробная статистика
 gun-examine = Технические характеристики оружия:
 gun-examine-recoil = - [color={$color}]Recoil[/color]: [color=lightblue]{$value}°[/color] per shot
 gun-examine-stability = - [color={$color}]Stability[/color]: [color=lightblue]{$value}°[/color] per second

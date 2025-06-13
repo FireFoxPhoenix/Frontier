@@ -11,4 +11,4 @@ job-supervisors-syndicate = Командиру Синдиката
 job-supervisors-MMO = Менеджеру Медицинских Операций
 job-supervisors-nf-pirate = Первый помощник и капитан
 job-supervisors-nf-pirate-captain = Капитан
-job-supervisors-freebooters-union = the Freebooters' Union
+job-supervisors-freebooters-union = Союз флибустьеров # кто?

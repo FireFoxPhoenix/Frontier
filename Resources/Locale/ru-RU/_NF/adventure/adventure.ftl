@@ -38,5 +38,4 @@ nf-pirate-title = Пираты
 nf-pirate-description = Банда пиратов на свободе! Берегитесь в космосе и постарайтесь не быть разграбленным!
 nf-test-title = Тест
 nf-test-description = A preset intended for testing. No POIs, no bluespace events, final destination.
-shuttle-ftl-invalid = Invalid ship for FTL!
-public-transit-shuttle-screen-text = {" "}BUS  {$number}{$suffix}
+shuttle-ftl-invalid = Неверный корабль для FTL!public-transit-shuttle-screen-text = {" "}BUS  {$number}{$suffix}
