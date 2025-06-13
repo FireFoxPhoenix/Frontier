@@ -1,4 +1,4 @@
-marking-BurqaSolid = Бурка
+marking-BurqaSolid = Бурка # че так много бурк
 marking-BurqaSolidThaven = Бурка
 marking-BurqaSolidLizard = Бурка
 marking-BurqaSolidLizard-burqasolidlizard = Бурка

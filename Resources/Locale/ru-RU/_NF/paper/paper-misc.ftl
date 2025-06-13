@@ -1,6 +1,7 @@
-book-text-pirate-scribbles = Кларпи вновь выдул всю содовую, не забудьте пополнить аппарат.
+# проверить перевести
+book-text-pirate-scribbles = Кларпи вновь выдул всю содовую, не забудьте пополнить аппарат. # не знаю что это но мне нравится
 power-fork-certification = {"              "}[head=2]Power Fork Certification[/head]
     {"                                                      "}[color=#999999]NT-LOGI-17024.13.4-B[/color]
-    This certifies that the signer below is fully qualified to operate a power fork, and has demonstrated competence in the use of heavy machinery.
+    Это удостоверяет, что подписавший ниже имеет полную квалификацию для управления power forks и продемонстрировал компетентность в использовании тяжелой техники.
     {""}
-    {"["}bold]PLEASE SIGN BELOW.[/bold]
+    {"["}bold]ПОДПИСЬ НИЖЕ.[/bold]

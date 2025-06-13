@@ -1,8 +1,8 @@
 zzzz-fmt-gas-quantity = { TOSTRING($divided, "F1") } { $places ->
-    [0] mol
-    [1] kmol
-    [2] Mmol
-    [3] Gmol
-    [4] Tmol
+    [0] Моль
+    [1] Киломоль
+    [2] Мегамоль
+    [3] Гигамоль
+    [4] Терамоль
     *[5] ???
 }

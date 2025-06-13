@@ -1,4 +1,4 @@
-pda-wiped-device = The PDA's voice program was terminated.
+pda-wiped-device = Программа голоса ПДА была уничтожена. # что за программа
 
 # Verbs
-pda-wipe-device-verb-text = Прекратить голос
+pda-wipe-device-verb-text = Прекратить голос # как-то не по русски

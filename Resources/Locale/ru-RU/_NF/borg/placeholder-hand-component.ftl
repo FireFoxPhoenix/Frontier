@@ -1,11 +1,13 @@
+# почесу некоторое с большой, а некоторое с маленькой
 borg-placeholder-display-name-cable-coil = кабельная катушка
 borg-placeholder-display-name-electronics = Электроника
 borg-placeholder-display-name-trading-crate = торговый ящик
 borg-placeholder-display-name-construction-material = материалы
 borg-placeholder-display-name-floor-tile = половая плитка
-borg-placeholder-display-name-flatpack = Упаковкаborg-placeholder-display-name-lights = свет
+borg-placeholder-display-name-flatpack = Упаковка
+borg-placeholder-display-name-lights = свет
 borg-placeholder-display-name-spray-bottle = распылитель
-borg-placeholder-display-name-topical-medication = Актуальные
+borg-placeholder-display-name-topical-medication = Актуальные # шо
 borg-placeholder-display-name-musical-instrument = инструмент
 borg-placeholder-display-name-seeds = семена
 borg-placeholder-display-name-produce = производить

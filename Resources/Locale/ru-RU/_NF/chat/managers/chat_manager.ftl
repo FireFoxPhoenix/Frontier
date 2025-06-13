@@ -20,3 +20,8 @@ chat-speech-verb-goblin-2 = ворчит
 chat-speech-verb-goblin-3 = выкрикивает
 chat-speech-verb-goblin-4 = лепечет
 chat-speech-verb-goblin-5 = отсекает
+chat-speech-verb-name-sheleg = Орех # что?
+chat-speech-verb-sheleg-1 = потрескаться
+chat-speech-verb-sheleg-2 = блестят
+chat-speech-verb-sheleg-3 = хрусты
+

@@ -1,3 +1,4 @@
+# перевести
 -nf-pirate-role-greeting-suffix = fulfill bounties from the Freebooters' Union in exchange for doubloons. Evade the law and amass a fortune!
 nf-pirate-role-greeting = You are a pirate aboard a hidden cove deep in space.
     Help your captain plunder the sector, and {-nf-pirate-role-greeting-suffix}

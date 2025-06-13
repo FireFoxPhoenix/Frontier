@@ -1,1 +1,1 @@
-mouth-storage-examine-condition-occupied = [color=yellow]{CAPITALIZE(SUBJECT($entity))} has something in {POSS-ADJ($entity)} mouth.[/color]
+mouth-storage-examine-condition-occupied = [color=yellow]{SUBJECT($entity)} имеет что-то в {POSS-ADJ($entity)} рту.[/color]

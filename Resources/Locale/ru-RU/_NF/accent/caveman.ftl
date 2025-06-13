@@ -1,3 +1,4 @@
+# удачи
 accent-caveman-forbidden-0 = а
 accent-caveman-forbidden-1 = анонца
 accent-caveman-forbidden-2 = к

@@ -37,8 +37,8 @@ frontier-lobby-medical-description = Медицинский диспетчерс
    - Приобретать специализированные медицинские суда
    - Получить медицинское вознаграждение за спасённое тело, поместив его в "Устройство для выкупа тела"  
  Некоторые роли на этой станции доступны только по белому списку. Чтобы попасть в белый список, обратитесь в Discord.frontier-lobby-crew-vessel = [bold][color=#A88B5E]Vessel:[/color][/bold] {$name}
-frontier-lobby-crew-class-prefix = [bold][color=#A88B5E]Classes:[/color][/bold]{" "}
+frontier-lobby-crew-class-prefix = [bold][color=#A88B5E]Классы:[/color][/bold]{" "}
 frontier-lobby-crew-size = [bold][color=#A88B5E]Size:[/color][/bold] {$size}
-frontier-lobby-crew-class-advertisement = [bold][color=#A88B5E]Advertisement:[/color][/bold]
+frontier-lobby-crew-class-advertisement = [bold][color=#A88B5E]Advertisement:[/color][/bold] # перевести
 frontier-lobby-crew-only-hide-jobless = Скрыть корабли безработных
-frontier-lobby-crew-vessel = [bold][color=#A88B5E]Vessel:[/color][/bold] {$name}
+frontier-lobby-crew-vessel = [bold][color=#A88B5E]Сосуд:[/color][/bold] {$name} # какой сосуд

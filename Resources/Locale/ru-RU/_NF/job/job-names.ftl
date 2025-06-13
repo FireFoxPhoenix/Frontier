@@ -1,3 +1,4 @@
+# проаерить и перевести
 # Frontier
 job-name-bailiff = Бейлиф
 job-name-brigmedic = Коронер

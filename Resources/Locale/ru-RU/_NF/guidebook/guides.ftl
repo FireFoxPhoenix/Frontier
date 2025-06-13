@@ -1,3 +1,4 @@
+# перевести
 # Base entries
 guide-entry-nf14 = Руководство Фронтира
 guide-entry-bank = NT Галактический банк

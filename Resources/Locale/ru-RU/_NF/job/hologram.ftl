@@ -1,3 +1,4 @@
+# проверить и перевести
 hologram-return-to-shuttle = Вернитесь на шаттл.
 interview-hologram-approve = Утвердить
 interview-hologram-rescind = Изменение одобрения

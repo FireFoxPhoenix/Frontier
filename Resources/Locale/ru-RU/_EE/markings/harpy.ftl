@@ -1,9 +1,16 @@
-marking-HarpyWingDefaultHuescale = Базовые крыльяmarking-HarpyWingDefaultHuescale-huescale_harpy = Крылья
-marking-HarpyWingDefaultWhitescale = Базовые крылья (Белая чешуя)marking-HarpyWingDefaultWhitescale-whitescale_harpy = Крылья
-marking-HarpyWingFoldedHuescale = Folded Wingsmarking-HarpyWingFoldedHuescale-huescale_harpy_folded = Крылья
-marking-HarpyWingFoldedWhitescale = Сложенные крылья (Белая чешуя)marking-HarpyWingFoldedWhitescale-whitescale_harpy_folded = Крылья
-marking-HarpyWingOwlHuescale = Крылья совыmarking-HarpyWingOwlHuescale-huescale_harpy_wing_owl = Крылья
-marking-HarpyWingOwlWhitescale = Сова крылья (Белая чешуя)marking-HarpyWingOwlWhitescale-whitescale_harpy_wing_owl = Крылья
+# часть не переведена
+marking-HarpyWingDefaultHuescale = Базовые крылья
+marking-HarpyWingDefaultHuescale-huescale_harpy = Крылья
+marking-HarpyWingDefaultWhitescale = Базовые крылья (Белая чешуя)
+marking-HarpyWingDefaultWhitescale-whitescale_harpy = Крылья
+marking-HarpyWingFoldedHuescale = Сложенные крылья
+marking-HarpyWingFoldedHuescale-huescale_harpy_folded = Крылья
+marking-HarpyWingFoldedWhitescale = Сложенные крылья (Белая чешуя)
+marking-HarpyWingFoldedWhitescale-whitescale_harpy_folded = Крылья
+marking-HarpyWingOwlHuescale = Крылья совы
+marking-HarpyWingOwlHuescale-huescale_harpy_wing_owl = Крылья
+marking-HarpyWingOwlWhitescale = Крылья совы (Белая чешуя)
+marking-HarpyWingOwlWhitescale-whitescale_harpy_wing_owl = Крылья
 marking-HarpyWingClassic-classic_harpy = Крылья
 marking-HarpyWing2ToneClassic-harpy_2tone_1 = Верхняя половина
 marking-HarpyWing2ToneClassic-harpy_2tone_2 = Нижняя половина
@@ -16,18 +23,24 @@ marking-HarpyWingUndertoneClassic-harpy_undertone_1 = Передний
 marking-HarpyWingUndertoneClassic-harpy_undertone_2 = Назад
 marking-HarpyWingTipsClassic-harpy_wingtip_1 = Основной
 marking-HarpyWingTipsClassic-harpy_wingtip_2 = Перья
-marking-HarpyWingBat = Крылья летучей мыши (Белая чешуя)marking-HarpyWingBat-bat_wings_tone_1 = Конечности
+marking-HarpyWingBat = Крылья летучей мыши (Белая чешуя)
+marking-HarpyWingBat-bat_wings_tone_1 = Конечности
 marking-HarpyWingBat-bat_wings_tone_2 = Мембрана
-marking-HarpyWingBionic = Простые бионические крылья (Белая чешуя)marking-HarpyWingBionic-bionic_wings_tone_1 = Крылья
-marking-HarpyWingBionic-bionic_wings_tone_2 = Огни # бредmarking-HarpyEarsLarge = Большие перья
+marking-HarpyWingBionic = Простые бионические крылья (Белая чешуя)
+marking-HarpyWingBionic-bionic_wings_tone_1 = Крылья
+marking-HarpyWingBionic-bionic_wings_tone_2 = Огни # бред
+marking-HarpyEarsLarge = Большие перья
 marking-HarpyEarsLarge-harpy_ears_large = Пучки
-marking-HarpyTailForkedHuescale = Раздвоенный хвостовой плавникmarking-HarpyTailForkedHuescale-huescale_forked_tailfin = Хвост
-marking-HarpyTailForkedWhitescale = Раздвоенный хвостовой плавник (Белая чешуя)marking-HarpyTailForkedWhitescale-whitescale_forked_tailfin = Хвост
+marking-HarpyTailForkedHuescale = Раздвоенный хвостовой плавник
+marking-HarpyTailForkedHuescale-huescale_forked_tailfin = Хвост
+marking-HarpyTailForkedWhitescale = Раздвоенный хвостовой плавник (Белая чешуя)
+marking-HarpyTailForkedWhitescale-whitescale_forked_tailfin = Хвост
 marking-HarpyTailPeacock = Павлин хвост
 marking-HarpyTailPeacock-peacock_tail_feathers = Перья
 marking-HarpyTailPeacock-peacock_tail_eyes = Глаза
 marking-HarpyTailHaven = Хвост Хейвен (Уайтессаль)
 marking-HarpyTailHaven-haven_tone_1 = Внешние перья
 marking-HarpyTailHaven-haven_tone_2 = Внутренние перья
-marking-HarpyTailForkedLong = Длинный раздвоенный хвост (Белая чешуя)marking-HarpyTailForkedLong-forked_long = Хвост
+marking-HarpyTailForkedLong = Длинный раздвоенный хвост (Белая чешуя)
+marking-HarpyTailForkedLong-forked_long = Хвост
 marking-HarpyTailSwallow = Хвост ласточки (Белая чешуя) # тоже бред

@@ -1,2 +1,2 @@
 metabolizer-type-goblin = Гоблин
-metabolizer-type-sheleg = Орех
+metabolizer-type-sheleg = Орех # какой орех

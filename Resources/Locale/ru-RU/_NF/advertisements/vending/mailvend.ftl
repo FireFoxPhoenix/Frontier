@@ -1,10 +1,10 @@
-advertisement-mailvend-1 = Speso for your thoughts? Why not?
+advertisement-mailvend-1 = Спесо за ваши мысли? Почему нет?
 advertisement-mailvend-2 = Округи! Бумага! Ручки!
 advertisement-mailvend-3 = Когда вы в последний раз писали домой?
-advertisement-mailvend-4 = Кому нужны телекоммуникации? Написание в!
+advertisement-mailvend-4 = Кому нужны телекоммуникации?
 advertisement-mailvend-5 = Помните, марки бесплатны!
-advertisement-mailvend-6 = Есть перопал? Почему бы не сделать его?
+advertisement-mailvend-6 = Есть перопал? Почему бы не сделать его? # чего
 goodbye-mailvend-1 = Счастливого письма!
-goodbye-mailvend-2 = Dot your I's and cross your T's!
+goodbye-mailvend-2 = Dot your I's and cross your T's! # тяжело
 goodbye-mailvend-3 = Помните, это имеет значение!
 goodbye-mailvend-4 = Не забудьте написать!

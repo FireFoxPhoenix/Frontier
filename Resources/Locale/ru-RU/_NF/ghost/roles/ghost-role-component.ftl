@@ -1,3 +1,4 @@
+# проверить и починить
 ghost-role-information-emotional-support-name = Пушистый терапевт
 ghost-role-information-emotional-support-description = Ты - пушистый психотерапевт! Преданный хозяину, твоя миссия - дарить радость и поднимать настроение!
 ghost-role-information-emotional-support-rules = Ты - пушистый психотерапевт! Преданный хозяину, твоя миссия - дарить радость и поднимать настроение!

@@ -27,7 +27,7 @@ accent-words-fox-2 = Яп!
 accent-words-fox-3 = Гуд!
 accent-words-fox-4 = Верна!
 accent-words-fox-5 = Аааааг!
-accent-words-fox-6 = Screeee!
+accent-words-fox-6 = Скриии!
 
 # Accent Toggle
-accent-clothing-component-toggle = Перевернуть акцент
+accent-clothing-component-toggle = Переключить акцент

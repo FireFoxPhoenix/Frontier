@@ -16,7 +16,8 @@ medical-bounty-redemption-redeem-label-not-alive = Тело должно быт�
 medical-bounty-redemption-redeem-label-valid-bounty = Сумма: {$amount}.
 medical-bounty-redemption-ui-sell-button = Обменять
 medical-bounty-console-flavor-left = Относитесь ко всем телам как к членам своей семьи.
-medical-bounty-console-flavor-right = v3.1medical-bounty-redemption-success-to-station = Bounty redeemed! Payment sent to station accounts.
-medical-bounty-redemption-redeem-label-valid-bounty-to-station = Value: {$amount} (paid to station accounts).
+medical-bounty-console-flavor-right = v3.1
+medical-bounty-redemption-success-to-station = Bounty redeemed! Payment sent to station accounts.
+medical-bounty-redemption-redeem-label-valid-bounty-to-station = Цена: {$amount} (Оплачено на станционный аккаунт).
 medical-bounty-redemption-success-to-station = Вознаграждение получено! Платеж отправлен на счета станции.
 Смесь измельченных, пережеванных и частично высушенных грибов, взвешенных в мопвате. # где?

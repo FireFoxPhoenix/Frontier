@@ -1,1 +1,1 @@
-botany-cannot-be-swabbed-message = Вы не можете такого поманить!
+botany-cannot-be-swabbed-message = Вы не можете такого поманить! # не понял
