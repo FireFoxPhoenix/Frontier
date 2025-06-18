@@ -168,7 +168,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             var mapGridComp = Comp<MapGridComponent>(griduid.Value);
             var tiles = _map.GetAllTiles(griduid.Value, mapGridComp).ToList();
             var tilesCount = tiles.Count;
-            if (tilesCount > 15)
+            if (tilesCount > 20)
             {
                 if (!TryPilot(args.User, uid))
                     args.Cancel();
