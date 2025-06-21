@@ -564,16 +564,21 @@
     whitelist:
       tags:
         - ShellShotgun
-  - type: ContainerContainer
+  - type: ContainerContainer # Frontier
     containers:
       storagebase: !type:Container
         ents: []
-  - type: UserInterface
+  - type: UserInterface # Frontier
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: UseDelay
+  - type: UseDelay # Frontier
     delay: 0.5
+#  - type: BallisticAmmoProvider # Frontier
+#    whitelist:
+#      tags:
+#        - ShellShotgun
+#    capacity: 14
 
 - type: entity
   parent: ClothingBeltBase
