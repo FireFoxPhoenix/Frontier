@@ -555,13 +555,30 @@
     sprite: Clothing/Belt/bandolier.rsi
   - type: Clothing
     sprite: Clothing/Belt/bandolier.rsi
-  #- type: Item # Frontier
-    #size: Huge # Frontier
-  - type: BallisticAmmoProvider
+  - type: Item # Frontier
+    size: Huge
+  - type: Storage # Frontier вместо механики обоймы есть хранилище
+    grid:
+    - 0,0,5,5
+    maxItemSize: Huge
     whitelist:
       tags:
         - ShellShotgun
-    capacity: 14
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: UseDelay
+    delay: 0.5
+#  - type: BallisticAmmoProvider
+#    whitelist:
+#      tags:
+#        - ShellShotgun
+#    capacity: 14
 
 - type: entity
   parent: ClothingBeltBase
