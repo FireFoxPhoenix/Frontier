@@ -21,8 +21,10 @@
   addComponents:
   - type: IFF
     color: "#C83737"
-    flags: [HideLabel]
+    flags: [HideLabel, Hide]
     readOnly: false
+  - type: ProtectedGrid
+    noGridCollision: true #CorvaxFrontier
 
 - type: gameMap
   id: Cove
@@ -41,10 +43,11 @@
           stationDescription: 'frontier-lobby-pirate-description'
         - type: StationJobs
           availableJobs:
-            PirateCaptain: [ 1, 1 ]
-            PirateFirstMate: [ 0, 0]
-            Pirate: [ 0, 0 ]
+            NFPirateCaptain: [ 1, 1 ]
+            NFPirateFirstMate: [ 0, 0] #Corvax-Frontier
+            NFPirate: [ 0, 0 ]
         - type: StationDeadDropReporting
           messageSet: Pirate
         - type: StationDeadDropHintExempt
         - type: TradeCrateWildcardDestination
+        - type: BindToStationVariationPassExemption

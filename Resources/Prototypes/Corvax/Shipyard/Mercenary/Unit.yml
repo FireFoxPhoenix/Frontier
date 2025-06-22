@@ -6,7 +6,7 @@
 
 # Maintainer Info
 # GitHub: https://github.com/mersen-tyn
-# Discord: mersen 
+# Discord: mersen
 
 - type: vessel
   id: Unit
@@ -36,3 +36,5 @@
           availableJobs:
             Pilot: [ 0, 0 ]
             Mercenary: [ 0, 0 ]
+        - type: MercenaryBountyDatabase
+          bounties: []

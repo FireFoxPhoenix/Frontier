@@ -109,7 +109,10 @@
       - NFPosterContrabandFsbRubicon
       - NFPosterContrabandWyvernShipyards
       - NFPosterContrabandRatvarLives
+      - NFPosterContrabandFsbNightlight
+      - NFPosterContrabandFsbRetort
         # Frontier: Ending
+      - PosterContrabandTrueEnemy #CorvaxFrontier
     chance: 1
 
 - type: entity
@@ -175,7 +178,8 @@
       - PosterLegitSafetyMothHardhat
       - PosterLegitSafetyMothSSD
       - PosterLegitOppenhopper
-        # Frontier: Start
+      - PosterLegitTyrone
+        # Frontier
       - NFPosterLegitMagnusWatching
       - NFPosterLegitGoblinTinkerer
       - NFPosterLegitBahamaMama
@@ -183,5 +187,6 @@
       - NFPosterLegitWantedClarpy
       - NFPosterLegitMothPlease
       - NFPosterLegitHaveYouSeenThisEgg
-        # Frontier: Ending
+      - NFPosterLegitGunTurnIn
+        # End Frontier
     chance: 1

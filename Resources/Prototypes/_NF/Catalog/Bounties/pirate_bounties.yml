@@ -232,7 +232,7 @@
   entries:
   - name: pirate-bounty-item-orebox
     amount: 2
-    id: OreBox
+    id: NFMagnetBoxOre
 
 - type: pirateBounty
   id: PirateBountyAutolathe
@@ -348,11 +348,12 @@
   - name: pirate-bounty-item-bedsheetsyndie
     amount: 1
     id: BedsheetSyndie
-    
+
 - type: pirateBounty #CorvaxFrontier
   id: PirateBountyGunSafe
   reward: 4
   description: pirate-bounty-description-generic
+  spawnChest: false
   entries:
   - name: pirate-bounty-item-gunsafe
     amount: 3

@@ -13,10 +13,14 @@
   parent: BaseVessel
   name: Лазутчик
   description: Среднегабаритный экспедиционный шаттл синдиката. Рекомендованный состав команды 2-5 человек.
-  price: 85000
+  price: 65000
   category: Medium
   group: Syndicate
   shuttlePath: /Maps/Corvax/Shuttles/Syndicate/infiltrator.yml
+  addComponents:
+  - type: IFF
+    color: "#850d09"
+    flags: [HideLabel]
   guidebookPage: Null
   class:
   - Syndicate

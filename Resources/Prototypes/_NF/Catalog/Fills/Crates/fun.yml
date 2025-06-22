@@ -27,28 +27,28 @@
         prob: 1
         orGroup: FloorTileItemArcadeBlue
 
-- type: entity
-  id: CrateFunHoverbikeNF
-  parent: CrateLivestock
-  name: hoverbike crate
-  description: Harder, better, faster, stronger? No, just faster, faster, faster.
-  components:
-  - type: StorageFill
-    contents:
-      - id: VehicleHoverbikeNF
-      - id: VehicleKeyHoverbikeNF
+#- type: entity
+#  id: CrateFunHoverbikeNF
+#  parent: CrateLivestock
+#  name: hoverbike crate
+#  description: Harder, better, faster, stronger? No, just faster, faster, faster.
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: NFVehicleHoverbike
+#      - id: VehicleKeyHoverbikeNF
 
-- type: entity
-  id: CrateFunHoverbikeNFPirate
-  parent: CrateLivestock
-  name: hoverbike crate
-  suffix: Pirate
-  description: Harder, better, faster, stronger? No, just faster, faster, faster.
-  components:
-  - type: StorageFill
-    contents:
-      - id: VehicleHoverbikePirate
-      - id: VehicleKeyHoverbikeNF
+#- type: entity
+#  id: CrateFunHoverbikeNFPirate
+#  parent: CrateLivestock
+#  name: hoverbike crate
+#  suffix: Pirate
+#  description: Harder, better, faster, stronger? No, just faster, faster, faster.
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: VehicleHoverbikePirate
+#      - id: VehicleKeyHoverbikeNF
 
 - type: entity
   id: CrateFunPartyNF
@@ -84,3 +84,14 @@
       - id: MicrophoneInstrument
         amount: 1
       - id: PaperWrittenPartyProcedure
+
+- type: entity
+  id: NFCrateFunSyndicateSegway
+  parent: CrateLivestock
+  name: Syndicate segway crate
+  description: A crate containing a two-wheeler that will help you escape from the security officers. Or not.
+  components:
+    - type: StorageFill
+      contents:
+        - id: VehicleSyndicateSegway
+        - id: VehicleKeySyndicateSegway

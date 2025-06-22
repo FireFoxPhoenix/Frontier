@@ -19,8 +19,10 @@
   weight: 125
   displayWeight: 35
   canBeAntag: false
+  access:
+  - Brigmedic
   accessGroups:
-  - GeneralNfsdBrigmedicAccess
+  - GeneralNfsdAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, TrackingImplant ]
@@ -38,4 +40,4 @@
     - Flash
     - MagazinePistol
     - MagazinePistolRubber
-    - FrontierUplinkCoin10
+    - DogtagsCoroner

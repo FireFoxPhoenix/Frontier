@@ -4,6 +4,7 @@
   id: DrinkCanBaseFull
   abstract: true
   components:
+  - type: GoblinPreciousTrash # Frontier
   - type: Drink
   - type: Openable
   - type: Shakeable
@@ -260,6 +261,8 @@
   - type: Drink
   - type: Sprite
     sprite: Objects/Consumable/Drinks/sodawater.rsi
+  - type: PirateBountyItem
+    id: DrinkSodaWaterCan
 
 - type: entity
   parent: DrinkCanBaseFull

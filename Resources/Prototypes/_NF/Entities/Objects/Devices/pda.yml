@@ -13,9 +13,11 @@
   id: NFAdminPDA
   components:
   - type: CartridgeLoader
+    diskSpace: 20
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - NanoTaskCartridge
       - NewsReaderCartridge
       - BountyContractsCartridge
       - AstroNavCartridge
@@ -150,6 +152,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - NanoTaskCartridge
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -371,6 +374,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - NanoTaskCartridge
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -379,15 +383,24 @@
 
 - type: entity
   parent: PiratePDA
-  id: PirateNFPDA
+  id: NFPiratePDA
   name: pirate PDA
+  suffix: Frontier
   components:
   - type: Pda
-    id: PirateNFIDCard
+    id: NFPirateIDCard
     bookSlot: #corvax frontier
       startingItem: HyperlinkBookPirateCode #corvax frontier
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+        - BookPirateCode
     penSlot: #corvax frontier
       startingItem: LuxuryPen #corvax frontier
+      whitelist:
+        tags:
+        - LuxuryPen
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -396,15 +409,24 @@
 
 - type: entity
   parent: PiratePDA
-  id: PirateCaptainNFPDA
+  id: NFPirateCaptainPDA
   name: pirate captain PDA
+  suffix: Frontier
   components:
   - type: Pda
-    id: PirateCaptainNFIDCard
+    id: NFPirateCaptainIDCard
     bookSlot: #corvax frontier
       startingItem: HyperlinkBookPirateCode #corvax frontier
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+        - BookPirateCode
     penSlot: #corvax frontier
       startingItem: LuxuryPen #corvax frontier
+      whitelist:
+        tags:
+        - LuxuryPen
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -413,15 +435,24 @@
 
 - type: entity
   parent: PiratePDA
-  id: PirateFirstMateNFPDA
+  id: NFPirateFirstMatePDA
   name: pirate first mate PDA
+  suffix: Frontier
   components:
   - type: Pda
-    id: PirateFirstMateNFIDCard
+    id: NFPirateFirstMateIDCard
     bookSlot: #corvax frontier
       startingItem: HyperlinkBookPirateCode #corvax frontier
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+        - BookPirateCode
     penSlot: #corvax frontier
       startingItem: LuxuryPen #corvax frontier
+      whitelist:
+        tags:
+        - LuxuryPen
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -494,6 +525,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - NanoTaskCartridge
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
