@@ -153,7 +153,7 @@ public sealed partial class NFCargoSystem
                 ("item", Loc.GetString(entry.Name)))}", out var _);
         }
         message.PushNewline();
-        message.TryAddMarkup(Loc.GetString("miners-bounty-console-manifest-reward", ("reward", BankSystemExtensions.ToMinersTokenString(prototype.Reward))), out var _);
+        message.TryAddMarkup(Loc.GetString("miners-bounty-console-manifest-reward", ("reward", BankSystemExtensions.ToSpesoString(prototype.Reward))), out var _);
 
         _meta.SetEntityDescription(uid, message.ToMarkup());
 
@@ -180,7 +180,7 @@ public sealed partial class NFCargoSystem
                 ("item", Loc.GetString(entry.Name)))}", out var _);
             msg.PushNewline();
         }
-        msg.TryAddMarkup(Loc.GetString("miners-bounty-console-manifest-reward", ("reward", BankSystemExtensions.ToMinersTokenString(prototype.Reward))), out var _);
+        msg.TryAddMarkup(Loc.GetString("miners-bounty-console-manifest-reward", ("reward", BankSystemExtensions.ToSpesoString(prototype.Reward))), out var _);
         _paper.SetContent((uid, paper), msg.ToMarkup());
     }
 
