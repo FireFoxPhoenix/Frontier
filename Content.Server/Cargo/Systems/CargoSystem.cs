@@ -67,13 +67,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
         InitializeShuttle();
         InitializeTelepad();
         InitializeBounty();
-        // Frontier: add specific initialization calls here.
-        InitializePirateBounty();
-        InitializeMercenaryBounty();
-        InitializeMinersBounty();
-        InitializeTradeCrates();
-        // End Frontier
-        InitializeFunds()
+        InitializeFunds();
     }
 
     public override void Update(float frameTime)
