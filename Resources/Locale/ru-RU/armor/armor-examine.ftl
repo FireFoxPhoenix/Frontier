@@ -17,3 +17,9 @@ armor-damage-type-cold = Низкотемпературный
 armor-damage-type-poison = Ядовитый
 armor-damage-type-shock = Электрический
 armor-damage-type-structural = Структурный
+armor-damage-type-holy = Святость
+[normal] Нормальный
+[warning] Предупреждение
+[danger] Опасность
+[emagged] Взломан
+*[invalid] Недействительный

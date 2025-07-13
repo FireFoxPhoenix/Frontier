@@ -38,4 +38,6 @@ ledger-entry-type-StationWithdrawalPayroll = Выплаты зарплат
 ledger-entry-type-StationWithdrawalWorkOrder = Work Orders
 ledger-entry-type-StationWithdrawalSupplies = Supply Expenses
 ledger-entry-type-StationWithdrawalBounty = Bounties
-ledger-entry-type-StationWithdrawalOther = Misc. Expenses
+ledger-entry-type-StationWithdrawalOther = Misc. Expensesledger-tab-Edison = Edison
+# Fallback, if this displays, something's wrong.
+ledger-entry-type-PowerTransmission = Экспорт энергии

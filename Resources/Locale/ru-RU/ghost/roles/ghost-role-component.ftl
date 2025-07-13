@@ -208,3 +208,74 @@ ghost-role-information-syndie-assaultborg-name = Штурмовой киборг
 ghost-role-information-syndie-assaultborg-description = Ядерным оперативникам требуется подкрепление. Вы, хладнокремниевая машина для убийств, будете им помогать. Больше дакки!
 ghost-role-information-snail-name = Улитка
 ghost-role-information-snail-description = Маленькая улитка, которая не против немного побыть на свободе. Только не убегай за пределы клетки!
+ghost-role-information-rules-team-antagonist = Вы - [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color]. Ваши намерения недвусмысленно враждебны станции и экипажу.
+Вы обязаны [bold]работать с командой[/bold] или следовать указаниям лидеров.
+Вы не помните прошлой жизни и знаний, полученных как призрак.
+Вам разрешено помнить общие игровые механизмы (готовка, использование предметов).
+Абсолютно [color=red]ЗАПРЕЩЕНО[/color] вспоминать детали предыдущего персонажа (имя, внешность и т. д.).
+ghost-role-information-snailspeed-name = Улишка
+ghost-role-information-snailspeed-description = Маленькая улитка с миниатюрными двигателями.
+ghost-role-information-snoth-name = Снот
+ghost-role-information-snoth-description = Маленький ленивец в космосе. Оставайтесь на гриде!
+ghost-role-information-paradox-clone-name = Парадокс клон
+ghost-role-information-paradox-clone-description = Аномалия перенесла вас в другую реальность! Найдите своего двойника и замените его.
+ghost-role-information-syndicate-reinforcement-medic-name = Синдикат медик
+ghost-role-information-syndicate-reinforcement-medic-description = Кому-то нужна поддержка. Ваша задача - сохранить жизнь агенту.
+ghost-role-information-syndicate-reinforcement-spy-name = Синдикат шпион
+ghost-role-information-syndicate-reinforcement-spy-description = Кому-то нужна поддержка. Ваша специализация - шпионаж, избегайте обнаружения.
+ghost-role-information-syndicate-reinforcement-thief-name = Синдикат вор
+ghost-role-information-syndicate-reinforcement-thief-description = Кому-то нужна поддержка. Ваша цель - проникнуть и изъять ценный объект для агента.
+ghost-role-information-nukeop-reinforcement-name = Ядерный оперативник
+ghost-role-information-nukeop-reinforcement-description = Оперативникам нужно подкрепление. Вы - резервный агент.
+ghost-role-information-nukeop-reinforcement-rules = Вы - [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] в команде ядерных оперативников.
+ghost-role-information-syndicate-cyborg-assault-name = Синдикат нападения киборга
+ghost-role-information-syndicate-cyborg-saboteur-name = Синдикат диверсион киборг
+ghost-role-information-syndicate-cyborg-description = Синдикату нужны подкрепления. Вы - хладнокровная боевая машина.
+ghost-role-information-derelict-cyborg-name = Заброшенные киборг
+ghost-role-information-derelict-cyborg-description = Заблудившийся киборг. После ионных бурь вы оказались у станции.
+ghost-role-information-security-name = Безопасность
+ghost-role-information-security-description = Вы - часть группы безопасности в странной ситуации...
+ghost-role-information-medical-name = Медицинский
+ghost-role-information-medical-virologist-name = Вирусолог
+ghost-role-information-medical-geneticist-name = Генетик
+ghost-role-information-medical-dentist-name = Стоматолог
+ghost-role-information-medical-description = Вы - медик в странной ситуации...
+ghost-role-information-cargo-name = Груз
+ghost-role-information-cargo-description = Вы - логист в странной ситуации...
+ghost-role-information-engineering-name = Инженерный
+ghost-role-information-engineering-description = Вы - инженер в странной ситуации...
+ghost-role-information-science-name = Наука
+ghost-role-information-science-description = Вы - ученый в странной ситуации...
+ghost-role-information-civilian-name = Гражданское лицо
+ghost-role-information-civilian-description = Вы - гражданский в странной ситуации...
+ghost-role-information-civilian-centcom-lawyer-name = Centcom Lawyer
+ghost-role-information-civilian-centcom-lawyer-description = Юрист напрямую из Центрального Юридического Отдела.
+ghost-role-information-command-name = Командир
+ghost-role-information-command-description = Вы представитель командования в странной ситуации...
+ghost-role-information-lost-challenge-commander-name = Командир на берегу отпуска
+ghost-role-information-lost-challenge-commander-description = Вы - командующий с другого корабля, высаженный на станцию для отдыха с грузчиком.
+ghost-role-information-lost-challenge-commander-rules = Вы не враждебны станции. Спасите себя.ghost-role-information-lost-challenge-cargo-technican-description = Вы - техник по грузоперевозкам, получивший увольнительную с одним из ваших командиров.
+ghost-role-information-lost-challenge-cargo-technican-name = Грузовой шофер
+ghost-role-information-lost-challenge-cargo-technican-description = Вы - специалист по грузу, которому был предоставлен отпуск на берегу с одним из ваших командиров.
+ghost-role-information-lost-challenge-cargo-technican-rules = Вы не враждебны станции, делайте всё необходимое для собственного выживания.
+You don't remember any of your previous life, and you don't remember anything you learned as a ghost. = Вы не помните ничего из своей прошлой жизни и ничего, чему научились как призрак.
+You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc. = Вам разрешено помнить общие знания об игре, такие как приготовление пищи, использование предметов и т.д.
+You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character. = Вам абсолютно [color=red]НЕ[/color] разрешено помнить, например, имя, внешность и т.д. вашего предыдущего персонажа.
+ghost-role-information-syndie-soldier-name = Синдикат Солдат
+ghost-role-information-syndie-soldier-description = Вы - солдат Синдиката.
+ghost-role-information-syndie-soldier-teamlead-name = Синдикат руководителя команды
+ghost-role-information-syndie-soldier-teamlead-description = Вы — командир боевой группы оперативников Синдиката.
+ghost-role-information-blackmarketeer-name = Трейдер черного рынка
+ghost-role-information-blackmarketeer-description = Совершайте сделки или выполняйте подработки, чтобы собрать самые интересные предметы к концу смены.
+ghost-role-information-cossack-name = Древний путешественник
+ghost-role-information-cossack-description = Из истории, потерянной во времени, вы перенеслись в современность.
+ghost-role-information-pirate-name = Космический пират
+ghost-role-information-pirate-description = Аррр, приятель! Собери крутую добычу, но избегай охраны и утилизаторов!
+ghost-role-information-pirate-captain-name = Космический пиратский капитан
+ghost-role-information-pirate-captain-description = Аррр, приятель! Ты здесь главный и должен придумать план, как добыть эту сочную добычу любыми средствами. Главное — избегай охраны и утилизаторов!
+ghost-role-information-tomatokiller-name = Томатный убийца
+ghost-role-information-tomatokiller-description = Этот маленький помидор будет служить ботанику всю оставшуюся жизнь... то есть пару минут.
+ghost-role-information-gingerbread-name = Пряничный мужчина
+ghost-role-information-gingerbread-description = Существо чисто праздничного духа.
+ghost-role-information-wizard-name = Волшебник
+ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажите станции, на что способна ваша магия.

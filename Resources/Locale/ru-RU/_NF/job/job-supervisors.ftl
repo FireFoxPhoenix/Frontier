@@ -9,3 +9,7 @@ job-supervisors-pirate = боцману и капитану
 job-supervisors-nobody = никому
 job-supervisors-syndicate = Командиру Синдиката
 job-supervisors-MMO = Менеджеру Медицинских Операций
+job-supervisors-freebooters-union = Союз Флибустьеров
+job-supervisors-nf-pirate = Первый помощник и капитан
+job-supervisors-nf-pirate-captain = Капитан
+job-supervisors-plant-manager = Управляющий станцией

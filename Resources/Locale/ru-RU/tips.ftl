@@ -133,3 +133,7 @@ tips-dataset-132 = By right clicking on a player, and then clicking the heart ic
 tips-dataset-133 = Monkeys and kobolds have a rare chance to be sentient. Ook!
 tips-dataset-134 = You can tell if an area with firelocks up is spaced by looking to see if the firelocks have lights beside them.
 tips-dataset-135 = Instead of picking it up, you can alt-click food to eat it. This also works for mice and other creatures without hands.
+tips-dataset-136 = Если вы заперты за электрифицированной дверью, отключите APC или бросьте свой ID в дверь, чтобы избежать удара током!
+tips-dataset-137 = Если ИИ электрифицирует дверь, и у вас есть изолированные перчатки, перережьте и почините силовой провод, чтобы сбросить электрификацию!
+tips-dataset-138 = Если вы хотите предотвратить побег заключенного сразу после снятия наручников, включите боевой режим во время снятия — это толкнет заключенного на пол.
+tips-dataset-139 = Не забудьте очистить ваши незаконные имплантеры мылом или влажной тряпкой после использования! Детективы могут сканировать использованные имплантеры на наличие улик ДНК, но только если они не были стерты.

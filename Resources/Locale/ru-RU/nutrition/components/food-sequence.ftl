@@ -126,4 +126,37 @@ food-sequence-taco-gen = тако с { $content }
 
 # SKEWER
 
-food-sequence-skewer-gen = шашлык с { $content }
+food-sequence-skewer-gen = шашлык с { $content }food-sequence-cotton-burger-gen = {$content}burger
+food-sequence-cotton-burger-content-cotton-bol = хлопок
+food-sequence-cotton-burger-content-pyrotton-bol = пиро
+food-sequence-cotton-burger-content-plushie-throngler = тронлер
+food-sequence-cotton-burger-content-plushie-ghost = призрачок
+food-sequence-cotton-burger-content-plushie-revenant = ревенант
+food-sequence-cotton-burger-content-plushie-bee = пчёлка
+food-sequence-cotton-burger-content-plushie-hamptr = хэмптр
+food-sequence-cotton-burger-content-plushie-nukie = нукер
+food-sequence-cotton-burger-content-plushie-rouny = руни
+food-sequence-cotton-burger-content-plushie-lamp = лампочка
+food-sequence-cotton-burger-content-plushie-arachnid = арахнид
+food-sequence-cotton-burger-content-plushie-lizard = ящерка
+food-sequence-cotton-burger-content-plushie-experiment = эксперимент
+food-sequence-cotton-burger-content-plushie-spacelizard = космоящер
+food-sequence-cotton-burger-content-plushie-lizard-inversed = инверсная ящерка
+food-sequence-cotton-burger-content-plushie-diona = диона
+food-sequence-cotton-burger-content-plushie-shark = акула
+food-sequence-cotton-burger-content-plushie-ratvar = ратвар
+food-sequence-cotton-burger-content-plushie-narsie = нар'си
+food-sequence-cotton-burger-content-plushie-carp = карп
+food-sequence-cotton-burger-content-plushie-magicarp = мэджикарп
+food-sequence-cotton-burger-content-plushie-holocarp = голокарп
+food-sequence-cotton-burger-content-plushie-slime = слизень
+food-sequence-cotton-burger-content-plushie-snake = змейка
+food-sequence-cotton-burger-content-plushie-mouse = мышонок
+food-sequence-cotton-burger-content-plushie-vox = вокс
+food-sequence-cotton-burger-content-plushie-atmosian = атмосианин
+food-sequence-cotton-burger-content-plushie-xeno = ксено
+food-sequence-cotton-burger-content-plushie-penguin = пингвин
+food-sequence-cotton-burger-content-plushie-human = человек
+food-sequence-cotton-burger-content-plushie-moth = мотылёк
+food-sequence-cotton-burger-content-plushie-ian = иан
+food-sequence-cotton-burger-content-among-pequeno = амонг

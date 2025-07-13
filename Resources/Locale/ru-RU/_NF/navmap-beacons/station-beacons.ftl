@@ -34,4 +34,11 @@ station-beacon-dock-five = Порт 5
 station-beacon-dock-six = Порт 6
 station-beacon-dock-six-a = Порт 6a
 station-beacon-dock-six-b = Порт 6b
-station-beacon-dock-six-c = Порт 6c
+station-beacon-dock-six-c = Порт 6cstation-beacon-aux-chamber = Аукс -камера
+station-beacon-supplies = Припасы
+station-beacon-managers-office = Офис УС
+station-beacon-managers-quarters = Квартиры УС
+station-beacon-break-room = Комната отдыха
+station-beacon-power-nexus = Энергоузел
+station-beacon-decommissioned-reactor = Выведенный реактор
+station-beacon-gas-sale = Продажа газа

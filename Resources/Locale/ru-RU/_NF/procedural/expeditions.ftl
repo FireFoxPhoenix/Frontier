@@ -31,4 +31,19 @@ salvage-air-mod-15 = 103 CO2
 salvage-air-mod-16 = 34 CO2, 34 NH3, 34 N2O
 salvage-air-mod-17 = 34 H2O, 34 NH3, 34 N2O
 salvage-air-mod-18 = 34 H2O, 34 N2O, 17 NH3, 17 CO2
-salvage-air-mod-unknown = Неизвестная атмосфера
+salvage-air-mod-unknown = Неизвестная атмосфераsalvage-expedition-announcement-destruction = { $count ->
+    [1] Destroy the {$structure} before the expedition ends.
+    *[others] Destroy {$count} {MAKEPLURAL($structure)} before the expedition ends.
+}
+salvage-expedition-announcement-elimination = { $count ->
+    [1] Устраните {$target} до окончания экспедиции.
+    *[others] Устраните {$count} {MAKEPLURAL($target)} до окончания экспедиции.
+}
+salvage-expedition-announcement-destruction-entity-fallback = структура
+salvage-expedition-announcement-elimination-entity-fallback = цель
+salvage-expedition-failed = Экспедиция провалена.
+
+# Salvage mods
+salvage-expedition-difficulty-NFModerate = Умеренная
+salvage-expedition-difficulty-NFHazardous = Опасная
+salvage-expedition-difficulty-NFExtreme = Экстремальная

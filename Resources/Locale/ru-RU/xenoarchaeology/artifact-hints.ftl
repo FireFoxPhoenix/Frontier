@@ -40,4 +40,40 @@ artifact-trigger-hint-regular-gases = Стандартные атмосферн�
 artifact-trigger-hint-plasma = Газообразная плазма
 artifact-trigger-hint-land = Активное замедление
 artifact-trigger-hint-examine = Внимательное изучение
-artifact-trigger-hint-medical = Терапевтические химикаты
+artifact-trigger-hint-medical = Терапевтические химикатыxenoarch-trigger-tip-music = Гармонические звуковые вибрации
+xenoarch-trigger-tip-heat = Высокий температурный газ
+xenoarch-trigger-tip-cold = Низкий температурный газ
+xenoarch-trigger-tip-no-oxygen = Безгородная среда
+xenoarch-trigger-tip-water = Вода
+xenoarch-trigger-tip-co2 = Углекислый газ
+xenoarch-trigger-tip-plasma = Нельесполичная плазма
+xenoarch-trigger-tip-tritium = Тритий
+xenoarch-trigger-tip-ammonia = Аммиак
+xenoarch-trigger-tip-n2o = Оксид азота
+xenoarch-trigger-tip-frezon = Фрезон
+xenoarch-trigger-tip-radiation = Излучение
+xenoarch-trigger-tip-brute-damage = Физический ущерб
+xenoarch-trigger-tip-interaction = Физическое взаимодействие
+xenoarch-trigger-tip-wrenching = Подтягивание
+xenoarch-trigger-tip-prying = Подъездной
+xenoarch-trigger-tip-screwing = Ввинчивание
+xenoarch-trigger-tip-pulsing = Пульсировка
+xenoarch-trigger-tip-pressure-low = Низкое давление
+xenoarch-trigger-tip-pressure-high = Высокое давление
+xenoarch-trigger-tip-examine = Тесный осмотр
+xenoarch-trigger-tip-timer = Регулярная самостоятельная активация
+xenoarch-trigger-tip-blood = Кровь
+xenoarch-trigger-tip-throw = Быть брошенным
+xenoarch-trigger-tip-death = Смерть
+xenoarch-trigger-tip-magnet = Magnetic waves
+
+### Description hints
+xenoarch-trigger-examine-wrenching = Там немного разбивается.
+xenoarch-trigger-examine-prying = Там панель соходит с поверхности.
+xenoarch-trigger-examine-screwing = На нем есть поднятая секция с небольшой вставкой.
+xenoarch-trigger-examine-pulsing = Открытый диод выходит из поверхности артефакта.
+xenoarch-trigger-examine-timer = Carvings and scratches cover the surface... You can just barely make out a number: [italic]{$time}[/italic]
+
+### Effects hints
+xenoarch-effect-puddle = Produces puddle of following reagents: {$reagent}
+xenoarch-effect-foam = Produces foam of following reagents: {$reagent}

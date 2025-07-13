@@ -22,3 +22,7 @@ barsign-prototype-description-the-rune = Сдвигающие реальност
 
 barsign-prototype-name-whiskey-echoes = Виски-Эхо
 barsign-prototype-description-whiskey-echoes = Э-хей, приятель! Садись и выпей! У нас здесь лозунг один: «Смерть трезвости!»
+barsign-prototype-name-nf-maltroach = Мальтроч
+barsign-prototype-description-nf-maltroach = Моль-тараканы вежливо приветствуют вас в баре, или они приветствуют друг друга?
+barsign-prototype-name-wyvern-shipyards = Верфи Виверны
+barsign-prototype-description-wyvern-shipyards = Присядьте, расслабьтесь и не волнуйтесь, будущее не может наступить быстрее!

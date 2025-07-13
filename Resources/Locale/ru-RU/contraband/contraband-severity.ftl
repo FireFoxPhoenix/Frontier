@@ -9,4 +9,4 @@ contraband-examine-text-in-the-clear = [color=green][italic]Вам должно 
 contraband-examinable-verb-text = Законность
 contraband-examinable-verb-message = Проверить на законность.
 contraband-department-plural = {$department}
-contraband-job-plural = {MAKEPLURAL($job)}
+contraband-job-plural = {MAKEPLURAL($job)}contraband-examine-text-Magical = [color=#b337b3]This item is highly illegal Magical contraband![/color]

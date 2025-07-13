@@ -16,4 +16,5 @@ medical-bounty-redemption-redeem-label-not-alive = Тело должно быт�
 medical-bounty-redemption-redeem-label-valid-bounty = Сумма: {$amount}.
 medical-bounty-redemption-ui-sell-button = Обменять
 medical-bounty-console-flavor-left = Относитесь ко всем телам как к членам своей семьи.
-medical-bounty-console-flavor-right = v3.1
+medical-bounty-console-flavor-right = v3.1medical-bounty-redemption-success-to-station = Bounty redeemed! Payment sent to station accounts.
+medical-bounty-redemption-redeem-label-valid-bounty-to-station = Стоимость: {$amount} (оплачено на счета станции).

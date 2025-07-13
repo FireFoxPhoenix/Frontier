@@ -62,3 +62,13 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
+-air-alarm-state-name = { $state ->
+    [normal] Normal
+    [warning] Warning
+    [danger] Danger
+    [emagged] Emagged
+   *[invalid] Invalid
+}
+air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
+air-alarm-ui-thresholds-copy = Копировать пороги на все устройства
+air-alarm-ui-thresholds-copy-tooltip = Копирует пороги сенсоров этого устройства на все устройства в этой вкладке сигнализации воздуха.

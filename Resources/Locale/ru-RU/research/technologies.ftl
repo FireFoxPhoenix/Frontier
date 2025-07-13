@@ -69,4 +69,10 @@ research-technology-quantum-fiber-weaving = Плетение квантовог�
 research-technology-bluespace-cargo-transport = Блюспейс-транспортировка грузов
 research-technology-advanced-salvage = Продвинутое утилизаторское вооружение
 research-technology-advanced-jet-boots = Продвинутые реактивные ботинки
-research-technology-advanced-salvage-equipment = Продвинутое утилизаторское снаряжение
+research-technology-advanced-salvage-equipment = Продвинутое утилизаторское снаряжениеresearch-technology-optimized-microgalvanism = Оптимизированный микрогальванизм
+research-technology-special-means = Особые средства
+research-technology-kinetic-modifications = Кинетические модификации
+research-technology-thermal-weaponry = Тепловое оружие
+research-technology-bluespace-time-manipulation = Манипуляция с временем блюзового пространства
+research-technology-launcher-syringe = Шприц -пистолет
+research-technology-clowning-utilities = Утилиты клоуна

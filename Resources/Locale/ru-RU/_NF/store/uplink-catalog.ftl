@@ -280,3 +280,5 @@ uplink-speedloader-magnum-non-ap-desc = Быстрый зарядник на 6 �
 
 uplink-syndicate-segway-name = Синдикатский Сигвей
 uplink-syndicate-segway-desc = Передвигайся со стилем, не пачкая свои кроваво-красные ботинки.
+uplink-security-30riflemagazine-name = .30 Rifle +P Magazines
+uplink-security-30riflemagazine-desc = Коробка с 4 заполненными магазинами для винтовки .30 (повышенное давление).
