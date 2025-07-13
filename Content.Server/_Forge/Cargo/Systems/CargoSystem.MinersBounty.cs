@@ -22,6 +22,8 @@ namespace Content.Server._NF.Cargo.Systems; // Needs to collide with base namesp
 
 public sealed partial class NFCargoSystem
 {
+    [Dependency] private readonly IEntityManager _ent = default!;
+
     [ValidatePrototypeId<NameIdentifierGroupPrototype>]
     private const string MinersBountyNameIdentifierGroup = "Bounty"; // Use the bounty name ID group (0-999) for now.
 
@@ -212,7 +214,7 @@ public sealed partial class NFCargoSystem
         if (gridUid == null)
             return;
 
-        if (!TryGetComponent(gridUid, out MinersBountyDatabaseComponent? bountyDb))
+        if (!_ent.TryGetComponent(gridUid, out MinersBountyDatabaseComponent? bountyDb))
             return;
 
         FillMinersBountyDatabase(uid, bountyDb);
