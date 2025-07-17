@@ -306,7 +306,7 @@
 
 - type: entity
   id: BedsheetSyndie
-  parent: BedsheetBase
+  parent: [ BedsheetBase, BaseC3SyndicateContrabandNoValue ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
   name: syndicate bedsheet
   description: It has a syndicate emblem and it has an aura of evil.
   components:
@@ -314,6 +314,8 @@
     state: sheetsyndie
   - type: Clothing
     sprite: Clothing/Neck/Bedsheets/syndie.rsi
+  - type: PirateBountyItem
+    id: BedsheetSyndie
 
 - type: entity
   id: BedsheetUSA

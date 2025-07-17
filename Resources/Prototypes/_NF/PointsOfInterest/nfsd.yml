@@ -15,7 +15,7 @@
   minimumDistance: 750
   maximumDistance: 1000
   spawnGroup: Required
-  gridPath: /Maps/Corvax/POI/nfsd.yml #CorvaxFrontier
+  gridPath: /Maps/Forge/POI/nfsd.yml #CorvaxFrontier
   addComponents:
   - type: IFF
     color: "#8e6444"
@@ -30,7 +30,7 @@
 - type: gameMap
   id: Nfsd
   mapName: 'Аванпост ДСБФ'
-  mapPath: /Maps/Corvax/POI/nfsd.yml #CorvaxFrontier
+  mapPath: /Maps/Forge/POI/nfsd.yml #CorvaxFrontier
   minPlayers: 0
   stations:
     Nfsd:
@@ -47,11 +47,11 @@
           availableJobs:
             Sheriff: [ 1, 1 ]
             Bailiff: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-            Brigmedic: [ 0, 0 ]
-            NFDetective: [ 0, 0 ]
+            SeniorOfficer: [ 2, 2 ]
+            Brigmedic: [ 1, 1 ]
+            NFDetective: [ 1, 1 ]
             Deputy: [ 3, 3 ]
-            Cadet: [ 0, 0 ]
+            Cadet: [ 1, 1 ]
             # Others:
             PublicAffairsLiaison: [ 1, 1 ]
           tags:

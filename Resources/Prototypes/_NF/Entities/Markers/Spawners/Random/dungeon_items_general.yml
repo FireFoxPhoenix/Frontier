@@ -9,6 +9,8 @@
   components:
   - type: Transform
     anchored: false
+  - type: Tag
+    tags: []
 
 # Clutter
 - type: entity
@@ -985,14 +987,14 @@
       - sprite: _NF/Markers/general.rsi
         state: questionmark
         color: red
-  - type: RandomSpawner
-    prototypes:
-    - CrateFunATV
-    chance: 1
-    offset: 0.0
-    rarePrototypes:
-    - CrateFunHoverbikeNF
-    rareChance: 0.35
+#  - type: RandomSpawner
+#    prototypes:
+#    - CrateFunATV
+#    chance: 1
+#    offset: 0.0
+#    rarePrototypes:
+#    - CrateFunHoverbikeNF
+#    rareChance: 0.35
 
 - type: entity
   name: random briefcase

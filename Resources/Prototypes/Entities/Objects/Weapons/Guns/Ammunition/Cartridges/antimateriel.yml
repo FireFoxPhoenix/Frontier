@@ -1,5 +1,6 @@
 - type: entity
-  parent: [ BaseCartridge, BaseC2Contraband ] # Frontier: BaseMajorContraband<BaseC2Contraband
+  categories: [ HideSpawnMenu ] # Frontier
+  parent: [ BaseCartridge, BaseC2ContrabandUnredeemable ] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable
   id: CartridgeAntiMateriel
   name: cartridge (.60 anti-materiel)
   components:
@@ -8,7 +9,7 @@
     - Cartridge
     - CartridgeAntiMateriel
   - type: CartridgeAmmo
-    proto: BulletAntiMateriel
+    # proto: BulletAntiMateriel # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
     layers:
@@ -18,3 +19,53 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+
+# CorvaxFrontier
+- type: entity
+  id: BaseMagazineAntiMateriel
+  name: "magazine (.60 AntiMateriel)"
+  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelTiny ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineAntiMateriel
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeAntiMateriel
+    proto: CartridgeAntiMateriel
+    capacity: 5
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineAntiMateriel
+  name: "magazine (.60 AntiMateriel)"
+  parent: BaseMagazineAntiMateriel
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMateriel
+  - type: Sprite
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
