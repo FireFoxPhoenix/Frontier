@@ -32,8 +32,4 @@ hud-chatbox-channel-Unspecified = Неопределённый
 hud-chatbox-highlights = Выделения:
 hud-chatbox-highlights-button = Применить
 hud-chatbox-highlights-tooltip = Слова разделяются новой строкой,
-если обернуть их в " ", они будут выделяться только
-при отделении пробелами или знаками препинания.
 hud-chatbox-highlights-placeholder = Рукавс
-"Судья"
-Медицинский

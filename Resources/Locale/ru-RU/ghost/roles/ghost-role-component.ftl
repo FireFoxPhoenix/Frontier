@@ -209,10 +209,6 @@ ghost-role-information-syndie-assaultborg-description = Ядерным опер�
 ghost-role-information-snail-name = Улитка
 ghost-role-information-snail-description = Маленькая улитка, которая не против немного побыть на свободе. Только не убегай за пределы клетки!
 ghost-role-information-rules-team-antagonist = Вы - [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color]. Ваши намерения недвусмысленно враждебны станции и экипажу.
-Вы обязаны [bold]работать с командой[/bold] или следовать указаниям лидеров.
-Вы не помните прошлой жизни и знаний, полученных как призрак.
-Вам разрешено помнить общие игровые механизмы (готовка, использование предметов).
-Абсолютно [color=red]ЗАПРЕЩЕНО[/color] вспоминать детали предыдущего персонажа (имя, внешность и т. д.).
 ghost-role-information-snailspeed-name = Улишка
 ghost-role-information-snailspeed-description = Маленькая улитка с миниатюрными двигателями.
 ghost-role-information-snoth-name = Снот
@@ -258,9 +254,6 @@ ghost-role-information-lost-challenge-commander-rules = Вы не враждеб
 ghost-role-information-lost-challenge-cargo-technican-name = Грузовой шофер
 ghost-role-information-lost-challenge-cargo-technican-description = Вы - специалист по грузу, которому был предоставлен отпуск на берегу с одним из ваших командиров.
 ghost-role-information-lost-challenge-cargo-technican-rules = Вы не враждебны станции, делайте всё необходимое для собственного выживания.
-You don't remember any of your previous life, and you don't remember anything you learned as a ghost. = Вы не помните ничего из своей прошлой жизни и ничего, чему научились как призрак.
-You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc. = Вам разрешено помнить общие знания об игре, такие как приготовление пищи, использование предметов и т.д.
-You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character. = Вам абсолютно [color=red]НЕ[/color] разрешено помнить, например, имя, внешность и т.д. вашего предыдущего персонажа.
 ghost-role-information-syndie-soldier-name = Синдикат Солдат
 ghost-role-information-syndie-soldier-description = Вы - солдат Синдиката.
 ghost-role-information-syndie-soldier-teamlead-name = Синдикат руководителя команды
