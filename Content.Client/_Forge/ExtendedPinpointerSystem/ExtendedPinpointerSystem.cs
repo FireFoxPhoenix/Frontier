@@ -1,8 +1,8 @@
-using Content.Shared._Corvax.ExtendedPinpointer;
+using Content.Shared._Forge.ExtendedPinpointer;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
-namespace Content.Client._Corvax.ExtendedPinpointer;
+namespace Content.Client._Forge.ExtendedPinpointer;
 
 public sealed class ExtendedPinpointerSystem : SharedExtendedPinpointerSystem
 {
