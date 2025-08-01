@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Corvax.ExtendedPinpointer;
+namespace Content.Shared._Forge.ExtendedPinpointer;
 
 /// <summary>
 /// Displays a sprite on the item that points towards the target component.
