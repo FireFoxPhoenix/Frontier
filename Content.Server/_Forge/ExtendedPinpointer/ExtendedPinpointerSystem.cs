@@ -1,5 +1,5 @@
 using Content.Shared.Interaction;
-using Content.Shared._Corvax.ExtendedPinpointer;
+using Content.Shared._Forge.ExtendedPinpointer;
 using System.Linq;
 using System.Numerics;
 using Robust.Shared.Utility;
@@ -7,7 +7,7 @@ using Content.Server.Shuttles.Events;
 using Content.Shared.IdentityManagement;
 using Content.Server.Station.Components;
 
-namespace Content.Server._Corvax.ExtendedPinpointer;
+namespace Content.Server._Forge.ExtendedPinpointer;
 
 public sealed class ExtendedPinpointerSystem : SharedExtendedPinpointerSystem
 {
