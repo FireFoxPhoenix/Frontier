@@ -15,10 +15,10 @@
   parent: PinpointerSyndicateNuclear
   suffix: Syndicate FOB
   components:
-#  - type: Pinpointer #Corvax-Frontier
+#  - type: Pinpointer #Forge-Change
 #    component: SyndicateFOB
 #    targetName: unknown
-   - type: ExtendedPinpointer #Corvax-Frontier
+   - type: ExtendedPinpointer #Forge-Change
      targetId: Charlie
      targetName: unknown
 
