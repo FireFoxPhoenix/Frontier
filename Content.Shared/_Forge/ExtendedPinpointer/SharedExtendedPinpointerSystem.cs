@@ -8,7 +8,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Corvax.ExtendedPinpointer;
+namespace Content.Shared._Forge.ExtendedPinpointer;
 
 public abstract class SharedExtendedPinpointerSystem : EntitySystem
 {
