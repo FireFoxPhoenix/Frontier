@@ -63,9 +63,8 @@
       - !type:MovespeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect # Forge-Change
+        effectProto: StatusEffectDrowsiness # Forge-Change
         time: 4
         type: Add
         refresh: false
@@ -174,7 +173,6 @@
   flavor: sour
   color: "#48b3b8"
   physicalDesc: reagent-physical-desc-ferrous
-  slippery: false
   metabolisms:
     Drink:
       effects:
@@ -344,9 +342,8 @@
   metabolisms:
     Poison:
       effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
+      - !type:ModifyStatusEffect # Forge-Change
+        effectProto: StatusEffectSeeingRainbow # Forge-Change
         type: Add
         time: 10
         refresh: false
@@ -481,6 +478,9 @@
           - !type:OrganType
             type: Animal
             shouldHave: false
+          - !type:OrganType
+            type: Vox
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -491,10 +491,16 @@
           - !type:OrganType
             type: Animal
             shouldHave: false
+          - !type:OrganType
+            type: Vox
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
           type: Animal
+          shouldHave: false
+        - !type:OrganType
+          type: Vox
           shouldHave: false
         damage:
           types:
@@ -503,15 +509,22 @@
         conditions:
         - !type:OrganType
           type: Animal
-          shouldHave: true
         reagent: Protein
         amount: 0.5
-      - !type:AdjustReagent # Frontier: Goblin
-        conditions: # Frontier: Goblin
-        - !type:OrganType # Frontier: Goblin
-          type: Goblin # Frontier: Goblin
-        reagent: Protein # Frontier: Goblin
-        amount: 0.5 # Frontier: Goblin
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Vox
+        reagent: Protein
+        amount: 0.25
+      # Frontier: goblin metabolism
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        reagent: Protein
+        amount: 0.5
+      # End Frontier: goblin metabolism
 
 - type: reagent
   id: Allicin
@@ -711,3 +724,19 @@
           shouldHave: false
         walkSpeedModifier: 0.4
         sprintSpeedModifier: 0.4
+
+- type: reagent
+  id: ToxinTrash
+  name: reagent-name-toxintrash
+  group: Toxins
+  desc: reagent-desc-toxintrash
+  flavor: trashy
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.2 # Frontier: 1<0.2
+        conditions:
+        - !type:OrganType
+          type: Vox

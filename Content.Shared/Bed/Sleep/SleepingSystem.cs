@@ -18,9 +18,11 @@ using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Content.Shared.Speech;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew; // Forge-Change
 using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Verbs;
+using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -36,10 +38,12 @@ public sealed partial class SleepingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedEmitSoundSystem _emitSound = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private readonly StatusEffect.StatusEffectsSystem _statusEffectOld = default!; // Forge-Change
+    [Dependency] private readonly StatusEffectNew.StatusEffectsSystem _statusEffectNew = default!; // Forge-Change
 
     public static readonly EntProtoId SleepActionId = "ActionSleep";
     public static readonly EntProtoId WakeActionId = "ActionWake";
+    public static readonly EntProtoId StatusEffectForcedSleeping = "StatusEffectForcedSleeping"; // Forge-Change
 
     public override void Initialize()
     {
@@ -52,6 +56,7 @@ public sealed partial class SleepingSystem : EntitySystem
         SubscribeLocalEvent<MobStateComponent, SleepActionEvent>(OnSleepAction);
 
         SubscribeLocalEvent<SleepingComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<SleepingComponent, EntityZombifiedEvent>(OnZombified);
         SubscribeLocalEvent<SleepingComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<SleepingComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SleepingComponent, SpeakAttemptEvent>(OnSpeakAttempt);
@@ -63,7 +68,7 @@ public sealed partial class SleepingSystem : EntitySystem
         SubscribeLocalEvent<SleepingComponent, GetVerbsEvent<AlternativeVerb>>(AddWakeVerb);
         SubscribeLocalEvent<SleepingComponent, InteractHandEvent>(OnInteractHand);
 
-        SubscribeLocalEvent<ForcedSleepingComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ForcedSleepingStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied); // Forge-Change
         SubscribeLocalEvent<SleepingComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
         SubscribeLocalEvent<SleepingComponent, EmoteAttemptEvent>(OnEmoteAttempt);
 
@@ -102,8 +107,7 @@ public sealed partial class SleepingSystem : EntitySystem
         if (args.FellAsleep)
         {
             // Expiring status effects would remove the components needed for sleeping
-            _statusEffectsSystem.TryRemoveStatusEffect(ent.Owner, "Stun");
-            _statusEffectsSystem.TryRemoveStatusEffect(ent.Owner, "KnockedDown");
+            _statusEffectOld.TryRemoveStatusEffect(ent.Owner, "Stun"); // Forge-Change
 
             EnsureComp<StunnedComponent>(ent);
             EnsureComp<KnockedDownComponent>(ent);
@@ -221,6 +225,16 @@ public sealed partial class SleepingSystem : EntitySystem
     }
 
     /// <summary>
+    /// Wake up on being zombified.
+    /// In some cases, zombification might theoretically occur without a mob state change or being damaged
+    /// </summary>
+    /// //TODO Perhaps a generic component should be introduced that guarantees that a mob will wake up immediately and can't go to sleep again
+    private void OnZombified(Entity<SleepingComponent> ent, ref EntityZombifiedEvent args)
+    {
+        TryWaking((ent, ent.Comp), true);
+    }
+
+    /// <summary>
     /// In crit, we wake up if we are not being forced to sleep.
     /// And, you can't sleep when dead...
     /// </summary>
@@ -236,9 +250,9 @@ public sealed partial class SleepingSystem : EntitySystem
             _emitSound.SetEnabled((ent, spam), args.NewMobState == MobState.Alive);
     }
 
-    private void OnInit(Entity<ForcedSleepingComponent> ent, ref ComponentInit args)
+    private void OnStatusEffectApplied(Entity<ForcedSleepingStatusEffectComponent> ent, ref StatusEffectAppliedEvent args) // Forge-Change
     {
-        TrySleeping(ent.Owner);
+        TrySleeping(args.Target); // Forge-Change
     }
 
     private void Wake(Entity<SleepingComponent> ent)
@@ -299,7 +313,7 @@ public sealed partial class SleepingSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        if (!force && HasComp<ForcedSleepingComponent>(ent))
+        if (!force && _statusEffectNew.HasEffectComp<ForcedSleepingStatusEffectComponent>(ent)) // Forge-Change
         {
             if (user != null)
             {
@@ -345,7 +359,7 @@ public sealed partial class SleepingSystem : EntitySystem
             if (curTime >= wakeUp.NextWakeUp)
             {
                 Wake((uid, sleeping));
-                _statusEffectsSystem.TryRemoveStatusEffect(uid, "Drowsiness");
+                _statusEffectNew.TryRemoveStatusEffect(uid, "Drowsiness"); // Forge-Change
             }
         }
     }

@@ -1,4 +1,4 @@
-using Content.Server.Corvax.Elzuosa; //Corvax-Frontier
+using Content.Server._Forge.Elzuosa; //Corvax-Frontier
 using Content.Server.Entry;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
@@ -76,6 +76,22 @@ public sealed class EmpSystem : SharedEmpSystem
             _pvs.AddGlobalOverride(empBlast); // Frontier
 
         Dirty(empBlast, empBlastComp); // Frontier
+    }
+
+    /// <summary>
+    ///   Triggers an EMP pulse at the given location, by first raising an <see cref="EmpAttemptEvent"/>, then a raising <see cref="EmpPulseEvent"/> on all entities in range.
+    /// </summary>
+    /// <param name="coordinates">The location to trigger the EMP pulse at.</param>
+    /// <param name="range">The range of the EMP pulse.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP pulse.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    public void EmpPulse(EntityCoordinates coordinates, float range, float energyConsumption, float duration)
+    {
+        foreach (var uid in _lookup.GetEntitiesInRange(coordinates, range))
+        {
+            TryEmpEffects(uid, energyConsumption, duration);
+        }
+        Spawn(EmpPulseEffectPrototype, coordinates);
     }
 
     /// <summary>

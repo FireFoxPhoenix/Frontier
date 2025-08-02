@@ -46,7 +46,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
         if (!HasComp<HolopadUserComponent>(uid))
             return;
 
-        var netEv = new HolopadUserTypingChangedEvent(GetNetEntity(uid.Value), ev.IsTyping);
+        var netEv = new HolopadUserTypingChangedEvent(GetNetEntity(uid.Value), ev.State);
         RaiseNetworkEvent(netEv);
     }
 
@@ -105,7 +105,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
         // Remove shading from all layers (except displacement maps)
         for (int i = 0; i < hologramSprite.AllLayers.Count(); i++)
         {
-            if (hologramSprite.TryGetLayer(i, out var layer) && layer.ShaderPrototype != "DisplacedStencilDraw")
+            if (hologramSprite.TryGetLayer(i, out var layer) && layer.ShaderPrototype != "DisplacedDraw")
                 hologramSprite.LayerSetShader(i, "unshaded");
         }
 

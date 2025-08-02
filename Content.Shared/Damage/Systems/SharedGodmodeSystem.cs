@@ -1,7 +1,8 @@
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Events;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew; // Forge-Change
 
 namespace Content.Shared.Damage.Systems;
 

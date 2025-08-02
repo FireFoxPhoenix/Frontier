@@ -45,7 +45,11 @@
     - type: Sprite
       sprite: Objects/Power/powersink.rsi
       state: powersink
+    - type: Tag
+      tags:
+      - GhostOnlyWarp
     - type: WarpPoint
       location: powersink
-    - type: StaticPrice #CorvaxFrontier
-      price: 200
+      blacklist:
+        tags:
+        - GhostOnlyWarp
