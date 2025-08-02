@@ -711,11 +711,9 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
-    - type: MercenaryBountyDatabase
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Corvet
-    - type: ShuttleImpact
 - proto: AirAlarm
   entities:
   - uid: 2
@@ -2234,7 +2232,7 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
-- proto: ContrabandPalletPirate
+- proto: ContrabandPalletCivillian
   entities:
   - uid: 695
     components:

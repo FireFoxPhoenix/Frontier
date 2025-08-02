@@ -344,11 +344,9 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
-    - type: MercenaryBountyDatabase
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Crown
-    - type: ShuttleImpact
 - proto: AirlockGlassShuttle
   entities:
   - uid: 201
@@ -915,7 +913,7 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
-- proto: ContrabandPalletPirate
+- proto: ContrabandPalletCivillian
   entities:
   - uid: 228
     components:
