@@ -42,6 +42,14 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+// Forge Change
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Damage;
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared._EinsteinEngines.Silicon.Components;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Ghost
 {
@@ -74,6 +82,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly IAdminManager _admin = default!; // Frontier
         [Dependency] private readonly CryoSleepSystem _cryo = default!; // Frontier
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Frontier
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -610,9 +619,22 @@ namespace Content.Server.Ghost
                         dealtDamage = playerDeadThreshold - damageable.TotalDamage;
                     }
 
-                    DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), dealtDamage);
+                    // Forge change start
+                    var damageType = HasComp<SiliconComponent>(playerEntity)
+                        ? "Ion"
+                        : "Asphyxiation";
+                    DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>(damageType), dealtDamage);
 
-                    _damageable.TryChangeDamage(playerEntity, damage, true);
+                    if (TryComp<BodyComponent>(playerEntity, out var body)
+                        && body.BodyType == BodyType.Complex
+                        && body.RootContainer.ContainedEntities.FirstOrNull() is { } root)
+                        _damageable.TryChangeDamage(playerEntity,
+                            damage,
+                            true,
+                            targetPart: _bodySystem.GetTargetBodyPart(root));
+                    else
+                        _damageable.TryChangeDamage(playerEntity, damage, true);
+                    // Forge Change End
                 }
             }
 
