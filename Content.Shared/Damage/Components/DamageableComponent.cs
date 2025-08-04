@@ -85,6 +85,9 @@ namespace Content.Shared.Damage
 
         [DataField]
         public FixedPoint2? HealthBarThreshold;
+
+        [ViewVariables]
+        public TimeSpan LastModifiedTime = TimeSpan.Zero; // Forge-Change
     }
 
     [Serializable, NetSerializable]

@@ -16,7 +16,7 @@ namespace Content.Server.Administration.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            if (args.Length != 3)
+            if (args.Length != 4) // Forge-Change
             {
                 shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
                 return;
@@ -38,10 +38,9 @@ namespace Content.Server.Administration.Commands
             var parentId = _entManager.GetEntity(parentNetId);
             var bodySystem = _entManager.System<BodySystem>();
 
-
-
-            if (Enum.TryParse<BodyPartType>(args[3], out var partType) &&
-                bodySystem.TryCreatePartSlotAndAttach(parentId, args[2], childId, partType))
+            if (Enum.TryParse<BodyPartType>(args[3], out var partType)
+                && Enum.TryParse<BodyPartSymmetry>(args[4], out var symmetry) //Forge-Change
+                && bodySystem.TryCreatePartSlotAndAttach(parentId, args[2], childId, partType, symmetry)) //Forge-Change
             {
                 shell.WriteLine($@"Added {childId} to {parentId}.");
             }

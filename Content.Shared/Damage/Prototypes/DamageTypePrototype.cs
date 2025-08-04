@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Content.Shared.FixedPoint; // Forge-Change
 
 namespace Content.Shared.Damage.Prototypes
 {
@@ -28,5 +29,8 @@ namespace Content.Shared.Damage.Prototypes
         /// </summary>
         [DataField("armorFlatPrice")]
         public double ArmorPriceFlat { get; set; }
+
+        [DataField, ViewVariables(VVAccess.ReadOnly)]
+        public FixedPoint2 WoundHealingMultiplier { get; set; } = 1; // Forge-Change
     }
 }

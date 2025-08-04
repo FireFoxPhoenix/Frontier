@@ -13,6 +13,7 @@ namespace Content.Shared.Humanoid
         UndergarmentTop,
         UndergarmentBottom,
         Chest,
+        Groin, // Forge-Change
         Head,
         Snout,
         HeadSide, // side parts (i.e., frills)

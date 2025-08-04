@@ -133,13 +133,17 @@ namespace Content.Server.Body.Commands
             if (attachAt == default)
                 attachAt = bodySystem.GetBodyChildren(entity, body).First();
 
-            var slotId = part.GetHashCode().ToString();
+            // Forge_Change start
+            var slotId = $"{part.Symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
+            part.SlotId = part.GetHashCode().ToString();
 
-            if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, slotId, hand, BodyPartType.Hand, attachAt.Component, part))
+
+            if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, slotId, hand, BodyPartType.Hand, BodyPartSymmetry.Right, attachAt.Component, part))
             {
                 shell.WriteError($"Couldn't create a slot with id {slotId} on entity {_entManager.ToPrettyString(entity)}");
                 return;
             }
+            // Forge-Change end
 
             shell.WriteLine($"Added hand to entity {_entManager.GetComponent<MetaDataComponent>(entity).EntityName}");
         }

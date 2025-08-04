@@ -164,7 +164,7 @@ public abstract partial class SharedStunSystem : EntitySystem // Forge-Change (p
     /// <summary>
     ///     Knocks down the entity, making it fall to the ground.
     /// </summary>
-    public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, bool autoStand = true, bool drop = true) // Forge-Change
+    public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, bool autoStand = true, bool drop = true, StatusEffectsComponent? status = null, bool standOnRemoval = true) // Forge-Change
     {
         if (time <= TimeSpan.Zero)
             return false;
@@ -177,7 +177,7 @@ public abstract partial class SharedStunSystem : EntitySystem // Forge-Change (p
         RaiseLocalEvent(uid, ref evAttempt); // Forge-Change
 
         if (evAttempt.Cancelled) // Forge-Change
-            return false; 
+            return false;
         // Forge-Change-Start
         // Initialize our component with the relevant data we need if we don't have it
         if (EnsureComp<KnockedDownComponent>(uid, out var component))
@@ -214,12 +214,12 @@ public abstract partial class SharedStunSystem : EntitySystem // Forge-Change (p
     ///     Applies knockdown and stun to the entity temporarily.
     /// </summary>
     public bool TryParalyze(EntityUid uid, TimeSpan time, bool refresh,
-        StatusEffectsComponent? status = null)
+        StatusEffectsComponent? status = null, bool standOnRemoval = true) // Forge-Change
     {
         if (!Resolve(uid, ref status, false))
             return false;
 
-        return TryKnockdown(uid, time, refresh) && TryStun(uid, time, refresh, status); // Forge-Change
+        return TryKnockdown(uid, time, refresh, status: status, standOnRemoval: standOnRemoval) && TryStun(uid, time, refresh, status: status); // Forge-Change
     }
 
     /// <summary>
@@ -303,7 +303,7 @@ public abstract partial class SharedStunSystem : EntitySystem // Forge-Change (p
         UpdateStunModifiers(ent, speedModifier, speedModifier);
     }
 
-    #region friction and movement listeners 
+    #region friction and movement listeners
 
     private void OnRefreshMovespeed(EntityUid ent, SlowedDownComponent comp, RefreshMovementSpeedModifiersEvent args) // Forge-Change
     {

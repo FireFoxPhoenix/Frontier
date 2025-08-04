@@ -1,5 +1,6 @@
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Body.Systems;
+using Content.Shared._Shitmed.Body; // Forge-Change
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -45,4 +46,10 @@ public sealed partial class BodyComponent : Component
     [DataField, AutoNetworkedField]
     public bool ThermalVisibility = true;
     // WD EDIT END
+
+    [DataField]
+    public BodyType BodyType = BodyType.Complex; // Forge-Change
+
+    [ViewVariables, AutoNetworkedField, Access(Other = AccessPermissions.ReadWrite)]
+    public TimeSpan HealAt; // Forge-Change
 }

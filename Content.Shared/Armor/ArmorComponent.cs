@@ -2,6 +2,14 @@
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
+// Forge-Change start
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+using Content.Shared.Body.Part;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+// Forge-Change end
 
 namespace Content.Shared.Armor;
 
@@ -29,6 +37,25 @@ public sealed partial class ArmorComponent : Component
     /// </summary>
     [DataField]
     public bool ShowArmorOnExamine = true;
+
+    [DataField("coverageHidden")]
+    public bool ArmourCoverageHidden = false; // Forge-Change
+
+    [DataField("modifiersHidden")]
+    public bool ArmourModifiersHidden = false; // Forge-Change
+
+    [DataField("coverage")]
+    public List<BodyPartType> ArmorCoverage = new(); // Forge-Change
+
+    [DataField]
+    public Dictionary<TraumaType, FixedPoint2> TraumaDeductions = new() // Forge-Change
+    {
+        { TraumaType.Dismemberment, 0 },
+        { TraumaType.BoneDamage, 0 },
+        { TraumaType.OrganDamage, 0 },
+        { TraumaType.VeinsDamage, 0 },
+        { TraumaType.NerveDamage, 0 },
+    };
 }
 
 /// <summary>

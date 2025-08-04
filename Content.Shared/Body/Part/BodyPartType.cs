@@ -10,7 +10,11 @@ namespace Content.Shared.Body.Part
     public enum BodyPartType
     {
         Other = 0,
-        Torso,
+        // Forge-Change start
+        Chest,
+        Groin,
+        Torso, // не забыть удалить
+        // Forge-Change end
         Head,
         Arm,
         Hand,

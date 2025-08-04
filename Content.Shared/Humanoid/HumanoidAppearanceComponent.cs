@@ -110,6 +110,9 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
+
+    [DataField, AutoNetworkedField]
+    public bool ProfileLoaded; // Forge-Change
 }
 
 [DataDefinition]

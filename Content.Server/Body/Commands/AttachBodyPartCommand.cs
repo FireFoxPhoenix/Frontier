@@ -98,24 +98,31 @@ namespace Content.Server.Body.Commands
                 return;
             }
 
-            var slotId = $"AttachBodyPartVerb-{partUid}";
+            // Forge-Change start
+            var slotId = "";
+            if (part.Symmetry != BodyPartSymmetry.None)
+                slotId = $"{part.Symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
+            else
+                slotId = $"{part.GetHashCode().ToString()}";
+
+            part.SlotId = part.GetHashCode().ToString();
+            // Forge-Change end
 
             if (body.RootContainer.ContainedEntity is null && !bodySystem.AttachPartToRoot(bodyId, partUid.Value, body, part))
             {
                 shell.WriteError("Body container does not have a root entity to attach to the body part!");
                 return;
             }
-
-            var (rootPartId, rootPart) = bodySystem.GetRootPartOrNull(bodyId, body)!.Value;
-            if (!bodySystem.TryCreatePartSlotAndAttach(rootPartId,
-                    slotId,
-                    partUid.Value,
-                    part.PartType,
-                    rootPart,
-                    part))
+            else
             {
-                shell.WriteError($"Could not create slot {slotId} on entity {_entManager.ToPrettyString(bodyId)}");
-                return;
+                if(!bodySystem.TryGetRootPart(bodyId, out var rootPart))
+                    return;
+                // Forge-Change: Symmetry
+                if (!bodySystem.TryCreatePartSlotAndAttach(rootPart.Value, slotId, partUid.Value, part.PartType, part.Symmetry, rootPart, part))
+                {
+                    shell.WriteError($"Could not create slot {slotId} on entity {_entManager.ToPrettyString(bodyId)}");
+                    return;
+                }
             }
             shell.WriteLine($"Attached part {_entManager.ToPrettyString(partUid.Value)} to {_entManager.ToPrettyString(bodyId)}");
         }
