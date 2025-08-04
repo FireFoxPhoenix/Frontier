@@ -53,32 +53,9 @@ public sealed class PassiveDamageSystem : EntitySystem
 
             // Damage them
             foreach (var allowedState in comp.AllowedStates)
+            {
                 if (allowedState == mobState.CurrentState)
                     _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage, targetPart: TargetBodyPart.All); // Forge Change
-            }
-        }
-    }
-}            // Make sure they're up for a damage tick
-            if (comp.NextDamage > curTime)
-                continue;
-
-            if (comp.DamageCap != 0 && damage.TotalDamage >= comp.DamageCap)
-                continue;
-
-            // Set the next time they can take damage
-            comp.NextDamage = curTime + TimeSpan.FromSeconds(1f);
-
-            if (comp.AllowedStates == null || !TryComp<MobStateComponent>(uid, out var mobState)) // Forge-Change
-            {
-                _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
-                return;
-            }
-
-            // Damage them
-            foreach (var allowedState in comp.AllowedStates)
-            {
-                if (allowedState == mobState.CurrentState)
-                    _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage, targetPart: TargetBodyPart.All); //Forge-Change
             }
         }
     }
