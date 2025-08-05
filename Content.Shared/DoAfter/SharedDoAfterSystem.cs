@@ -9,6 +9,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._Shitmed.DoAfter; // Forge
 
 namespace Content.Shared.DoAfter;
 

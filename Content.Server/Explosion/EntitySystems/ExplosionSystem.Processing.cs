@@ -22,6 +22,16 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
+// Forge Change
+using Content.Shared.FixedPoint;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Damage;
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
+using Content.Shared.Body.Components;
+using Content.Server.Destructible;
+using Content.Server.Destructible.Thresholds.Triggers;
+using System.Linq;
 
 namespace Content.Server.Explosion.EntitySystems;
 
@@ -192,7 +202,7 @@ public sealed partial class ExplosionSystem
         if (!_physicsQuery.TryGetComponent(uid, out var physics))
             return false;
 
-        return physics.CanCollide && physics.Hard && (physics.CollisionLayer & (int) CollisionGroup.Impassable) != 0;
+        return physics.CanCollide && physics.Hard && (physics.CollisionLayer & (int)CollisionGroup.Impassable) != 0;
     }
 
     /// <summary>
@@ -462,7 +472,8 @@ public sealed partial class ExplosionSystem
                 }
 
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
-                _damageableSystem.TryChangeDamage(entity, damage * _damageableSystem.UniversalExplosionDamageModifier, ignoreResistances: true);
+                if (!WouldTriggerDestructibleThreshold(entity, damage, cause))
+                    _damageableSystem.TryChangeDamage(entity, damage, ignoreResistances: true, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.Split); // Forge Change
 
             }
         }
@@ -483,7 +494,7 @@ public sealed partial class ExplosionSystem
             && throwForce > 0
             && !EntityManager.IsQueuedForDeletion(uid)
             && _physicsQuery.TryGetComponent(uid, out var physics)
-            && physics.BodyType == BodyType.Dynamic)
+            && physics.BodyType == Robust.Shared.Physics.BodyType.Dynamic) // Forge Change
         {
             var pos = _transformSystem.GetWorldPosition(xform);
             var dir = pos - epicenter.Position;
@@ -542,6 +553,48 @@ public sealed partial class ExplosionSystem
             return;
 
         damagedTiles.Add((tileRef.GridIndices, new Tile(tileDef.TileId)));
+    }
+
+    // Forge Change: This is basically a private implementation handling a "prediction" of
+    // whether or not the explosion would trigger damage thresholds on a Woundmed entity.
+    // TODO: If it works well over time, move to an event.
+    private bool WouldTriggerDestructibleThreshold(EntityUid uid, DamageSpecifier incomingDamage, EntityUid? cause)
+    {
+        if (!TryComp<DestructibleComponent>(uid, out var destructible)
+            || !TryComp<DamageableComponent>(uid, out var damageable)
+            || !TryComp<BodyComponent>(uid, out var body)
+            || body.BodyType == Shared._Shitmed.Body.BodyType.Simple)
+            return false;
+
+        foreach (var threshold in destructible.Thresholds)
+        {
+            // Skip if already triggered and triggers only once
+            if (threshold.Triggered && threshold.TriggersOnce)
+                continue;
+
+            // Check if this threshold uses a damage type trigger
+            if (threshold.Trigger is not DamageTypeTrigger damageTypeTrigger)
+                continue;
+
+            // Get current damage for this damage type
+            var currentDamage = damageable.Damage.DamageDict.TryGetValue(damageTypeTrigger.DamageType, out var current)
+                ? current
+                : FixedPoint2.Zero;
+
+            // Get incoming damage for this damage type
+            var additionalDamage = incomingDamage.DamageDict.TryGetValue(damageTypeTrigger.DamageType, out var incoming)
+                ? incoming
+                : FixedPoint2.Zero;
+
+            // Check if combined damage would exceed threshold
+            if (currentDamage + additionalDamage >= damageTypeTrigger.Damage)
+            {
+                threshold.Execute(uid, _destructibleSystem, EntityManager, cause);
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 

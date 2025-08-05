@@ -1,5 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Shitmed.Body.Events; // Forge Change
+using Content.Shared.Body.Part; // Forge Change
 using Content.Client.DisplacementMap;
 using Content.Client.Examine;
 using Content.Client.Strip;
@@ -51,6 +53,8 @@ namespace Content.Client.Hands.Systems
             SubscribeLocalEvent<HandsComponent, ComponentShutdown>(OnHandsShutdown);
             SubscribeLocalEvent<HandsComponent, ComponentHandleState>(HandleComponentState);
             SubscribeLocalEvent<HandsComponent, VisualsChangedEvent>(OnVisualsChanged);
+            SubscribeLocalEvent<HandsComponent, BodyPartRemovedEvent>(HandleBodyPartRemoved); // Forge Change
+            SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // Forge Change
 
             OnHandSetActive += OnHandActivated;
         }
@@ -239,6 +243,37 @@ namespace Content.Client.Hands.Systems
         }
 
         #region visuals
+
+        // Forge Change Start
+        private void HideLayers(EntityUid uid, HandsComponent component, Entity<BodyPartComponent> part, SpriteComponent? sprite = null)
+        {
+            if (!Resolve(uid, ref sprite, logMissing: false)
+                || part.Comp.PartType != BodyPartType.Arm
+                && part.Comp.PartType != BodyPartType.Hand)
+                return;
+
+            var location = part.Comp.Symmetry switch
+            {
+                BodyPartSymmetry.None => HandLocation.Middle,
+                BodyPartSymmetry.Left => HandLocation.Left,
+                BodyPartSymmetry.Right => HandLocation.Right,
+                _ => throw new ArgumentOutOfRangeException(nameof(part.Comp.Symmetry))
+            };
+
+            if (component.RevealedLayers.TryGetValue(location, out var revealedLayers))
+            {
+                foreach (var key in revealedLayers)
+                    sprite.RemoveLayer(key);
+
+                revealedLayers.Clear();
+            }
+        }
+
+        private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args) => HideLayers(uid, component, args.Part);
+
+        private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args) => HideLayers(uid, component, args.Part);
+
+        // Forge Change End
 
         protected override void HandleEntityInserted(EntityUid uid, HandsComponent hands, EntInsertedIntoContainerMessage args)
         {

@@ -16,6 +16,9 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Network; // Goobstation
+// forge-change
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Popups;
 
 namespace Content.Shared.Actions;
 
@@ -31,6 +34,7 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private   readonly SharedAudioSystem _audio = default!;
     [Dependency] private   readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private   readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private   readonly SharedPopupSystem _popup = default!; // Forge Change
 
     public override void Initialize()
     {
@@ -199,7 +203,7 @@ public abstract class SharedActionsSystem : EntitySystem
         Dirty(actionId.Value, action);
     }
 
-    public void StartUseDelay(EntityUid? actionId)
+    public void StartUseDelay(EntityUid? actionId) //
     {
         if (actionId == null)
             return;
@@ -236,7 +240,7 @@ public abstract class SharedActionsSystem : EntitySystem
         Dirty(actionId.Value, action);
     }
 
-    private void OnRejuventate(EntityUid uid, ActionsComponent component, RejuvenateEvent args)
+    private void OnRejuventate(EntityUid uid, ActionsComponent component, RejuvenateEvent args) //
     {
         foreach (var act in component.Actions)
         {
@@ -416,6 +420,10 @@ public abstract class SharedActionsSystem : EntitySystem
                 break;
             }
             case InstantActionComponent instantAction:
+                var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(user); // Shitmed Change
+                if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null) && hasNoSpecificComponents) // Shitmed Change
+                    return;
+
                 if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null))
                     return;
 

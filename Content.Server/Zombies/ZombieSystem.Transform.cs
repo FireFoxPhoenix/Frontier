@@ -38,6 +38,7 @@ using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.Rejuvenate; // Forge Change
 
 namespace Content.Server.Zombies;
 
@@ -100,6 +101,7 @@ public sealed partial class ZombieSystem
             return;
 
         //you're a real zombie now, son.
+        RaiseLocalEvent(target, new RejuvenateEvent(false, false)); // Forge Change
         var zombiecomp = AddComp<ZombieComponent>(target);
 
         //we need to basically remove all of these because zombies shouldn't

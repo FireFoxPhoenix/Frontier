@@ -14,7 +14,21 @@ namespace Content.Server.Medical
             SubscribeLocalEvent<InsideCryoPodComponent, InhaleLocationEvent>(OnInhaleLocation);
             SubscribeLocalEvent<InsideCryoPodComponent, ExhaleLocationEvent>(OnExhaleLocation);
             SubscribeLocalEvent<InsideCryoPodComponent, AtmosExposedGetAirEvent>(OnGetAir);
+            // Forge Change Start
+            SubscribeLocalEvent<InsideCryoPodComponent, ComponentInit>(OnComponentInit);
+            SubscribeLocalEvent<InsideCryoPodComponent, ComponentRemove>(OnComponentRemove);
         }
+        private void OnComponentInit(EntityUid uid, InsideCryoPodComponent component, ComponentInit args)
+        {
+            _actionsSystem.AddAction(uid, ref component.SleepAction, SleepingSystem.SleepActionId, uid);
+        }
+
+        private void OnComponentRemove(EntityUid uid, InsideCryoPodComponent component, ComponentRemove args)
+        {
+            _actionsSystem.RemoveAction(uid, component.SleepAction);
+            _sleepingSystem.TryWaking(uid);
+        }
+        // Forge Change End
 
         #region Atmos handlers
 

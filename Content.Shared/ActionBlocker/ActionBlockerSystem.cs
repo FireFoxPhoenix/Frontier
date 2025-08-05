@@ -12,6 +12,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
+using Content.Shared.Silicons.StationAi; // Forge-Change
 
 namespace Content.Shared.ActionBlocker
 {
@@ -82,6 +83,10 @@ namespace Content.Shared.ActionBlocker
         public bool CanInteract(EntityUid user, EntityUid? target)
         {
             if (!CanConsciouslyPerformAction(user))
+                return false;
+
+            // Forge Change
+            if (HasComp<StationAiOverlayComponent>(user))
                 return false;
 
             var ev = new InteractionAttemptEvent(user, target);

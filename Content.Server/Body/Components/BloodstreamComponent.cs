@@ -9,6 +9,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared._Shitmed.Medical.Surgery; // Forge-Change
 
 namespace Content.Server.Body.Components
 {

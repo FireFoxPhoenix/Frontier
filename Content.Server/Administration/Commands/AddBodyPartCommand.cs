@@ -12,7 +12,7 @@ namespace Content.Server.Administration.Commands
 
         public string Command => "addbodypart";
         public string Description => "Adds a given entity to a containing body.";
-        public string Help => "Usage: addbodypart <entity uid> <body uid> <part slot> <part type>";
+        public string Help => "Usage: addbodypart <entity uid> <body uid> <part slot> <part type> <part symmetry>"; // Forge Change: part symmetry
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {

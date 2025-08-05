@@ -2,6 +2,12 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
 using JetBrains.Annotations;
+// Forge-Change start
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+// Forge-Change end
 
 namespace Content.Shared.Eye.Blinding.Systems;
 
@@ -9,6 +15,8 @@ public sealed class BlindableSystem : EntitySystem
 {
     [Dependency] private readonly BlurryVisionSystem _blurriness = default!;
     [Dependency] private readonly EyeClosingSystem _eyelids = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!; // Forge Change
+    [Dependency] private readonly TraumaSystem _trauma = default!; // Forge Change
 
     public override void Initialize()
     {
@@ -56,6 +64,7 @@ public sealed class BlindableSystem : EntitySystem
         Dirty(blindable);
     }
 
+    // Forge Change Start
     public void AdjustEyeDamage(Entity<BlindableComponent?> blindable, int amount)
     {
         if (!Resolve(blindable, ref blindable.Comp, false) || amount == 0)
@@ -63,7 +72,26 @@ public sealed class BlindableSystem : EntitySystem
 
         blindable.Comp.EyeDamage += amount;
         UpdateEyeDamage(blindable, true);
+        // If the entity has eye organs, then we also damage those.
+        if (!TryComp(blindable, out BodyComponent? body)
+            || !_body.TryGetBodyOrganEntityComps<EyesComponent>((blindable, body), out var eyes))
+            return;
+
+        // for now
+        foreach (var eye in eyes)
+            _trauma.TryCreateOrganDamageModifier(eye.Owner, amount, blindable.Owner, "BlindableDamage", eye.Comp2);
     }
+
+    // Alternative version of the method intended to be used with Eye Organs, so that you can just pass in
+    // the severity and set that.
+    public void SetEyeDamage(Entity<BlindableComponent?> blindable, int amount)
+    {
+        if (!Resolve(blindable, ref blindable.Comp, false))
+            return;
+        blindable.Comp.EyeDamage = amount;
+        UpdateEyeDamage(blindable, true);
+    }
+    // Forge-Change end
     private void UpdateEyeDamage(Entity<BlindableComponent?> blindable, bool isDamageChanged)
     {
         if (!Resolve(blindable, ref blindable.Comp, false))

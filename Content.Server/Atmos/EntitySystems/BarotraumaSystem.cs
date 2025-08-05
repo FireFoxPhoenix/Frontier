@@ -9,6 +9,12 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Robust.Shared.Containers;
+// Forge Change
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared.Body.Components;
+using System.Linq;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -19,6 +25,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly AlertsSystem _alertsSystem = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger= default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
+		[Dependency] private readonly WoundSystem _wound = default!; // Forge Change
 
         private const float UpdateTimer = 1f;
         private float _timer;
@@ -205,19 +212,23 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
 
             _timer -= UpdateTimer;
-
+			
+			// Forge Change start
             var enumerator = EntityQueryEnumerator<BarotraumaComponent, DamageableComponent>();
             while (enumerator.MoveNext(out var uid, out var barotrauma, out var damageable))
             {
                 var totalDamage = FixedPoint2.Zero;
-                foreach (var (barotraumaDamageType, _) in barotrauma.Damage.DamageDict)
+                foreach (var (damageType, _) in barotrauma.Damage.DamageDict)
                 {
-                    if (!damageable.Damage.DamageDict.TryGetValue(barotraumaDamageType, out var damage))
+                    if (!damageable.Damage.DamageDict.TryGetValue(damageType, out var damage))
                         continue;
+
                     totalDamage += damage;
                 }
+
                 if (totalDamage >= barotrauma.MaxDamage)
                     continue;
+				// Forge Change end
 
                 var pressure = 1f;
 
@@ -237,7 +248,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (pressure <= Atmospherics.HazardLowPressure)
                 {
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false);
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false, targetPart: TargetBodyPart.All); // Forge Change
 
                     if (!barotrauma.TakingDamage)
                     {
@@ -252,7 +263,7 @@ namespace Content.Server.Atmos.EntitySystems
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false);
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, targetPart: TargetBodyPart.All); // Forge Change
 
                     if (!barotrauma.TakingDamage)
                     {

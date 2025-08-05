@@ -19,6 +19,23 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server._NF.Traits.Assorted; // Frontier
+// Forge Change
+using Content.Shared._Shitmed.Medical.HealthAnalyzer;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.FixedPoint;
+using System.Linq;
 
 namespace Content.Server.Medical;
 
@@ -28,11 +45,14 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Forge Change
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly WoundSystem _woundSystem = default!; // Forge Change
+    [Dependency] private readonly TraumaSystem _trauma = default!; // Forge Change
 
     public override void Initialize()
     {
@@ -41,6 +61,13 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         SubscribeLocalEvent<HealthAnalyzerComponent, EntGotInsertedIntoContainerMessage>(OnInsertedIntoContainer);
         SubscribeLocalEvent<HealthAnalyzerComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<HealthAnalyzerComponent, DroppedEvent>(OnDropped);
+        // Forge Change Start
+        Subs.BuiEvents<HealthAnalyzerComponent>(HealthAnalyzerUiKey.Key, subs =>
+        {
+            subs.Event<HealthAnalyzerPartMessage>(OnHealthAnalyzerPartSelected);
+            subs.Event<HealthAnalyzerModeSelectedMessage>(OnHealthAnalyzerModeSelected);
+        });
+        // Forge Change End
     }
 
     public override void Update(float frameTime)
@@ -61,6 +88,17 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 continue;
             }
 
+            // Forge Change Start
+            if (component.CurrentBodyPart != null
+                && (Deleted(component.CurrentBodyPart)
+                || TryComp(component.CurrentBodyPart, out BodyPartComponent? bodyPartComponent)
+                && bodyPartComponent.Body is null))
+            {
+                BeginAnalyzingEntity((uid, component), patient, null);
+                continue;
+            }
+            // Forge Change End
+
             component.NextUpdate = _timing.CurTime + component.UpdateInterval;
 
             //Get distance between health analyzer and the scanned entity
@@ -73,7 +111,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 continue;
             }
 
-            UpdateScannedUser(uid, patient, true);
+            UpdateScannedUser(uid, patient, true, component.CurrentMode, component.CurrentBodyPart); // Forge Change
         }
     }
 
@@ -153,14 +191,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// </summary>
     /// <param name="healthAnalyzer">The health analyzer that should receive the updates</param>
     /// <param name="target">The entity to start analyzing</param>
-    private void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
+    private void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null) // Forge-Change
     {
         //Link the health analyzer to the scanned entity
         healthAnalyzer.Comp.ScannedEntity = target;
+        healthAnalyzer.Comp.CurrentBodyPart = part; // Forge Change
 
         _toggle.TryActivate(healthAnalyzer.Owner);
 
-        UpdateScannedUser(healthAnalyzer, target, true);
+        UpdateScannedUser(healthAnalyzer, target, true, healthAnalyzer.Comp.CurrentMode, part); // Forge Change
     }
 
     /// <summary>
@@ -172,11 +211,51 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     {
         //Unlink the analyzer
         healthAnalyzer.Comp.ScannedEntity = null;
+        healthAnalyzer.Comp.CurrentBodyPart = null; // Forge Change
 
         _toggle.TryDeactivate(healthAnalyzer.Owner);
 
-        UpdateScannedUser(healthAnalyzer, target, false);
+        UpdateScannedUser(healthAnalyzer, target, false, healthAnalyzer.Comp.CurrentMode); //Forge-Change
     }
+
+    // Forge Change Start
+    /// <summary>
+    /// Shitmed Change: Handle the selection of a body part on the health analyzer
+    /// </summary>
+    /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
+    /// <param name="args">The message containing the selected part</param>
+    private void OnHealthAnalyzerPartSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerPartMessage args)
+    {
+        if (!TryGetEntity(args.Owner, out var owner))
+            return;
+
+        healthAnalyzer.Comp.CurrentMode = HealthAnalyzerMode.Body; // If you press a part ye get redirected bozo.
+        if (args.BodyPart == null)
+        {
+            BeginAnalyzingEntity(healthAnalyzer, owner.Value, null);
+        }
+        else
+        {
+            var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(args.BodyPart.Value);
+            if (_bodySystem.GetBodyChildrenOfType(owner.Value, targetType, symmetry: targetSymmetry) is { } part)
+                BeginAnalyzingEntity(healthAnalyzer, owner.Value, part.FirstOrDefault().Id);
+        }
+    }
+
+    /// <summary>
+    /// Shitmed Change: Handle the selection of a different health analyzer mode
+    /// </summary>
+    /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
+    /// <param name="args">The message containing the selected mode</param>
+    private void OnHealthAnalyzerModeSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerModeSelectedMessage args)
+    {
+        if (!TryGetEntity(args.Owner, out var owner))
+            return;
+
+        healthAnalyzer.Comp.CurrentMode = args.Mode; // If you press a part ye get redirected bozo.
+        BeginAnalyzingEntity(healthAnalyzer, owner.Value);
+    }
+    // Forge Change End
 
     /// <summary>
     /// Send an update for the target to the healthAnalyzer
@@ -184,12 +263,11 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="healthAnalyzer">The health analyzer</param>
     /// <param name="target">The entity being scanned</param>
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
-    public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode)
+    // Forge-Change
+    public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, HealthAnalyzerMode mode, EntityUid? part = null)
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
-            return;
-
-        if (!HasComp<DamageableComponent>(target))
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key)
+            || !TryComp<BodyComponent>(target, out var body))
             return;
 
         var bodyTemperature = float.NaN;
@@ -198,34 +276,64 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bodyTemperature = temp.CurrentTemperature;
 
         var bloodAmount = float.NaN;
-        var bleeding = false;
-        var unrevivable = false;
-        var unclonable = false; // Frontier
 
         if (TryComp<BloodstreamComponent>(target, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
                 ref bloodstream.BloodSolution, out var bloodSolution))
-        {
             bloodAmount = bloodSolution.FillFraction;
-            bleeding = bloodstream.BleedAmount > 0;
+
+        var bodyStatus = _woundSystem.GetDamageableStatesOnBody(target);
+        Dictionary<TargetBodyPart, bool> bleeding = new();
+
+        switch (mode)
+        {
+            case HealthAnalyzerMode.Body:
+                var unrevivable = false;
+                FetchBodyData(target, body, out var traumas, out var pain, out bleeding);
+                if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
+                    unrevivable = true;
+
+                _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerBodyMessage(
+                    GetNetEntity(target),
+                    bodyTemperature,
+                    bloodAmount,
+                    scanMode,
+                    unrevivable,
+                    bodyStatus,
+                    bleeding,
+                    traumas,
+                    pain,
+                    part != null ? GetNetEntity(part) : null
+                ));
+                break;
+
+            case HealthAnalyzerMode.Organs:
+                bleeding = FetchBleedData(body);
+                var organs = FetchOrganData(target);
+                _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerOrgansMessage(
+                    GetNetEntity(target),
+                    bodyTemperature,
+                    bloodAmount,
+                    scanMode,
+                    bleeding,
+                    bodyStatus,
+                    organs
+                ));
+                break;
+
+            case HealthAnalyzerMode.Chemicals:
+                bleeding = FetchBleedData(body);
+                var chemicals = FetchChemicalData(target);
+                _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerChemicalsMessage(
+                    GetNetEntity(target),
+                    bodyTemperature,
+                    bloodAmount,
+                    scanMode,
+                    bleeding,
+                    bodyStatus,
+                    chemicals
+                ));
+                break;
         }
-
-        if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
-            unrevivable = true;
-
-        // Frontier: add unclonable
-        if (TryComp<UnclonableComponent>(target, out var unclonableComp) && unclonableComp.Analyzable)
-            unclonable = true;
-        // End Frontier: add unclonable
-
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
-            GetNetEntity(target),
-            bodyTemperature,
-            bloodAmount,
-            scanMode,
-            bleeding,
-            unrevivable,
-            unclonable // Frontier
-        ));
     }
 }

@@ -7,6 +7,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
+using Content.Shared._Shitmed.Targeting; // Forge Change
+using Content.Shared._Shitmed.Damage; // Forge Change
 
 namespace Content.Shared.Weapons.Marker;
 
@@ -31,13 +33,14 @@ public abstract class SharedDamageMarkerSystem : EntitySystem
             return;
 
         args.BonusDamage += component.Damage;
-        RemCompDeferred<DamageMarkerComponent>(uid);
         _audio.PlayPredicted(component.Sound, uid, args.User);
 
         if (TryComp<LeechOnMarkerComponent>(args.Used, out var leech))
         {
-            _damageable.TryChangeDamage(args.User, leech.Leech, true, false, origin: args.Used);
+            _damageable.TryChangeDamage(args.User, leech.Leech, true, false, origin: args.Used, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.SplitEnsureAll); // Forge-Change
         }
+
+        RemCompDeferred<DamageMarkerComponent>(uid);
     }
 
     public override void Update(float frameTime)

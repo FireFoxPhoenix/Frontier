@@ -85,14 +85,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     }
 
     private void SetLayerData(
-        HumanoidAppearanceComponent component,
-        SpriteComponent sprite,
+        Entity<HumanoidAppearanceComponent, SpriteComponent> entity,
         HumanoidVisualLayers key,
         string? protoId,
         bool sexMorph = false,
-        Color? color = null)
+        Color? color = null,
+        bool overrideSkin = false) // Forge Change
     {
-        var layerIndex = sprite.LayerMapReserveBlank(key);
+        var component = entity.Comp1;
+        var sprite = entity.Comp2;
+
+        var layerIndex = _sprite.LayerMapReserve((entity.Owner, sprite), key);
         var layer = sprite[layerIndex];
         layer.Visible = !IsHidden(component, key);
 
@@ -108,11 +111,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var proto = _prototypeManager.Index<HumanoidSpeciesSpriteLayer>(protoId);
         component.BaseLayers[key] = proto;
 
-        if (proto.MatchSkin)
+        if (proto.MatchSkin && !overrideSkin) // Forge Change
             layer.Color = component.SkinColor.WithAlpha(proto.LayerAlpha);
 
         if (proto.BaseSprite != null)
-            sprite.LayerSetSprite(layerIndex, proto.BaseSprite);
+            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
     }
 
     /// <summary>

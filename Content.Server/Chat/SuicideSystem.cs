@@ -15,6 +15,7 @@ using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components; // Forge Change
 
 namespace Content.Server.Chat;
 

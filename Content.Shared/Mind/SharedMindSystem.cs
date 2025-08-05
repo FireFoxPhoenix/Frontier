@@ -379,6 +379,9 @@ public abstract partial class SharedMindSystem : EntitySystem
         var title = Name(objective);
         _adminLogger.Add(LogType.Mind, LogImpact.Low, $"Objective {objective} ({title}) added to mind of {MindOwnerLoggingString(mind)}");
         mind.Objectives.Add(objective);
+        //Forge-Change
+        var ev = new ObjectiveAddedEvent(objective);
+        RaiseLocalEvent(mindId, ev);
     }
 
     /// <summary>
@@ -641,6 +644,8 @@ public abstract partial class SharedMindSystem : EntitySystem
 /// <param name="Dead"></param>
 [ByRefEvent]
 public record struct GetCharactedDeadIcEvent(bool? Dead);
+
+public record struct ObjectiveAddedEvent(EntityUid Objective); // Forge-Change
 
 /// <summary>
 /// Raised on an entity to determine whether or not they are "unrevivable" in IC-logic.

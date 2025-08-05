@@ -551,10 +551,15 @@ namespace Content.Shared.Cuffs
             if (TryComp<HandsComponent>(target, out var hands) && hands.Count <= component.CuffedHandCount)
                 return false;
 
+            // Forge Change Start
+            EnsureComp<HandcuffComponent>(handcuff, out var handcuffsComp);
+            handcuffsComp.Used = true;
+            Dirty(handcuff, handcuffsComp);
             // Success!
             _hands.TryDrop(user, handcuff);
+            var result = _container.Insert(handcuff, component.Container);
+            // Forge Change End
 
-            _container.Insert(handcuff, component.Container);
             UpdateHeldItems(target, handcuff, component);
             return true;
         }

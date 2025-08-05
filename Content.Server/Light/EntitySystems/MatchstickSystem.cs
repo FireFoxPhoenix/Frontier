@@ -119,7 +119,7 @@ namespace Content.Server.Light.EntitySystems
             });
         }
 
-        // Shitmed Change Start
+        // Forge Change Start
         public override bool SetState(Entity<MatchstickComponent> ent, SmokableState value)
         {
             if (!base.SetState(ent, value))
@@ -127,7 +127,7 @@ namespace Content.Server.Light.EntitySystems
 
             var (uid, component) = ent;
 
-        // Shitmed Change End
+        // Forge Change End
 
             if (_lights.TryGetLight(uid, out var pointLightComponent))
             {
@@ -153,7 +153,7 @@ namespace Content.Server.Light.EntitySystems
             }
 
 
-            return true; // Shitmed Change
+            return true; // Forge Change
         }
     }
 }

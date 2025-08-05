@@ -1,5 +1,6 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared._Shitmed.Medical.HealthAnalyzer; // Forge-Change
 
 namespace Content.Server.Medical.Components;
 
@@ -39,6 +40,12 @@ public sealed partial class HealthAnalyzerComponent : Component
     public EntityUid? ScannedEntity;
 
     /// <summary>
+    /// Shitmed Change: The body part that is currently being scanned.
+    /// </summary>
+    [DataField]
+    public EntityUid? CurrentBodyPart; // Forge-Change
+
+    /// <summary>
     /// The maximum range in tiles at which the analyzer can receive continuous updates, a value of null will be infinite range
     /// </summary>
     [DataField]
@@ -61,4 +68,10 @@ public sealed partial class HealthAnalyzerComponent : Component
     /// </summary>
     [DataField]
     public bool Silent;
+
+    /// <summary>
+    /// Shitmed Change: The current mode of the scanner.
+    /// </summary>
+    [DataField]
+    public HealthAnalyzerMode CurrentMode = HealthAnalyzerMode.Body; // Forge-Change
 }

@@ -12,4 +12,13 @@ public sealed partial class SharpComponent : Component
 
     [DataField("butcherDelayModifier")]
     public float ButcherDelayModifier = 1.0f;
+
+    [DataField]
+    public bool HadSurgeryTool; // forge-Change
+
+    [DataField]
+    public bool HadScalpel; // Forge-Change
+
+    [DataField]
+    public bool HadBoneSaw; // Forge-Change
 }

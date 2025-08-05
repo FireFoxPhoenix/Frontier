@@ -7,6 +7,11 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Text.Json.Serialization;
+// Forge Changes
+using Content.Shared._Shitmed.EntityEffects.Effects;
+using Content.Shared._Shitmed.Targeting;
+using Content.Server.Temperature.Components;
+using Content.Shared._Shitmed.Damage;
 
 namespace Content.Server.EntityEffects.Effects
 {
@@ -168,7 +173,10 @@ namespace Content.Server.EntityEffects.Effects
                     args.TargetEntity,
                     damageSpec * scale,
                     IgnoreResistances,
-                    interruptsDoAfters: false);
+                    interruptsDoAfters: false,
+                    targetPart: UseTargeting ? TargetPart : null,
+                    ignoreBlockers: IgnoreBlockers,
+                    splitDamage: SplitDamage); // Forge Change
         }
     }
 }

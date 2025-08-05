@@ -3,6 +3,7 @@ using Content.Server.Body.Systems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems; // Forge Change
 
 namespace Content.Server.EntityEffects.Effects;
 
@@ -32,6 +33,10 @@ public sealed partial class ModifyBloodLevel : EntityEffect
             }
 
             sys.TryModifyBloodLevel(args.TargetEntity, amt, blood);
+
+            //Forge-Change
+            var woundsSys = args.EntityManager.System<WoundSystem>();
+            woundsSys.TryHealMostSevereBleedingWoundables(args.TargetEntity, -amt, out _);
         }
     }
 }

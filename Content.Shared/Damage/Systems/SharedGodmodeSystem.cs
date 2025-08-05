@@ -3,12 +3,14 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
 using Content.Shared.StatusEffectNew; // Forge-Change
+using Content.Shared.Body.Systems; // Forge Change
 
 namespace Content.Shared.Damage.Systems;
 
 public abstract class SharedGodmodeSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Forge Change
 
     public override void Initialize()
     {
@@ -64,6 +66,9 @@ public abstract class SharedGodmodeSystem : EntitySystem
         }
 
         RemComp<GodmodeComponent>(uid);
+
+        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // Forge Change
+            DisableGodmode(id);
     }
 
     /// <summary>

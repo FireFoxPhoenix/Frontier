@@ -15,6 +15,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Power;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._Shitmed.Targeting; // Forge Change
+using Content.Shared._Shitmed.Damage; // Forge Change
 
 namespace Content.Server.Bed
 {
@@ -84,7 +86,7 @@ namespace Content.Server.Bed
                     if (HasComp<SleepingComponent>(healedEntity))
                         damage *= bedComponent.SleepMultiplier;
 
-                    _damageableSystem.TryChangeDamage(healedEntity, damage, true, origin: uid);
+                    _damageableSystem.TryChangeDamage(healedEntity, damage, true, origin: uid, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.SplitEnsureAll); // Forge-Change
                 }
             }
         }

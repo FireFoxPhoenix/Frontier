@@ -21,6 +21,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Shared.Eye; //Forge Change
 
 namespace Content.Server.Bible
 {
@@ -36,6 +37,7 @@ namespace Content.Server.Bible
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
+        [Dependency] private readonly SharedEyeSystem _eye = default!; //Forge-Change
 
         public override void Initialize()
         {

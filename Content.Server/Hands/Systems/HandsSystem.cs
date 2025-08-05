@@ -28,6 +28,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Body.Systems; // Forge Change
+using Content.Shared._Shitmed.Body.Events; // Forge Change
 
 namespace Content.Server.Hands.Systems
 {
@@ -41,6 +43,7 @@ namespace Content.Server.Hands.Systems
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly PullingSystem _pullingSystem = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Forge Change
 
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -66,6 +69,8 @@ namespace Content.Server.Hands.Systems
             SubscribeLocalEvent<HandsComponent, ComponentGetState>(GetComponentState);
 
             SubscribeLocalEvent<HandsComponent, BeforeExplodeEvent>(OnExploded);
+            SubscribeLocalEvent<HandsComponent, BodyPartEnabledEvent>(HandleBodyPartEnabled); // Forge Change
+            SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // Forge Change
 
             SubscribeLocalEvent<HandsComponent, DropHandItemsEvent>(OnDropHandItems);
 
@@ -118,6 +123,43 @@ namespace Content.Server.Hands.Systems
 
             args.Handled = true; // no shove/stun.
         }
+
+        //Forge-Change start
+        private void TryAddHand(EntityUid uid, HandsComponent component, Entity<BodyPartComponent> part, string slot)
+        {
+            if (part.Comp is null
+                || part.Comp.PartType != BodyPartType.Hand)
+                return;
+
+            // If this annoys you, which it should.
+            // Ping Smugleaf.
+            var location = part.Comp.Symmetry switch
+            {
+                BodyPartSymmetry.None => HandLocation.Middle,
+                BodyPartSymmetry.Left => HandLocation.Left,
+                BodyPartSymmetry.Right => HandLocation.Right,
+                _ => throw new ArgumentOutOfRangeException(nameof(part.Comp.Symmetry))
+            };
+
+            if (part.Comp.Enabled
+                && _bodySystem.TryGetParentBodyPart(part, out var _, out var parentPartComp)
+                && parentPartComp.Enabled)
+                AddHand(uid, slot, location);
+        }
+
+        private void HandleBodyPartEnabled(EntityUid uid, HandsComponent component, ref BodyPartEnabledEvent args) =>
+            TryAddHand(uid, component, args.Part, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
+
+        private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args)
+        {
+            if (TerminatingOrDeleted(uid)
+                || args.Part.Comp is null
+                || args.Part.Comp.PartType != BodyPartType.Hand)
+                return;
+
+            RemoveHand(uid, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
+        }
+        // Forge-Change end
 
         private void HandleBodyPartAdded(EntityUid uid, HandsComponent component, ref BodyPartAddedEvent args)
         {

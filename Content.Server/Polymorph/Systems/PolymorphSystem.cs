@@ -23,6 +23,13 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+// Forge Change
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
+using System.Linq;
 
 namespace Content.Server.Polymorph.Systems;
 
@@ -46,6 +53,9 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    // Forge Deps
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly WoundSystem _wound = default!;
 
     private const string RevertPolymorphId = "ActionRevertPolymorph";
 
@@ -225,13 +235,37 @@ public sealed partial class PolymorphSystem : EntitySystem
             _container.Insert(child, cont);
 
         //Transfers all damage from the original to the new one
+        //Forge-Change start
         if (configuration.TransferDamage &&
-            TryComp<DamageableComponent>(child, out var damageParent) &&
+            TryComp<DamageableComponent>(child, out var damageChild) &&
             _mobThreshold.GetScaledDamage(uid, child, out var damage, out var woundableDamage) &&
             damage != null)
         {
-            _damageable.SetDamage(child, damageParent, damage);
+            if (TryComp<BodyComponent>(child, out var childBody)
+                && childBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
+                && _body.TryGetRootPart(child, out var rootPart, childBody))
+            {
+                var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
+                var count = woundables.Count();
+                foreach (var woundable in woundables)
+                {
+                    var target = _body.GetTargetBodyPart(woundable);
+
+                    if (woundableDamage is not null)
+                    {
+                        if (woundableDamage.TryGetValue(target, out var wounds))
+                            _damageable.SetDamage(woundable, woundable.Comp2, wounds);
+                    }
+                    else
+                    {
+                        _damageable.SetDamage(woundable, woundable.Comp2, damage / count);
+                    }
+                }
+
+            }
+            _damageable.SetDamage(child, damageChild, damage);
         }
+        // Forge-Change end
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
@@ -312,13 +346,37 @@ public sealed partial class PolymorphSystem : EntitySystem
         _transform.SetParent(parent, parentXform, uidXform.ParentUid);
         _transform.SetCoordinates(parent, parentXform, uidXform.Coordinates, uidXform.LocalRotation);
 
+        // Forge-Change start
         if (component.Configuration.TransferDamage &&
             TryComp<DamageableComponent>(parent, out var damageParent) &&
             _mobThreshold.GetScaledDamage(uid, parent, out var damage, out var woundableDamage) &&
             damage != null)
         {
+            if (TryComp<BodyComponent>(parent, out var parentBody)
+                && parentBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
+                && _body.TryGetRootPart(parent, out var rootPart, parentBody))
+            {
+                var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
+                var count = woundables.Count();
+                foreach (var woundable in woundables)
+                {
+                    var target = _body.GetTargetBodyPart(woundable);
+
+                    if (woundableDamage is not null)
+                    {
+                        if (woundableDamage.TryGetValue(target, out var wounds))
+                            _damageable.SetDamage(woundable, woundable.Comp2, wounds);
+                    }
+                    else
+                    {
+                        _damageable.SetDamage(woundable, woundable.Comp2, damage / count);
+                    }
+                }
+
+            }
             _damageable.SetDamage(parent, damageParent, damage);
         }
+        // Forge-Change end
 
         if (component.Configuration.Inventory == PolymorphInventoryChange.Transfer)
         {

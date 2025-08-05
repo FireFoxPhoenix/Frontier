@@ -162,7 +162,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         var targetXform = Transform(args.Target);
 
         // No cross-grid
-        if (targetXform.GridUid != args.Actor.Comp.GridUid)
+        if (targetXform.GridUid != args.Actor.Comp.GridUid) //Forge-Change
         {
             return;
         }

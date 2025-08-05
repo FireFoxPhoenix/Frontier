@@ -4,6 +4,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Robust.Shared.Utility;
+using Content.Shared.Silicons.StationAi; // Forge-Change
 
 namespace Content.Shared.DoAfter;
 
@@ -237,7 +238,8 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
                 return true;
         }
 
-        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target))
+        var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(args.User); // Forge Change
+        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target) && hasNoSpecificComponents) //Forge-Change
             return true;
 
 

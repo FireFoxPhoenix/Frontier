@@ -45,4 +45,7 @@ public sealed partial class KnockedDownComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public TimeSpan GetUpDoAfter = TimeSpan.FromSeconds(1);
+
+    [DataField, AutoNetworkedField]
+    public bool StandOnRemoval = true; // Forge Change
 }

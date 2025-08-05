@@ -21,6 +21,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._Shitmed.Humanoid.Events; // Forge Change
 
 namespace Content.Shared.Humanoid;
 
@@ -467,6 +468,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
 
+        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Forge-Change
         Dirty(uid, humanoid);
     }
 

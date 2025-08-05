@@ -14,6 +14,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Bed.Sleep; // Forge Change
 
 namespace Content.Server.Body.Systems
 {
@@ -195,8 +196,17 @@ namespace Content.Server.Body.Systems
                     // still remove reagents
                     if (TryComp<MobStateComponent>(solutionEntityUid.Value, out var state))
                     {
+                        // Forge Change Start
+
                         if (!proto.WorksOnTheDead && _mobStateSystem.IsDead(solutionEntityUid.Value, state))
                             continue;
+
+                        if (proto.WorksOnUnconscious == true &&
+                            (_mobStateSystem.IsCritical(solutionEntityUid.Value, state) ||
+                             HasComp<SleepingComponent>(solutionEntityUid.Value)))
+                            continue;
+
+                        // Forge Change End
                     }
 
                     var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;

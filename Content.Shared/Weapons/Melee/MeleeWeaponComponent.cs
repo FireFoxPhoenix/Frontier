@@ -150,6 +150,18 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool MustBeEquippedToUse = false;
+
+    // Forge change start
+    [DataField, AutoNetworkedField]
+    public float ClickPartDamageMultiplier = 1.00f;
+
+    /// <summary>
+    ///     Shitmed Change: Part damage is multiplied by this amount for heavy swings
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float HeavyPartDamageMultiplier = 0.75f;
+
+    // Forge Change End
 }
 
 /// <summary>

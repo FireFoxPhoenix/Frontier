@@ -33,7 +33,7 @@ public sealed class DamageOverlayUiController : UIController
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnPlayerAttach);
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<MobThresholdChecked>(OnThresholdCheck);
+        SubscribeNetworkEvent<MobThresholdChecked>(OnThresholdCheck); // Forge Change Networkevent
     }
 
     private void OnPlayerAttach(LocalPlayerAttachedEvent args)

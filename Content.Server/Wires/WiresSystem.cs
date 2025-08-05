@@ -16,6 +16,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Tag; // Forge Change
 
 namespace Content.Server.Wires;
 
@@ -28,6 +29,7 @@ public sealed class WiresSystem : SharedWiresSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ConstructionSystem _construction = default!;
+	[Dependency] private readonly TagSystem _tags = default!; // Forge Change
 
     // This is where all the wire layouts are stored.
     [ViewVariables] private readonly Dictionary<string, WireLayout> _layouts = new();
@@ -448,6 +450,15 @@ public sealed class WiresSystem : SharedWiresSystem
         {
             if (TryComp(args.User, out ActorComponent? actor))
             {
+                // forge Change Start
+                if (_tags.HasTag(args.Used, component.ShowWiresTag))
+                    component.ViewWires = true;
+                else
+                    component.ViewWires = false;
+
+                UpdateUserInterface(uid);
+                // Forge Change End
+
                 _uiSystem.OpenUi(uid, WiresUiKey.Key, actor.PlayerSession);
                 args.Handled = true;
             }
@@ -542,10 +553,27 @@ public sealed class WiresSystem : SharedWiresSystem
         var statuses = new List<(int position, object key, object value)>();
         foreach (var (key, value) in wires.Statuses)
         {
-            var valueCast = ((int position, StatusLightData? value)) value;
-            statuses.Add((valueCast.position, key, valueCast.value!));
-        }
+            // Forge Change Start
+            var tempValue = value;
+            var lightData = (((int, StatusLightData?)) tempValue);
+            if (lightData.Item2 != null && lightData.Item2 is StatusLightData data)
+            {
+                if (wires.ViewWires)
+                {
+                    var foundWires = wires.WiresList
+                        .Where(wire => wire.OriginalPosition == lightData.Item1)
+                        .ToList();
+                    if (foundWires.Any())
+                    {
+                        var wireLetters = string.Join(", ", foundWires.Select(wire => wire.Letter.ToString()));
+                        data.Text = $"{data.Text}({wireLetters})";
+                    }
+                }
 
+                statuses.Add((lightData.Item1, key, data));
+            }
+            // forge Change End
+        }
         statuses.Sort((a, b) => a.position.CompareTo(b.position));
 
         _uiSystem.SetUiState((uid, ui), WiresUiKey.Key, new WiresBoundUserInterfaceState(

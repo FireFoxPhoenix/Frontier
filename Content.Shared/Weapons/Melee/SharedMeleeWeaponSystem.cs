@@ -38,6 +38,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using ItemToggleMeleeWeaponComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleMeleeWeaponComponent;
+using Content.Shared._Shitmed.Weapons.Melee.Events; // Forge Change
+using Content.Shared.Hands.EntitySystems; // Forge Change
 
 namespace Content.Shared.Weapons.Melee;
 
@@ -411,6 +413,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         // Do this AFTER attack so it doesn't spam every tick
         var ev = new AttemptMeleeEvent();
         RaiseLocalEvent(weaponUid, ref ev);
+        RaiseLocalEvent(user, ref ev); // Forge Change
 
         if (ev.Cancelled)
         {
@@ -526,7 +529,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(target.Value, attackedEvent);
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
-        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin:user, ignoreResistances:resistanceBypass);
+        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, partMultiplier: component.ClickPartDamageMultiplier); // Forge Change
 
         if (damageResult is {Empty: false})
         {
@@ -680,8 +683,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             var attackedEvent = new AttackedEvent(meleeUid, user, GetCoordinates(ev.Coordinates));
             RaiseLocalEvent(entity, attackedEvent);
             var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
-
-            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin:user);
+            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin: user, partMultiplier: component.HeavyPartDamageMultiplier); // Forge Change
 
             if (damageResult != null && damageResult.GetTotal() > FixedPoint2.Zero)
             {
