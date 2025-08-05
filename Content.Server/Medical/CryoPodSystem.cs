@@ -215,6 +215,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
             null,
             null,
             null,
+            null, // Forge-Change
             null // Frontier
         ));
     }

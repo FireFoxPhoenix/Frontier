@@ -336,4 +336,128 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 break;
         }
     }
+    private void FetchBodyData(EntityUid target,
+        BodyComponent body,
+        out Dictionary<NetEntity, List<WoundableTraumaData>> traumas,
+        out Dictionary<NetEntity, FixedPoint2> pain,
+        out Dictionary<TargetBodyPart, bool> bleeding)
+    {
+        traumas = new();
+        pain = new();
+        bleeding = new();
+
+        if (body.RootContainer.ContainedEntity is not { } rootPart)
+            return;
+
+        foreach (var (woundable, component) in _woundSystem.GetAllWoundableChildren(rootPart))
+        {
+            traumas.Add(GetNetEntity(woundable), FetchTraumaData(woundable, component));
+            pain.Add(GetNetEntity(woundable), FetchPainData(woundable, component));
+            bleeding.Add(_bodySystem.GetTargetBodyPart(woundable), component.Bleeds > 0);
+        }
+    }
+
+    private Dictionary<TargetBodyPart, bool> FetchBleedData(BodyComponent body)
+    {
+        var bleeding = new Dictionary<TargetBodyPart, bool>();
+
+        if (body.RootContainer.ContainedEntity is not { } rootPart)
+            return bleeding;
+
+        foreach (var (woundable, component) in _woundSystem.GetAllWoundableChildren(rootPart))
+            bleeding.Add(_bodySystem.GetTargetBodyPart(woundable), component.Bleeds > 0);
+
+        return bleeding;
+    }
+
+    private List<WoundableTraumaData> FetchTraumaData(EntityUid target,
+        WoundableComponent woundable)
+    {
+        var traumasList = new List<WoundableTraumaData>();
+
+        if (_trauma.TryGetWoundableTrauma(target, out var traumasFound))
+        {
+            foreach (var trauma in traumasFound)
+            {
+                if (trauma.Comp.TraumaType == TraumaType.BoneDamage
+                    && trauma.Comp.TraumaTarget is { } boneWoundable
+                    && TryComp(boneWoundable, out BoneComponent? boneComp))
+                {
+                    traumasList.Add(new WoundableTraumaData(ToPrettyString(target),
+                        trauma.Comp.TraumaType.ToString(), trauma.Comp.TraumaSeverity, boneComp.BoneSeverity.ToString(), trauma.Comp.TargetType));
+
+                    continue;
+                }
+
+                traumasList.Add(new WoundableTraumaData(ToPrettyString(trauma),
+                        trauma.Comp.TraumaType.ToString(), trauma.Comp.TraumaSeverity, targetType: trauma.Comp.TargetType));
+            }
+        }
+
+        return traumasList;
+    }
+
+    private FixedPoint2 FetchPainData(EntityUid target,
+        WoundableComponent woundable)
+    {
+        var pain = FixedPoint2.Zero;
+
+        if (!TryComp<NerveComponent>(target, out var nerve))
+            return pain;
+
+        return nerve.PainFeels;
+    }
+
+    private Dictionary<NetEntity, OrganTraumaData> FetchOrganData(EntityUid target)
+    {
+        var organs = new Dictionary<NetEntity, OrganTraumaData>();
+        if (!TryComp<BodyComponent>(target, out var body))
+            return organs;
+
+        foreach (var (organId, organComp) in _bodySystem.GetBodyOrgans(target))
+        {
+            organs.Add(GetNetEntity(organId), new OrganTraumaData(organComp.OrganIntegrity,
+                organComp.IntegrityCap,
+                organComp.OrganSeverity,
+                organComp.IntegrityModifiers
+                    .Select(x => (x.Key.Item1, x.Value))
+                    .ToList()));
+        }
+
+        return organs;
+    }
+
+    private Dictionary<NetEntity, Solution> FetchChemicalData(EntityUid target)
+    {
+        var solutionsList = new Dictionary<NetEntity, Solution>();
+
+        if (!TryComp(target, out SolutionContainerManagerComponent? container) || container.Containers.Count == 0)
+            return solutionsList;
+
+        foreach (var (name, solution) in _solutionContainerSystem.EnumerateSolutions((target, container)))
+        {
+            if (name is null
+                || name == BloodstreamComponent.DefaultBloodTemporarySolutionName
+                || name == "print" // I hate this so fucking much.
+                || !TryGetNetEntity(solution, out var netSolution))
+                continue;
+
+            solutionsList.Add(netSolution.Value, solution.Comp.Solution);
+        }
+
+        if (TryComp<BodyComponent>(target, out var body)
+            && _bodySystem.TryGetBodyOrganEntityComps<StomachComponent>((target, body), out var stomachs))
+        {
+            foreach (var stomach in stomachs)
+            {
+                if (stomach.Comp1.Solution is null
+                    || !TryGetNetEntity(stomach.Comp1.Solution, out var netSolution))
+                    continue;
+
+                solutionsList.Add(netSolution.Value, stomach.Comp1.Solution.Value.Comp.Solution); // This is horrible.
+            }
+        }
+
+        return solutionsList;
+    }
 }

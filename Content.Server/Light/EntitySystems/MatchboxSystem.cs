@@ -20,7 +20,7 @@ namespace Content.Server.Light.EntitySystems
         {
             if (!args.Handled
                 && EntityManager.TryGetComponent(args.Used, out MatchstickComponent? matchstick)
-                && matchstick.CurrentState == SmokableState.Unlit)
+                && matchstick.State == SmokableState.Unlit)
             {
                 _stickSystem.Ignite((args.Used, matchstick), args.User);
                 args.Handled = true;

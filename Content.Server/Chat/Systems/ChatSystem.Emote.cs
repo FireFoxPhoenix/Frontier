@@ -55,6 +55,7 @@ public partial class ChatSystem
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
     /// <param name="forceEmote">Bypasses whitelist/blacklist/availibility checks for if the entity can use this emote</param>
+    //Forge-Change 
     public void TryEmoteWithChat(
         EntityUid source,
         string emoteId,
@@ -62,12 +63,14 @@ public partial class ChatSystem
         bool hideLog = false,
         string? nameOverride = null,
         bool ignoreActionBlocker = false,
-        bool forceEmote = false
+        bool forceEmote = false,
+        bool voluntary = false
         )
     {
         if (!_prototypeManager.TryIndex<EmotePrototype>(emoteId, out var proto))
             return;
-        TryEmoteWithChat(source, proto, range, hideLog: hideLog, nameOverride, ignoreActionBlocker: ignoreActionBlocker, forceEmote: forceEmote);
+            
+        TryEmoteWithChat(source, proto, range, hideLog: hideLog, nameOverride, ignoreActionBlocker: ignoreActionBlocker, forceEmote: forceEmote, voluntary: voluntary);
     }
 
     /// <summary>
@@ -87,7 +90,8 @@ public partial class ChatSystem
         bool hideLog = false,
         string? nameOverride = null,
         bool ignoreActionBlocker = false,
-        bool forceEmote = false
+        bool forceEmote = false,
+        bool voluntary = false // Forge-Change
         )
     {
         if (!forceEmote && !AllowedToUseEmote(source, emote))
@@ -102,29 +106,31 @@ public partial class ChatSystem
         }
 
         // do the rest of emote event logic here
-        TryEmoteWithoutChat(source, emote, ignoreActionBlocker);
+        TryEmoteWithoutChat(source, emote, ignoreActionBlocker, voluntary: voluntary);
     }
 
     /// <summary>
     ///     Makes selected entity to emote using <see cref="EmotePrototype"/> without sending any messages to chat.
     /// </summary>
-    public void TryEmoteWithoutChat(EntityUid uid, string emoteId, bool ignoreActionBlocker = false)
+    //Forge-Change
+    public void TryEmoteWithoutChat(EntityUid uid, string emoteId, bool ignoreActionBlocker = false, bool voluntary = false)
     {
         if (!_prototypeManager.TryIndex<EmotePrototype>(emoteId, out var proto))
             return;
 
-        TryEmoteWithoutChat(uid, proto, ignoreActionBlocker);
+        TryEmoteWithoutChat(uid, proto, ignoreActionBlocker, voluntary);
     }
 
     /// <summary>
     ///     Makes selected entity to emote using <see cref="EmotePrototype"/> without sending any messages to chat.
     /// </summary>
-    public void TryEmoteWithoutChat(EntityUid uid, EmotePrototype proto, bool ignoreActionBlocker = false)
+    // Forge-Change
+    public void TryEmoteWithoutChat(EntityUid uid, EmotePrototype proto, bool ignoreActionBlocker = false, bool voluntary = false)
     {
         if (!_actionBlocker.CanEmote(uid) && !ignoreActionBlocker)
             return;
 
-        InvokeEmoteEvent(uid, proto);
+        InvokeEmoteEvent(uid, proto, voluntary);
     }
 
     /// <summary>
@@ -176,7 +182,7 @@ public partial class ChatSystem
             if (!AllowedToUseEmote(uid, emote))
                 continue;
 
-            InvokeEmoteEvent(uid, emote);
+            InvokeEmoteEvent(uid, emote, voluntary: true); //Forge-Change
             validEmote = true; // DeltaV
             break; // Frontier: break on first emote (avoid playing multiple sounds at once)
         }
@@ -232,10 +238,10 @@ public partial class ChatSystem
     }
 
 
-    private void InvokeEmoteEvent(EntityUid uid, EmotePrototype proto)
+    private void InvokeEmoteEvent(EntityUid uid, EmotePrototype proto, bool voluntary = false) //Forge-Change
     {
-        var ev = new EmoteEvent(proto);
-        RaiseLocalEvent(uid, ref ev);
+        var ev = new EmoteEvent(proto, voluntary);
+        RaiseLocalEvent(uid, ref ev, true); //Forge-Change
     }
 }
 
@@ -248,10 +254,12 @@ public struct EmoteEvent
 {
     public bool Handled;
     public readonly EmotePrototype Emote;
+    public bool Voluntary; //Forge-Change
 
     public EmoteEvent(EmotePrototype emote)
     {
         Emote = emote;
         Handled = false;
+        Voluntary = voluntary; //Forge-Change
     }
 }

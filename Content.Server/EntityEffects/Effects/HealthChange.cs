@@ -38,8 +38,28 @@ namespace Content.Server.EntityEffects.Effects
         public bool ScaleByQuantity;
 
         [DataField]
+        [JsonPropertyName("scaleByTemperature")]
+        public TemperatureScaling? ScaleByTemperature; // Forge-Change
+
+        [DataField]
         [JsonPropertyName("ignoreResistances")]
         public bool IgnoreResistances = true;
+
+        [DataField]
+        [JsonPropertyName("splitDamage")]
+        public SplitDamageBehavior SplitDamage = SplitDamageBehavior.SplitEnsureAllOrganic; // Forge-Change
+
+        [DataField]
+        [JsonPropertyName("useTargeting")]
+        public bool UseTargeting = true; // Forge-Change
+
+        [DataField]
+        [JsonPropertyName("targetPart")]
+        public TargetBodyPart TargetPart = TargetBodyPart.All; // Forge-Change
+
+        [DataField]
+        [JsonPropertyName("ignoreBlockers")]
+        public bool IgnoreBlockers = true; // Forge-Change
 
         protected override string ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         {
