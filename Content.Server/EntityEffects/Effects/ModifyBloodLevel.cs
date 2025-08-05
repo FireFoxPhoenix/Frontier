@@ -35,8 +35,8 @@ public sealed partial class ModifyBloodLevel : EntityEffect
             sys.TryModifyBloodLevel(args.TargetEntity, amt, blood);
 
             //Forge-Change
-            var woundsSys = args.EntityManager.System<WoundSystem>();
-            woundsSys.TryHealMostSevereBleedingWoundables(args.TargetEntity, -amt, out _);
+            //var woundsSys = args.EntityManager.System<WoundSystem>();
+            //woundsSys.TryHealMostSevereBleedingWoundables(args.TargetEntity, -amt, out _);
         }
     }
 }
