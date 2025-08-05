@@ -2,6 +2,7 @@
 using Content.Server.Body.Systems;
 using Content.Server.Medical.Components;
 using Content.Shared.Medical.Cryogenics;
+using Content.Shared.Bed.Sleep; // Forge-Change
 
 namespace Content.Server.Medical
 {
