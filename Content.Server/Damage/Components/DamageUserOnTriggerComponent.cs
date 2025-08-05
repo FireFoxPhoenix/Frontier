@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared._Shitmed.Targeting; // Forge-Change
 
 namespace Content.Server.Damage.Components;
 
@@ -9,4 +10,7 @@ public sealed partial class DamageUserOnTriggerComponent : Component
 
     [DataField("damage", required: true)]
     public DamageSpecifier Damage = default!;
+
+    [DataField]
+    public TargetBodyPart? TargetPart = TargetBodyPart.Feet; // Forge-Change
 }

@@ -28,12 +28,13 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Smoking;
-using Content.Shared.Smoking.Components; // Shitmed Change
-using Content.Shared.Smoking.Systems; // Shitmed Change
+//using Content.Shared.Smoking.Components; // Forge Change
+using Content.Shared.IgnitionSource.Components; // Forge-Change
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.IgnitionSource.Systems;
 
 namespace Content.Server.Light.EntitySystems
 {
@@ -67,7 +68,7 @@ namespace Content.Server.Light.EntitySystems
 
             foreach (var match in _litMatches)
             {
-                if (match.Comp.CurrentState != SmokableState.Lit || Paused(match) || match.Comp.Deleted)
+                if (match.Comp.State != SmokableState.Lit || Paused(match) || match.Comp.Deleted)
                     continue;
 
                 var xform = Transform(match);
@@ -83,7 +84,7 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnInteractUsing(Entity<MatchstickComponent> ent, ref InteractUsingEvent args)
         {
-            if (args.Handled || ent.Comp.CurrentState != SmokableState.Unlit)
+            if (args.Handled || ent.Comp.State != SmokableState.Unlit)
                 return;
 
             var isHotEvent = new IsHotEvent();
@@ -98,7 +99,7 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnIsHotEvent(EntityUid uid, MatchstickComponent component, IsHotEvent args)
         {
-            args.IsHot = component.CurrentState == SmokableState.Lit;
+            args.IsHot = component.State == SmokableState.Lit;
         }
 
         public void Ignite(Entity<MatchstickComponent> matchstick, EntityUid user)
@@ -130,12 +131,12 @@ namespace Content.Server.Light.EntitySystems
 
             if (_lights.TryGetLight(uid, out var pointLightComponent))
             {
-                _lights.SetEnabled(uid, component.CurrentState == SmokableState.Lit, pointLightComponent);
+                _lights.SetEnabled(uid, component.State == SmokableState.Lit, pointLightComponent);
             }
 
             if (EntityManager.TryGetComponent(uid, out ItemComponent? item))
             {
-                switch (component.CurrentState)
+                switch (component.State)
                 {
                     case SmokableState.Lit:
                         _item.SetHeldPrefix(uid, "lit", component: item);
@@ -148,7 +149,7 @@ namespace Content.Server.Light.EntitySystems
 
             if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
             {
-                _appearance.SetData(uid, SmokingVisuals.Smoking, component.CurrentState, appearance);
+                _appearance.SetData(uid, SmokingVisuals.Smoking, component.State, appearance);
             }
 
 

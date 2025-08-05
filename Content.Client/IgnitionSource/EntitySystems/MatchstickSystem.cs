@@ -7,7 +7,8 @@
 
 // Shitmed Change Start
 
-using Content.Shared.Smoking.Systems;
+using Content.Shared.Smoking;
+using Content.Shared.IgnitionSource.Systems;
 
 namespace Content.Client.Smoking;
 

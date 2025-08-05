@@ -1,8 +1,9 @@
 using Content.Shared.IgnitionSource.Components;
+using Content.Shared.Smoking;
 
-namespace Content.Shared.Smoking.Systems;
+namespace Content.Shared.IgnitionSource.Systems;
 
-public abstract class MatchstickSystem : EntitySystem
+public abstract class SharedMatchstickSystem : EntitySystem
 {
     public virtual bool SetState(Entity<MatchstickComponent> ent, SmokableState state)
     {

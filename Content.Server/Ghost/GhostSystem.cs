@@ -48,8 +48,8 @@ using Content.Shared.Body.Systems;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared._EinsteinEngines.Silicon.Components;
 using Robust.Shared.Utility;
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Server.Ghost
 {
@@ -620,7 +620,7 @@ namespace Content.Server.Ghost
                     }
 
                     // Forge change start
-                    var damageType = HasComp<SiliconComponent>(playerEntity)
+                    var damageType = HasComp<BorgChassisComponent>(playerEntity)
                         ? "Ion"
                         : "Asphyxiation";
                     DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>(damageType), dealtDamage);

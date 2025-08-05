@@ -4,7 +4,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.OnHit;
 using Content.Shared.Actions;
