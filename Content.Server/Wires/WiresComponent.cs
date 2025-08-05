@@ -1,5 +1,6 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Content.Shared.Tag; //Forge-Change
 
 namespace Content.Server.Wires;
 
@@ -67,4 +68,12 @@ public sealed partial class WiresComponent : Component
 
     [DataField]
     public SoundSpecifier PulseSound = new SoundPathSpecifier("/Audio/Effects/multitool_pulse.ogg");
+   
+    // Forge Change
+    [ViewVariables]
+    public bool ViewWires = false;
+
+    [DataField]
+    public ProtoId<TagPrototype> ShowWiresTag = "ShowWires";
+    // Forge Change End
 }
