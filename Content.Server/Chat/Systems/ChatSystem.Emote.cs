@@ -256,7 +256,7 @@ public struct EmoteEvent
     public readonly EmotePrototype Emote;
     public bool Voluntary; //Forge-Change
 
-    public EmoteEvent(EmotePrototype emote)
+    public EmoteEvent(EmotePrototype emote, bool voluntary = true) //Forge-Change 
     {
         Emote = emote;
         Handled = false;
