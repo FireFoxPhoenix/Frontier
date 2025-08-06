@@ -74,8 +74,8 @@
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
   - type: ActivatableUI
-  - type: Targeting # Shitmed Change
     key: enum.BorgUiKey.Key
+  - type: Targeting # Shitmed Change
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
