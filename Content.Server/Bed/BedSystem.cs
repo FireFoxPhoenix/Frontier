@@ -20,7 +20,7 @@ using Content.Shared._Shitmed.Damage; // Forge Change
 
 namespace Content.Server.Bed
 {
-    public sealed class BedSystem : EntitySystem
+    public sealed class BedSystem : SharedBedSystem // Forge-Change
     {
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly ActionsSystem _actionsSystem = default!;

@@ -60,7 +60,7 @@ public sealed class DamageOverlayUiController : UIController
         UpdateOverlays(args.Target, args.Component);
     }
 
-    private void OnThresholdCheck(ref MobThresholdChecked args)
+    private void OnThresholdCheck(MobThresholdChecked args, EntitySessionEventArgs session) // Forge-Change
     {
         if (!EntityManager.TryGetEntity(args.Uid, out var entity) // Forge-Change
             || !_playerManager.LocalEntity.Equals(entity))

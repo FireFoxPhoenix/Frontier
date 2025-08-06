@@ -29,6 +29,8 @@ using Content.Shared.Power;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
+using Content.Shared.Actions; // Forge Change
+using Content.Shared.Bed.Sleep; // Forge Change
 using Robust.Shared.Timing;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
@@ -49,7 +51,9 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!; // Forge-Change
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
+    [Dependency] private readonly SleepingSystem _sleepingSystem = default!; // Forge-Change
 
     // Frontier: keep a list of cryogenics reagents. The pod will only filter these out from the provided solution.
     private static readonly string[] CryogenicsReagents = ["Cryoxadone", "Aloxadone", "Doxarubixadone", "Opporozidone", "Necrosol", "Traumoxadone", "Stelloxadone"];
@@ -252,6 +256,8 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
             return;
         }
 
+        var insidePod = entity.Comp.BodyContainer.ContainedEntity; // Forge Change
+
         if (args.Powered)
         {
             EnsureComp<ActiveCryoPodComponent>(entity);
@@ -259,6 +265,8 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         else
         {
             RemComp<ActiveCryoPodComponent>(entity);
+            if (insidePod is { } patient) // Forge Change
+                _sleepingSystem.TryWaking(patient);
             _uiSystem.CloseUi(entity.Owner, HealthAnalyzerUiKey.Key);
         }
         UpdateAppearance(entity.Owner, entity.Comp);
