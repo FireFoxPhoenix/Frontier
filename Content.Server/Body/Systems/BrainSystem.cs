@@ -14,6 +14,7 @@ namespace Content.Server.Body.Systems
     public sealed class BrainSystem : EntitySystem
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Forge Change
 
         public override void Initialize()
         {
