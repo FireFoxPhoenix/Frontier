@@ -4,12 +4,18 @@
   abstract: true
   components:
   - type: Organ
+    intCap: 13
+    integrity: 13
+    integrityThresholds:
+      Normal: 13
+      Damaged: 6
+      Destroyed: 0
   - type: Food
 #    quality: Nasty # Frontier
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: StaticPrice
-    price: 5
+    price: 50
   - type: SolutionContainerManager
     solutions:
       food:
@@ -20,9 +26,10 @@
   - type: FlavorProfile
     flavors:
       - chicken # everything kinda tastes like chicken
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: BaseAnimalOrgan
@@ -42,6 +49,13 @@
     - state: lung-l
     - state: lung-r
   - type: Organ
+    slotId: lungs # Shitmed
+    intCap: 17 # animal lungs are less tuff than human's one
+    integrity: 17
+    integrityThresholds:
+      Normal: 17
+      Damaged: 8
+      Destroyed: 0
   - type: Lung
   - type: Metabolizer
     removeEmpty: true
@@ -61,6 +75,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
   - type: Item
     size: Small
     heldPrefix: lungs
@@ -74,6 +93,13 @@
   - type: Sprite
     state: stomach
   - type: Organ
+    slotId: stomach # Shitmed
+    intCap: 28
+    integrity: 28
+    integrityThresholds:
+      Normal: 28
+      Damaged: 16
+      Destroyed: 0
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -85,11 +111,16 @@
           Quantity: 5
   - type: Stomach
   - type: Metabolizer
-    maxReagents: 3
+    maxPoisonsProcessable: 3
     metabolizerTypes: [ Animal ]
     groups:
     - id: Food
     - id: Drink
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
   - type: Item
     size: Small
     heldPrefix: stomach
@@ -117,12 +148,25 @@
   - type: Sprite
     state: liver
   - type: Organ
+    slotId: liver # Shitmed
+    intCap: 17
+    integrity: 17
+    integrityThresholds:
+      Normal: 17
+      Damaged: 8
+      Destroyed: 0
   - type: Metabolizer
-    maxReagents: 1
+    maxPoisonsProcessable: 1
     metabolizerTypes: [ Animal ]
     groups:
     - id: Alcohol
       rateModifier: 0.1
+  - type: Liver # Shitmed
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
   - type: Item
     size: Small
     heldPrefix: liver
@@ -136,14 +180,27 @@
   - type: Sprite
     state: heart-on
   - type: Organ
+    slotId: heart # Shitmed
+    intCap: 14
+    integrity: 14
+    integrityThresholds:
+      Normal: 14
+      Damaged: 6
+      Destroyed: 0
   - type: Metabolizer
-    maxReagents: 2
+    maxPoisonsProcessable: 2
     metabolizerTypes: [ Animal ]
     groups:
     - id: Medicine
     - id: Cryogenic # Frontier
     - id: Poison
     - id: Narcotic
+  - type: Heart # Shitmed
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
   - type: Item
     size: Small
     heldPrefix: heart
@@ -159,10 +216,22 @@
     - state: kidney-l
     - state: kidney-r
   - type: Organ
+    slotId: kidneys # Shitmed
+    intCap: 17
+    integrity: 17
+    integrityThresholds:
+      Normal: 17
+      Damaged: 8
+      Destroyed: 0
   - type: Metabolizer
-    maxReagents: 5
+    maxPoisonsProcessable: 5
     metabolizerTypes: [ Animal ]
     removeEmpty: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
   - type: Item
     size: Small
     heldPrefix: kidneys

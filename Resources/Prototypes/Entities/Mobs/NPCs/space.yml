@@ -75,6 +75,13 @@
   description: It looks friendly. Why don't you give it a hug?
   categories: [ HideSpawnMenu ] # Frontier
   components:
+  - type: Body # Shitmed Change
+    prototype: SpaceBear
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/bear.rsi
@@ -127,6 +134,12 @@
   description: It looks friendly. Why don't you give it a hug?
   categories: [ HideSpawnMenu ] # Frontier
   components:
+  - type: Body # Shitmed Change
+    prototype: SpaceKangaroo
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/kangaroo.rsi
@@ -190,6 +203,14 @@
   description: It's so glowing, it looks dangerous.
   categories: [ HideSpawnMenu ] # Frontier
   components:
+  - type: VentCrawler # goobstation - Ventcrawl
+  - type: Body # Shitmed Change
+    prototype: SpaceSpider
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/spacespider.rsi
@@ -290,89 +311,88 @@
   description: Long fangs and a glowing hood, and the alluring look begs to come closer.
   categories: [ HideSpawnMenu ] # Frontier
   components:
-    - type: Sprite
-      drawdepth: Mobs
-      sprite: Mobs/Animals/spacecobra.rsi
-      layers:
-        - map: [ "enum.DamageStateVisualLayers.Base" ]
-          state: spacecobra
-        - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-          state: glow
-          shader: unshaded
-    - type: FootstepModifier
-      footstepSoundCollection:
-        collection: FootstepSnake
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        100: Dead
-    - type: Stamina
-      critThreshold: 150
-    - type: DamageStateVisuals
-      states:
-        Alive:
-          Base: spacecobra
-          BaseUnshaded: glow
-        Dead:
-          Base: dead_spacecobra
-    - type: Butcherable
-      spawned:
-        - id: FoodMeatSnake
-          amount: 2
-        - id: UraniumOre1
-          amount: 1
-        - id: ClothingShoesSnakeskinBoots
-          amount: 1
-          prob: 0.3
-    - type: Bloodstream
-      bloodMaxVolume: 200
-      bloodReagent: Cryoxadone
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 0.40
-          density: 120
-          mask:
-          - MobMask
-          layer:
-          - MobLayer
-    - type: MeleeWeapon
-      hidden: true
-      soundHit:
-        path: /Audio/Effects/bite.ogg
-      angle: 0
-      animation: WeaponArcBite
-      damage:
-        types:
-          Piercing: 6
-          Poison: 4
-    - type: SolutionContainerManager
-      solutions:
-        melee:
-          reagents:
-          - ReagentId: NorepinephricAcid
-            Quantity: 90
-    - type: MeleeChemicalInjector
-      solution: melee
-      transferAmount: 6
-    - type: ReplacementAccent
-      accent: xeno
-    - type: InteractionPopup
-      successChance: 0.2
-      interactSuccessString: petting-success-snake
-      interactFailureString: petting-failure-generic
-    - type: PointLight
-      radius: 1.1
-      energy: 1.5
-      color: "#4faffb"
-    - type: Stealth
-      enabledOnDeath: false
-      maxVisibility: 1.2
-    - type: StealthOnMove
-      passiveVisibilityRate: -0.25
-      movementVisibilityRate: 0.25
+  - type: Body # Shitmed Change
+    prototype: SpaceCobra
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/spacecobra.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: spacecobra
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: glow
+        shader: unshaded
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSnake
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Stamina
+    critThreshold: 150
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: spacecobra
+        BaseUnshaded: glow
+      Dead:
+        Base: dead_spacecobra
+  - type: Butcherable
+    spawned:
+      - id: FoodMeatSnake
+        amount: 2
+      - id: UraniumOre1
+        amount: 1
+      - id: ClothingShoesSnakeskinBoots
+        amount: 1
+        prob: 0.3
+  - type: Bloodstream
+    bloodMaxVolume: 200
+    bloodReagent: Cryoxadone
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 120
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 6
+        Poison: 4
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: NorepinephricAcid
+          Quantity: 90
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 6
+  - type: InteractionPopup
+    successChance: 0.2
+    interactSuccessString: petting-success-snake
+    interactFailureString: petting-failure-generic
+  - type: PointLight
+    radius: 1.1
+    energy: 1.5
+    color: "#4faffb"
 
 - type: entity
   id: MobCobraSpaceSalvage

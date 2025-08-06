@@ -1,4 +1,13 @@
 - type: entity
+  id: BaseTorso
+  name: "torso"
+  parent: BasePart
+  abstract: true
+  components:
+  - type: BodyPart
+    partType: Torso
+
+- type: entity
   abstract: true
   parent: BaseItem
   id: BasePartInorganic

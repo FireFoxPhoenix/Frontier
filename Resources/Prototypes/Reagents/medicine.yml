@@ -188,6 +188,10 @@
           - !type:Temperature
             # this is a little arbitrary but they gotta be pretty cold
             max: 213.0
+          scaleByTemperature: # Shitmed Change
+            min: 100.0
+            max: 213.0
+            scale: 1.6
           damage:
           # todo scale with temp like SS13
             groups:
@@ -212,6 +216,10 @@
           conditions:
           - !type:Temperature
             max: 213.0
+          scaleByTemperature: # Shitmed Change
+            min: 100.0
+            max: 213.0
+            scale: 1.6
           damage:
             types:
              Cellular: -4 # Frontier: -2<-4
@@ -1255,7 +1263,11 @@
           conditions:
           - !type:Temperature
             max: 213.0
+          scaleByTemperature: # Shitmed Change
           damage:
+            min: 100.0
+            max: 213.0
+            scale: 1.6
             groups:
               Brute: -4
               Burn: -5
@@ -1278,6 +1290,10 @@
         conditions:
         - !type:Temperature
           max: 213.0
+        scaleByTemperature: # Shitmed Change
+          min: 100.0
+          max: 213.0
+          scale: 1.6
         damage:
           types:
             Heat: -3.0

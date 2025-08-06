@@ -377,6 +377,7 @@
     - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled
 
 # No hardsuit locker
 - type: entity
@@ -420,3 +421,4 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+

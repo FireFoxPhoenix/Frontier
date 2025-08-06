@@ -53,6 +53,13 @@
     fireStacks: -4
   - type: MercenaryBountyItem # Corvax-Frontier
     id: FireAxe
+  - type: Scalpel # Shitmed
+    speed: 0.3
+  - type: BoneSaw # Shitmed
+    speed: 0.5
+  - type: SurgeryTool # Shitmed
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
 
 - type: entity
   id: FireAxeFlaming

@@ -139,7 +139,9 @@
     contents:
       - id: HeadHuman
         amount: 1
-      - id: TorsoHuman
+      - id: ChestHuman
+        amount: 1
+      - id: GroinHuman # Shitmed Change - more parts!!!!11!!!
         amount: 1
       - id: LeftArmHuman
         amount: 1
@@ -159,40 +161,41 @@
         amount: 1
   - type: Storage
     grid:
-    - 0,0,4,3
+    - 0,0,5,3 # Shitmed Change - more parts!!!!11!!!
     whitelist:
       components:
         - BodyPart
 
-- type: entity
-  name: Build-a-Buddy kit
-  suffix: Goblin
-  parent: BoxBuildABuddyHuman
-  id: BoxBuildABuddyGoblin
-  description: "\"Greta the Goblin\" Build-a-Buddy kit. Some assembly required."
-  components:
-  - type: StorageFill
-    contents:
-      - id: HeadGoblin
-        amount: 1
-      - id: TorsoGoblin
-        amount: 1
-      - id: LeftArmGoblin
-        amount: 1
-      - id: RightArmGoblin
-        amount: 1
-      - id: LeftHandGoblin
-        amount: 1
-      - id: RightHandGoblin
-        amount: 1
-      - id: LeftLegGoblin
-        amount: 1
-      - id: RightLegGoblin
-        amount: 1
-      - id: LeftFootGoblin
-        amount: 1
-      - id: RightFootGoblin
-        amount: 1
+# DeltaV - Goblins Aren't Real
+#- type: entity
+#  name: Build-a-Buddy kit
+#  suffix: Goblin
+#  parent: BoxBuildABuddyHuman
+#  id: BoxBuildABuddyGoblin
+#  description: "\"Greta the Goblin\" Build-a-Buddy kit. Some assembly required."
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: HeadGoblin
+#        amount: 1
+#      - id: TorsoGoblin
+#        amount: 1
+#      - id: LeftArmGoblin
+#        amount: 1
+#      - id: RightArmGoblin
+#        amount: 1
+#      - id: LeftHandGoblin
+#        amount: 1
+#      - id: RightHandGoblin
+#        amount: 1
+#      - id: LeftLegGoblin
+#        amount: 1
+#      - id: RightLegGoblin
+#        amount: 1
+#      - id: LeftFootGoblin
+#        amount: 1
+#      - id: RightFootGoblin
+#        amount: 1
 
 - type: entity
   name: Build-a-Buddy kit
@@ -205,7 +208,9 @@
     contents:
       - id: HeadReptilian
         amount: 1
-      - id: TorsoReptilian
+      - id: ChestReptilian
+        amount: 1
+      - id: GroinReptilian # Shitmed Change - more parts!!!!11!!!
         amount: 1
       - id: LeftArmReptilian
         amount: 1
@@ -235,7 +240,9 @@
     contents:
       - id: HeadSlime
         amount: 1
-      - id: TorsoSlime
+      - id: ChestSlime
+        amount: 1
+      - id: GroinSlime # Shitmed Change - more parts!!!!11!!!
         amount: 1
       - id: LeftArmSlime
         amount: 1
@@ -265,7 +272,9 @@
     contents:
       - id: HeadVulpkanin
         amount: 1
-      - id: TorsoVulpkanin
+      - id: ChestVulpkanin
+        amount: 1
+      - id: GroinVulpkanin # Shitmed Change - more parts!!!!11!!!
         amount: 1
       - id: LeftArmVulpkanin
         amount: 1

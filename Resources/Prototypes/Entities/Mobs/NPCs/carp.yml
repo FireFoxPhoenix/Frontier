@@ -24,6 +24,7 @@
         state: alive
     - type: CombatMode
     - type: Physics
+    - type: Body # Shitmed: Special carp organs
     - type: Fixtures
       fixtures:
         fix1:

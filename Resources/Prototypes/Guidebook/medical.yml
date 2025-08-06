@@ -10,6 +10,8 @@
   - Cryogenics # Note: Frontier changes inside
   - MedicalBounties # Frontier
   - Paramedic # corvax frontier
+  - Cryogenics
+  - Surgery # Shitmed Change
 
 - type: guideEntry
   id: Medical Doctor
