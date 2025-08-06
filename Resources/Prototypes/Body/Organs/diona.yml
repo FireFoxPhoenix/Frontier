@@ -273,7 +273,6 @@
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphBrain
-  - type: VentCrawler # goob
 
 - type: entity
   id: OrganDionaNymphStomach

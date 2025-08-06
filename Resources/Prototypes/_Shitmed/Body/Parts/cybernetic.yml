@@ -240,15 +240,9 @@
   parent: LeftHandCybernetic
   name: D.E.X left hand
   description: A cybernetic left hand that allows its wearer to interact faster.
-  components:
-  - type: DoAfterDelayMultiplier
-    multiplier: 0.8
 
 - type: entity
   id: DexRightHand
   parent: RightHandCybernetic
   name: D.E.X right hand
   description: A cybernetic right hand that allows its wearer to interact faster.
-  components:
-  - type: DoAfterDelayMultiplier
-    multiplier: 0.8

@@ -9,6 +9,7 @@ namespace Content.Shared.Humanoid
         {
             return layer switch
             {
+                HumanoidVisualLayers.Groin => true, // Forge-Change
                 HumanoidVisualLayers.Chest => true,
                 HumanoidVisualLayers.Head => true,
                 _ => false
@@ -62,7 +63,6 @@ namespace Content.Shared.Humanoid
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
                     yield return HumanoidVisualLayers.Tail;
-                    break;
                 // Forge Change Start
                     yield return HumanoidVisualLayers.Groin;
                     break;
@@ -94,6 +94,10 @@ namespace Content.Shared.Humanoid
             {
                 case BodyPartType.Other:
                     break;
+                case BodyPartType.Chest: // Forge-Change
+                    return HumanoidVisualLayers.Chest;
+                case BodyPartType.Groin: // Forge-Change
+                    return HumanoidVisualLayers.Groin;
                 case BodyPartType.Torso:
                     return HumanoidVisualLayers.Chest;
                 case BodyPartType.Tail:
