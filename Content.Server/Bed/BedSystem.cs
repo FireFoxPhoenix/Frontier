@@ -1,4 +1,5 @@
 using Content.Server.Actions;
+using Content.Shared.Bed.Components; // Forge Change
 using Content.Server.Bed.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Construction;
