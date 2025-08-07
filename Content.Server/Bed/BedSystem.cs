@@ -34,7 +34,7 @@ namespace Content.Server.Bed
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<HealOnBuckleComponent, StrappedEvent>(OnStrapped);
+            //SubscribeLocalEvent<HealOnBuckleComponent, StrappedEvent>(OnStrapped);
             //SubscribeLocalEvent<HealOnBuckleComponent, UnstrappedEvent>(OnUnstrapped);
             SubscribeLocalEvent<StasisBedComponent, StrappedEvent>(OnStasisStrapped);
             SubscribeLocalEvent<StasisBedComponent, UnstrappedEvent>(OnStasisUnstrapped);

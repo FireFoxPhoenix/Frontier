@@ -22,4 +22,36 @@ public sealed partial class FoodSequenceElementComponent : Component
     /// </summary>
     [DataField]
     public string Solution = "food";
+
+    [DataField]
+    public SpriteSpecifier? Sprite; // Forge-Change
+}
+
+[DataRecord, Serializable, NetSerializable]
+public sealed class FoodSequenceElementEntry
+{
+    /// <summary>
+    /// A localized name piece to build into the item name generator.
+    /// </summary>
+    public LocId? Name { get; set; } = null;
+
+    /// <summary>
+    /// overriding default sprite
+    /// </summary>
+    public SpriteSpecifier? Sprite { get; set; } = null;
+
+    /// <summary>
+    /// If the layer is the final one, it can be added over the limit, but no other layers can be added after it.
+    /// </summary>
+    public bool Final { get; set; } = false;
+
+    /// <summary>
+    /// the shear of a particular layer. Allows a little "randomization" of each layer.
+    /// </summary>
+    public Vector2 LocalOffset { get; set; } = Vector2.Zero;
+
+    /// <summary>
+    /// the original prototype of the layer
+    /// </summary>
+    public string? Proto { get; set; } = null; // Forge
 }

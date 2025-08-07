@@ -14,7 +14,7 @@ condition-body-bleeding = • {$entity} истекает кровью.
 condition-organ-damage-Normal = • The {$organ} is mostly good.
 condition-organ-damage-Damaged = • {$organ} поврежден.
 condition-organ-damage-Destroyed = • {$organ} испорчен...
-condition-organ-rotting = • {$орган} гниет!
+condition-organ-rotting = • {$organ} гниет!
 
 condition-none = • Условия не обнаружены.
 group-organ-status = {$organ} на {$capacity}% функциональной способности
