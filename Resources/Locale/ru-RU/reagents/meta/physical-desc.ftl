@@ -94,3 +94,8 @@ reagent-physical-desc-alkaline = щелочное
 reagent-physical-desc-holy = святое
 reagent-physical-desc-slimy = склизкое
 reagent-physical-desc-neural = нейронное
+<<<<<<< Updated upstream
+=======
+reagent-physical-desc-inversed = инвертированное
+reagent-physical-desc-unidentifiable = неопознаваемое
+>>>>>>> Stashed changes

@@ -1,2 +1,9 @@
 power-radiation-collector-gas-tank-missing = [color=red]Газовый баллон не подключен.[/color]
 power-radiation-collector-gas-tank-present = Газовый баллон [color=darkgreen]подключён[/color].
+<<<<<<< Updated upstream
+=======
+power-radiation-collector-enabled = Он [color={$state ->
+    [true] darkgreen]Включён
+    *[false] darkred]Выключен
+}[/color].
+>>>>>>> Stashed changes

@@ -8,8 +8,7 @@ station-beacon-cargobay-three = Карго шлюз 3
 station-beacon-cargobay-four = Карго шлюз 4
 station-beacon-shops = Магазины
 station-beacon-vending-machines = Автоматы
-station-beacon-transit-shuttle = Остановка бесплатного транспорта
-station-beacon-dock = Доки
+station-beacon-transit-shuttle = Остановка маршрутки
 station-beacon-nfsd = ДСБФ
 station-beacon-nfsd-brig = Бриг
 station-beacon-cafe = Кафэ
@@ -26,6 +25,7 @@ station-beacon-lobby = Лобби
 station-beacon-doc-office = Офис ММО
 
 station-beacon-eva-access = EVA Доступ
+<<<<<<< Updated upstream
 station-beacon-dock-one = Порт 1
 station-beacon-dock-two = Порт 2
 station-beacon-dock-three = Порт 3
@@ -35,3 +35,22 @@ station-beacon-dock-six = Порт 6
 station-beacon-dock-six-a = Порт 6a
 station-beacon-dock-six-b = Порт 6b
 station-beacon-dock-six-c = Порт 6c
+=======
+station-beacon-dock-one = Док 1
+station-beacon-dock-two = Док 2
+station-beacon-dock-three = Док 3
+station-beacon-dock-four = Док 4
+station-beacon-dock-five = Док 5
+station-beacon-dock-six = Док 6
+station-beacon-dock-six-a = Док 6a
+station-beacon-dock-six-b = Док 6b
+station-beacon-dock-six-c = Док 6c
+station-beacon-aux-chamber = Аукс -камера
+station-beacon-supplies = Припасы
+station-beacon-managers-office = Офис СИ
+station-beacon-managers-quarters = Квартиры СИ
+station-beacon-break-room = Комната отдыха
+station-beacon-power-nexus = Энергоузел
+station-beacon-decommissioned-reactor = Списанный реактор
+station-beacon-gas-sale = Продажа газа
+>>>>>>> Stashed changes

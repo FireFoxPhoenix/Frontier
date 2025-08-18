@@ -5,4 +5,9 @@ construction-menu-place-ghost = Разместить призрак констр
 construction-menu-clear-all = Очистить всё
 construction-menu-eraser-mode = Режим ластика
 construction-menu-craft = Создание
+<<<<<<< Updated upstream
 construction-menu-grid-view = Вид сеткой
+=======
+construction-menu-grid-view = Вид сеткой
+construction-menu-search = Поиск
+>>>>>>> Stashed changes

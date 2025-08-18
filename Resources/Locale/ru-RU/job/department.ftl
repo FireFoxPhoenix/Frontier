@@ -6,3 +6,8 @@ department-Medical = Медицинский отдел
 department-Security = Служба безопасности
 department-Science = Научный отдел
 department-Specific = На определённых станциях
+<<<<<<< Updated upstream
+=======
+department-CentralCommand = Центральное Командование
+department-Silicon = Силиконы
+>>>>>>> Stashed changes

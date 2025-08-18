@@ -20,4 +20,9 @@ player-panel-logs = Логи
 player-panel-delete = Удалить
 player-panel-rejuvenate = Вылечить
 player-panel-false = Нет
+<<<<<<< Updated upstream
 player-panel-true = Да
+=======
+player-panel-true = Да
+player-panel-follow = Следовать
+>>>>>>> Stashed changes

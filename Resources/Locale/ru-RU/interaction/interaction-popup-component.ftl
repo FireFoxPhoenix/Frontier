@@ -97,4 +97,10 @@ hugging-success-generic-target = { CAPITALIZE($user) } обнимает вас.
 ## Other
 
 petting-success-tesla = Вы гладите { $target }, попутно нарушая законы природы и физики.
+<<<<<<< Updated upstream
 petting-failure-tesla = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } разряд заставляет вас отдёрнуть руку.
+=======
+petting-failure-tesla = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } разряд заставляет вас отдёрнуть руку.
+petting-success-mail-teleporter = Вы гладите {THE($target)} по его {POSS-ADJ($target)} послушной, холодной обшивке.
+petting-failure-mail-teleporter = Вы пытаетесь погладить {THE($target)}, но {SUBJECT($target)} {CONJUGATE-BE($target)} занят сортировкой почты!
+>>>>>>> Stashed changes

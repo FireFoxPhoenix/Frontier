@@ -50,3 +50,10 @@ criminal-records-dna-filter = ДНК
 
 criminal-records-console-auto-history = АРЕСТОВАН: { $reason }
 criminal-records-console-unspecified-reason = <причина не указана>
+<<<<<<< Updated upstream
+=======
+criminal-records-console-flavor-left = Соблюдайте закон! Это ваш долг.
+criminal-records-console-flavor-right = v2.1
+criminal-records-console-show-all = Все
+## Status
+>>>>>>> Stashed changes

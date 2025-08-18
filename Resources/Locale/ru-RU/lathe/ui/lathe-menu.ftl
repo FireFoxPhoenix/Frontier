@@ -24,3 +24,9 @@ lathe-menu-no-materials-message = Материалы не загружены
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства
+<<<<<<< Updated upstream
+=======
+lathe-reagent-dispense-no-container = Жидкость выливается из {THE($name)} на пол!
+lathe-menu-result-reagent-display = {$reagent} ({$amount}u)
+lathe-menu-silo-linked-message = Сило подключёно
+>>>>>>> Stashed changes

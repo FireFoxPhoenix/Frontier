@@ -280,6 +280,7 @@ uplink-speedloader-magnum-non-ap-desc = Быстрый зарядник на 6 �
 
 uplink-syndicate-segway-name = Синдикатский Сигвей
 uplink-syndicate-segway-desc = Передвигайся со стилем, не пачкая свои кроваво-красные ботинки.
+<<<<<<< Updated upstream
 
 uplink-pirate-nightvision-name = очки ночного виденья
 uplink-pirate-nightvision-desc = Арх!!!! Я вижу все.
@@ -295,3 +296,7 @@ uplink-clothing-nightvisionplus-desc = Я вижу все.
 
 uplink-clothing-thermalvision-name = термальные очки
 uplink-clothing-thermalvision-desc = Видно теперь все!
+=======
+uplink-security-30riflemagazine-name = .30 винтовочные магизины
+uplink-security-30riflemagazine-desc = Коробка с 4 заполненными магазинами для винтовки .30.
+>>>>>>> Stashed changes

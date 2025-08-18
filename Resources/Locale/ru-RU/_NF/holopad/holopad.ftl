@@ -17,3 +17,7 @@ nf-holopad-general-nfsd-reception = ДСБФ - Приёмная
 nf-holopad-general-nfsd-lobby = ДСБФ - Лобби
 nf-holopad-general-edison-reception = Электростанция Эдисона - Приёмная
 nf-holopad-general-tinnia = Ресторан Тринньки
+<<<<<<< Updated upstream
+=======
+nf-holopad-general-barrier-gate = Барьерные врата
+>>>>>>> Stashed changes

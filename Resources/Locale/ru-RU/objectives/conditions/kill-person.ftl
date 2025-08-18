@@ -1,1 +1,6 @@
+<<<<<<< Updated upstream
 objective-condition-kill-person-title = Убить или не дать покинуть станцию { $targetName }, должность: { CAPITALIZE($job) }.
+=======
+objective-condition-kill-person-title = Убить или не дать покинуть станцию { $targetName }, должность: { CAPITALIZE($job) }. Убедитесь, что она не попадёт на ЦентКом даже в мёртвом виде.
+objective-condition-maroon-person-title = Не дать покинуть станцию {$targetName}, должность: {CAPITALIZE($job)}.
+>>>>>>> Stashed changes

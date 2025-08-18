@@ -4,3 +4,7 @@ ghost-component-on-examine-message = Умер [color=yellow]{ $timeOfDeath }[/co
 
 ghost-role-information-syndicate-reinforcement-cadet-name = Кадет контрабандиста
 ghost-role-information-syndicate-reinforcement-cadet-description = Помогите контрабандисту выжить на первой сделке.
+<<<<<<< Updated upstream
+=======
+ghost-component-boo-action-failed = Несмотря на все ваши старания, ничего жуткого не произошло.
+>>>>>>> Stashed changes

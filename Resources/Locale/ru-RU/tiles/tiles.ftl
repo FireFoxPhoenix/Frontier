@@ -128,3 +128,11 @@ tiles-jungle-astro-grass = астро-трава джунглей
 tiles-astro-ice = астро-лёд
 tiles-astro-snow = астро-снег
 tiles-wood-large = большой деревянный пол
+<<<<<<< Updated upstream
+=======
+tiles-red-circuit-floor = Красный микросхемный пол
+tiles-asteroid-sand-borderless = Безграничный астероидный песок
+tiles-asteroid-ironsand-borderless = Безграничный астероидный железопесок
+tiles-astro-asteroid-sand = Астероидный астро-песок
+tiles-astro-asteroid-sand-borderless = Безграничный астероидный астро-песок
+>>>>>>> Stashed changes

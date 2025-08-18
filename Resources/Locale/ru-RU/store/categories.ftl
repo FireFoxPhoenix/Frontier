@@ -20,3 +20,9 @@ store-caregory-spellbook-defensive = Защитные заклинания
 store-caregory-spellbook-utility = Вспомогательные заклинания
 store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
+<<<<<<< Updated upstream
+=======
+store-discounted-items = Скидки!
+
+# Revenant
+>>>>>>> Stashed changes

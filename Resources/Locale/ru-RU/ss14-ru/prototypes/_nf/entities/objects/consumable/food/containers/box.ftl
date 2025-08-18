@@ -25,3 +25,7 @@ ent-FoodContainerEggEmpty = { ent-FoodContainerEgg }
     .desc = { ent-FoodContainerEgg.desc }
 ent-FoodBoxDonutEmpty = { ent-FoodBoxDonut }
     .desc = { ent-FoodBoxDonut.desc }
+<<<<<<< Updated upstream
+=======
+ent-HappyHonkCargo = Ланчбокс МакКарго
+>>>>>>> Stashed changes

@@ -4,3 +4,7 @@ ghost-command-help-text =
     Обратите внимание, что это действие необратимо, и вы не сможете вернуться в тело своего персонажа.
 ghost-command-no-session = Вы не в сеансе, вы не можете использовать ghost.
 ghost-command-denied = Вы не можете стать призраком в данный момент.
+<<<<<<< Updated upstream
+=======
+ghost-command-error-lobby = Вы не можете стать призраком, так как находитесь не в игре!
+>>>>>>> Stashed changes

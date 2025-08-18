@@ -8,3 +8,8 @@ ent-PrisonGuardPDA = КПК тюремщика
     .desc = Красный чтобы не видеть следов крови.
 ent-MartialArtistPDA = КПК мастера боевых искусств
     .desc = { ent-BoxerPDA.desc }
+<<<<<<< Updated upstream
+=======
+ent-MailCarrierPDA = КПК почтальона
+ent-GuardPDA = КПК охранника
+>>>>>>> Stashed changes

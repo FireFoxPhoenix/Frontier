@@ -15,4 +15,14 @@ seeds-bees-name = пчёлы
 seeds-bees-display-name = соты
 
 # Should be in seed-component
+<<<<<<< Updated upstream
 botany-seed-jar-name = банка с {$seedName} {$seedNoun}
+=======
+botany-seed-jar-name = банка с {$seedName} {$seedNoun}
+seeds-everyspice-name = ВсеПерец
+seeds-everyspice-display-name = ВсеПерец
+seeds-monkanana-name = Обезьянанана
+seeds-monkanana-display-name = дерево обезьянананы
+
+# Should be in seed-component
+>>>>>>> Stashed changes

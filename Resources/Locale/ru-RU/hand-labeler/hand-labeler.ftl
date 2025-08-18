@@ -10,3 +10,8 @@ hand-labeler-has-label = На объекте имеется этикетка "{ 
 # Verb text
 comp-paper-label-eject = Удалить этикетку
 comp-paper-label-insert = Наклеить этикетку
+<<<<<<< Updated upstream
+=======
+hand-labeler-remove-label-text = Удалить этикетку
+hand-labeler-add-label-text = Применить этикетку
+>>>>>>> Stashed changes
