@@ -112,14 +112,6 @@
 
 - type: latheRecipe
   categories: [SyndicateTradingConsoleLaserArmsWeapons]
-  id: WeaponAntiqueLaserRecipe
-  result: NFWeaponEnergyPistolLaserAntique
-  completetime: 1
-  materials:
-    CreditCounterfeit: 9500
-
-- type: latheRecipe
-  categories: [SyndicateTradingConsoleLaserArmsWeapons]
   id: WeaponLaserSvalinnRecipe
   result: NFWeaponEnergyPistolLaserSvalinn
   completetime: 1
@@ -301,6 +293,22 @@
   completetime: 1
   materials:
     CreditCounterfeit: 129999
+
+- type: latheRecipe
+  id: MechGygaxSyndieBatteryRecipe
+  categories: [SyndicateTradingConsoleMeleeArmor]
+  result: MechGygaxSyndieBattery
+  completetime: 1
+  materials:
+    CreditCounterfeit: 249999
+
+- type: latheRecipe
+  id: MechMaulerSyndieBatteryRecipe
+  categories: [SyndicateTradingConsoleMeleeArmor]
+  result: MechMaulerSyndieBattery
+  completetime: 1
+  materials:
+    CreditCounterfeit: 349999
 
 - type: latheRecipe
   id: GrenadeShrapnelRecipe
@@ -574,3 +582,19 @@
   completetime: 1
   materials:
     CreditCounterfeit: 64200
+
+- type: latheRecipe
+  categories: [SyndicateTradingConsoleFirearmsWeapons]
+  id: WeaponSyndieEnergyRifleCarbineRecipe
+  result: WeaponSyndieEnergyRifleCarbine
+  completetime: 1
+  materials:
+    CreditCounterfeit: 44000
+
+- type: latheRecipe
+  categories: [SyndicateTradingConsoleFirearmsWeapons]
+  id: WeaponSyndieEnergyFalconPistolLaserRecipe
+  result: WeaponSyndieEnergyFalconPistolLaser
+  completetime: 1
+  materials:
+    CreditCounterfeit: 12000

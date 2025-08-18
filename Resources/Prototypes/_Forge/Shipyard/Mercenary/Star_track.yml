@@ -12,8 +12,8 @@
   id: Star_track
   parent: BaseVessel
   name: SBI Энтерпрайз
-  description: Малогабаритный шаттл для наёмников, рекомендуемый состав экипажа 2 человека.
-  price: 145000
+  description: Крупногабаритный шаттл для наёмников, рекомендуемый состав экипажа 4 человека.
+  price: 239500
   category: Small
   group: Mercenary
   shuttlePath: /Maps/Forge/Shuttles/Mercenary/Star_track.yml

@@ -31,3 +31,11 @@ lathe-category-command = Командование
 lathe-category-hats = Шляпы
 lathe-category-jumpsuits = Комбинезоны
 lathe-category-neck = Шея
+# Forge-Change
+lathe-category-smechs = Небольшие экзокостюмы
+lathe-category-ripley = Рипли
+lathe-category-honker = ХОНК
+lathe-category-clarke = Кларк
+lathe-category-gygax = Гигакс
+lathe-category-durand = Дюранд
+lathe-category-mech-weaponary = Модули экзокостюмов

@@ -1723,6 +1723,36 @@
   categories:
     - UplinkWearablesSmugger
 
+- type: listing
+  id: SmuggerUplinkgMechGygaxSyndieBattery
+  name: uplink-security-mech-dgygax-name
+  description: uplink-security-mech-dgygax-desc
+  productEntity: MechGygaxSyndieBattery
+  cost:
+    TelecrystalDamaged: 200
+  categories:
+  - UplinkWearablesSmugger
+  conditions:
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: SmuggerUplinkgMechMaulerSyndieBattery
+  name: uplink-security-mech-mauler-name
+  description: uplink-security-mech-mauler-desc
+  productEntity: MechMaulerSyndieBattery
+  cost:
+    TelecrystalDamaged: 300
+  categories:
+  - UplinkWearablesSmugger
+  conditions:
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
  # Pointless
 
 - type: listing
@@ -2250,3 +2280,22 @@
       components:
       - SurplusBundle
 
+- type: listing
+  id: SmuggerUplinkSyndieLaser
+  name: uplink-syndie-laser-name
+  description: uplink-syndie-laser-desc
+  productEntity: WeaponSyndieEnergyRifleCarbine
+  cost:
+    TelecrystalDamaged: 34
+  categories:
+  - UplinkWeaponrySmugger
+
+- type: listing
+  id: SmuggerUplinkWeaponSyndieEnergyFalconPistolLaser
+  name: uplink-syndie-laser-pistol-name
+  description: uplink-syndie-laser-pistol-desc
+  productEntity: WeaponSyndieEnergyFalconPistolLaser
+  cost:
+    TelecrystalDamaged: 16
+  categories:
+  - UplinkWeaponrySmugger
