@@ -57,8 +57,6 @@ ghost-role-information-sigmis-name = Сигмис
 ghost-role-information-sigmis-description = Ни с места! Работает Синдикат! Разыскивается во всех уголках сектора за массовый геноцид мышей.
 ghost-role-information-sigmis-rules = Ты, созданный Синдикатом кот. Подчиняющийся непосредственно кадету синдиката и его начальству.
 
-ghost-role-information-sigmis-rules = Ты - кот, созданный синдикатом. Подчиняющийся непосредственно кадету синдиката и его начальству.
-
 ghost-role-information-cult-cat-name = Кот культа крови
 ghost-role-information-cult-cat-description = Основал Кровавый культ от скуки.
 ghost-role-information-elcapo-name = Эль Капо

@@ -35,5 +35,3 @@ pirate-bounty-item-diamond = Алмаз
 pirate-bounty-item-akms = АКМС
 
 pirate-bounty-description-generic = Вперёд, бездельник! Добудь мне это добро!
-pirate-bounty-item-diamond = Алмаз
-pirate-bounty-item-akms = AKMS

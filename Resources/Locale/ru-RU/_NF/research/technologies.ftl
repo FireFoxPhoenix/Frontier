@@ -17,7 +17,7 @@ research-technology-magnets-tech-combat = Боевой магнетизм
 research-technology-excavation = Массовая экскавация
 research-technology-advanced-food-service = Современное ресторанное обслуживание
 research-technology-industrial-medicine = Промышленная медицина
-research-technology-industrial-medicine = Промышленная медицинаnf-research-discipline-engineering = Инженерный
+nf-research-discipline-engineering = Инженерный
 nf-research-discipline-medical = Медицина
 nf-research-discipline-arsenal-mercenary = Наемники
 nf-research-discipline-arsenal-nfsd = ДСБФ

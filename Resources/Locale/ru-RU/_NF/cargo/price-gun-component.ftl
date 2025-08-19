@@ -7,7 +7,6 @@ medical-price-gun-pricing-result = Устройство показывает, ч
 medical-price-gun-verb-text = Оценка предмета
 medical-price-gun-verb-message = Оценить {THE($object)}.
 medical-price-gun-pricing-result-none = Устройство показывает, что {THE($object)} не имеет цены.
-medical-price-gun-pricing-result-none = Устройство показывает, что {THE($object)} не имеет цены.
 
 pirate-contraband-price-gun-pricing-result = Железка говорит, что {THE($object)} {$price ->
     [0] не стоит ни одного дублона!.

@@ -79,7 +79,6 @@ salvage-biome-mod-caves = Пещеры
 salvage-biome-mod-grasslands = Луга
 salvage-biome-mod-snow = Снежная тайга
 salvage-biome-mod-lava = Вулкан
-salvage-biome-mod-lava = Вулкан
 salvage-dungeon-mod-lava-brig = Лавовый бриг
 salvage-dungeon-mod-snowy-labs = Снежные лаборатории
 salvage-dungeon-mod-experiment = Эксперимент

@@ -41,7 +41,6 @@ artifact-trigger-hint-plasma = Газообразная плазма
 artifact-trigger-hint-land = Активное замедление
 artifact-trigger-hint-examine = Внимательное изучение
 artifact-trigger-hint-medical = Терапевтические химикаты
-artifact-trigger-hint-medical = Терапевтические химикаты
 xenoarch-trigger-tip-music = Звуковые вибрации
 xenoarch-trigger-tip-heat = Высотемпературный газ
 xenoarch-trigger-tip-cold = Низкотемпературный газ

@@ -5,7 +5,6 @@ shuttle-console-iff-search = Поиск IFF
 shuttle-console-inertia-dampener-off = Дрейф
 shuttle-console-inertia-dampener-dampen = Ход
 shuttle-console-inertia-dampener-anchor = Стоп
-shuttle-console-inertia-dampener-anchor = Стоп
 shuttle-console-service-flags = Реклама
 shuttle-console-service-flag-Services-label = Услуги
 shuttle-console-service-flag-Trade-label = Покупки

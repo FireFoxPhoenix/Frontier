@@ -127,7 +127,6 @@ food-sequence-taco-gen = тако с { $content }
 # SKEWER
 
 food-sequence-skewer-gen = шашлык с { $content }
-food-sequence-skewer-gen = шашлык с { $content }
 food-sequence-cotton-burger-gen = {$content}бургер
 food-sequence-cotton-burger-content-cotton-bol = хлопко
 food-sequence-cotton-burger-content-pyrotton-bol = пирохлопко

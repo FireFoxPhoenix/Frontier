@@ -16,7 +16,6 @@ seeds-bees-display-name = соты
 
 # Should be in seed-component
 botany-seed-jar-name = банка с {$seedName} {$seedNoun}
-botany-seed-jar-name = банка с {$seedName} {$seedNoun}
 seeds-everyspice-name = ВсеПерец
 seeds-everyspice-display-name = ВсеПерец
 seeds-monkanana-name = Обезьянанана

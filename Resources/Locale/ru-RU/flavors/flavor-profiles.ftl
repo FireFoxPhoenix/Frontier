@@ -324,7 +324,6 @@ flavor-complex-bottledlightning = как молния в бутылке
 flavor-complex-punishment = как наказание
 flavor-weh = как вех
 flavor-hew = как хев
-flavor-hew = как хев
 flavor-base-trashy = мусорно
 
 # Complex flavors. Put a flavor here when you want something that's more
