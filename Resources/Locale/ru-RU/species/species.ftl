@@ -9,7 +9,7 @@ species-name-arachnid = Арахнид
 species-name-moth = Ниан
 species-name-skeleton = Скелет
 species-name-vox = Вокс
-species-name-gingerbread = delicious baked good
+species-name-gingerbread = Пряничный человечек
 
 ## Misc species things
-snail-hurt-by-salt-popup = Соленый раствор горит, как кислота!
+snail-hurt-by-salt-popup = Соль жжётся, как кислота!

@@ -18,18 +18,18 @@ ui-vote-type-votekick = Votekick
 
 # Votekick reasons
 ui-vote-votekick-type-raiding = Набег
-ui-vote-votekick-type-cheating = Мошенничество
-ui-vote-votekick-type-spamming = Spamming
+ui-vote-votekick-type-cheating = Читы
+ui-vote-votekick-type-spamming = Спам
 
 # Window title of the vote create menu
-ui-vote-follow-button = Follow User
+ui-vote-follow-button = Следовать за пользователем
 
 # Timeout text if a standard vote type is currently on timeout.
-ui-vote-trusted-users-notice = This vote option is only available to players who have enough playtime or are whitelisted.
-  In addition, you must have been a ghost for { $timeReq } seconds.
+ui-vote-trusted-users-notice = Этот тип голосования доступен только для игроков, имеющих достаточное количество игрового времени или находящимся в вайт-листе.
+  Кроме этого, вы должны быть призраком как минимум { $timeReq } секунд.
 
 # Warning to not abuse a specific vote option.
-ui-vote-abuse-warning = Warning!
-  Abuse of the votekick system may result in an indefinite ban!
+ui-vote-abuse-warning = Внимание!
+  Злоупотребление голосованием за кик может привести к бессрочному бану!
 
 # Hue hue hue

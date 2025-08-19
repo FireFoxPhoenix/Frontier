@@ -69,8 +69,8 @@ salvage-map-proto-OutpostArm = Рукав захваченного аванпо�
 salvage-magnet-debris-ChunkDebris = Space debris
 
 # Asteroids
-salvage-map-wreck = Спасение
+salvage-map-wreck = Утилизация
 salvage-map-wreck-desc-size = Размер:
-salvage-map-wreck-size-small = [color=lime]Small[/color]
-salvage-map-wreck-size-medium = [color=cornflowerblue]Medium[/color]
-salvage-map-wreck-size-large = [color=orchid]Large[/color]
+salvage-map-wreck-size-small = [color=lime]Маленький[/color]
+salvage-map-wreck-size-medium = [color=cornflowerblue]Средний[/color]
+salvage-map-wreck-size-large = [color=orchid]Большой[/color]

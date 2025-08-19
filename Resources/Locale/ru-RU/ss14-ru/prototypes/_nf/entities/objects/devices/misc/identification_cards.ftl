@@ -39,4 +39,6 @@ ent-CappyIDCard = ID карта Каппи
 ent-ClarpyIDCard = ID карта Клярпи
     .desc = { ent-PirateNFIDCard.desc }
 ent-ClippyIDCard = ID карта Скрепки
-    .desc = { ent-IDCardStandard.desc }ent-MailCarrierNFIDCard = идентификационная карта почтового перевозчика
+    .desc = { ent-IDCardStandard.desc }
+    .desc = { ent-IDCardStandard.desc }
+ent-MailCarrierNFIDCard = ID карта почтальона

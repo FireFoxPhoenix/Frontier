@@ -32,4 +32,4 @@ hud-chatbox-channel-Unspecified = Неопределённый
 hud-chatbox-highlights = Выделения:
 hud-chatbox-highlights-button = Применить
 hud-chatbox-highlights-tooltip = Слова разделяются новой строкой,
-hud-chatbox-highlights-placeholder = Рукавс
+hud-chatbox-highlights-placeholder = Текст

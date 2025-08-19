@@ -1,3 +1,3 @@
 vehicle-use-key = Используйте { $keys } для запуска { $vehicle }.
 vehicle-slot-component-slot-name-keys = Ключи
-vehicle-cannot-pull = You need to stop pulling {THE($object)} before you can ride {THE($vehicle)}.
+vehicle-cannot-pull = Вам нужно перестать тащить {THE($object)} прежде, чем вы сможете управлять {THE($vehicle)}.

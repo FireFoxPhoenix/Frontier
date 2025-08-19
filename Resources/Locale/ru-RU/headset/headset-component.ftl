@@ -17,4 +17,4 @@ chat-radio-freelance = Фриланс
 chat-radio-handheld = Портативный
 chat-radio-binary = Двоичный
 chat-radio-xenoborg = Ксеноборг
-chat-radio-mothership = Флагман
+chat-radio-mothership = Материнский корабль

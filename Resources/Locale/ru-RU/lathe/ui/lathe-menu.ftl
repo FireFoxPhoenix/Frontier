@@ -16,4 +16,4 @@ lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства
 lathe-reagent-dispense-no-container = Жидкость выливается из {THE($name)} на пол!
 lathe-menu-result-reagent-display = {$reagent} ({$amount}u)
-lathe-menu-silo-linked-message = Силос подключён
+lathe-menu-silo-linked-message = Сило подключёно

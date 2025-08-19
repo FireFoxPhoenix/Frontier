@@ -19,4 +19,4 @@ reagent-desc-sodium-polyacrylate = Суперпоглощающий полиме
 reagent-name-cellulose = целлюлозные волокна
 reagent-desc-cellulose = Кристаллический полимер полидекстрозы, растения дорожат этим веществом.
 reagent-name-rororium = Ророриум
-reagent-desc-rororium = A strange substance which fills the cores of the hivelords that roam the mining asteroid. Thought to be the source of their regenerative powers.
+reagent-desc-rororium = Странное вещество, содержащееся в ядрах повелителей роя, бродящих по шахтёрскому астероиду. Считается, что это источник их регенеративных способностей.

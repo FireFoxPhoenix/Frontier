@@ -46,8 +46,8 @@ emergency-shuttle-ui-authorize = АВТОРИЗОВАТЬСЯ
 emergency-shuttle-ui-repeal = ПОВТОРИТЬ
 emergency-shuttle-ui-authorizations = Авторизации
 emergency-shuttle-ui-remaining = Осталось: { $remaining }
-emergency-shuttle-extended = {" "}Launch time has been extended due to inconvenient circumstances.
+emergency-shuttle-extended = {" "}Время до запуска шаттла продлено.
 
 # Emergency shuttle console popup / announcement
-map-name-centcomm = Центральная команда
-map-name-terminal = Прибытие терминала
+map-name-centcomm = Центральное Командование
+map-name-terminal = Терминал прибытия

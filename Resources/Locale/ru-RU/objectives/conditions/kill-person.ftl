@@ -1,3 +1,3 @@
 objective-condition-kill-person-title = Убить или не дать покинуть станцию { $targetName }, должность: { CAPITALIZE($job) }.
-objective-condition-kill-maroon-title = Kill and maroon {$targetName}, {CAPITALIZE($job)}
-objective-condition-maroon-person-title = Prevent {$targetName}, {CAPITALIZE($job)} from reaching CentComm.
+objective-condition-kill-person-title = Убить или не дать покинуть станцию { $targetName }, должность: { CAPITALIZE($job) }. Убедитесь, что она не попадёт на ЦентКом даже в мёртвом виде.
+objective-condition-maroon-person-title = Не дать покинуть станцию {$targetName}, должность: {CAPITALIZE($job)}.

@@ -14,13 +14,13 @@ trait-tall-name = Высокий
 trait-short-name = Низкий
 trait-scandinavian-name = Скандинавский акцент
 trait-scandinavian-desc = Вам придется собрать предложение самостоятельно.
-trait-unclonable-name = Нецелим
+trait-unclonable-name = Неклонируемый
 trait-unclonable-desc = Из-за административного упущения или аномальной генетики ваши гены не секвенированы NT, и вас нельзя клонировать.
-trait-lizard-accent-name = Рептильный акцент
-trait-lizard-accent-desc = Будь то из-за постоянного воздействия или чего-то еще, вы звучите как рептилия.
+trait-lizard-accent-name = Акцент рептилии
+trait-lizard-accent-desc = Будь то иссс-ссса поссстоянного восссдейссствия или щщщего-то ещще, вы сссвущщите как рептилия.
 trait-moth-accent-name = Акцент моли
 trait-moth-accent-desc = Некоторые ваши слова имеют определенное жужжание.
-trait-dwarf-accent-name = Гнома акцент
-trait-dwarf-accent-desc = Ты звучишь так, будто слишком долго держал кирку в руках. Камень и камень!
+trait-dwarf-accent-name = Дворфский акцент
+trait-dwarf-accent-desc = Ты звучишь так, будто слишком долго держал кирку в руках. Скала и камень!
 
 # These traits are bound to be replaced with a slider, but they live here for now.

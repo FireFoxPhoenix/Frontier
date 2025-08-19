@@ -8,5 +8,5 @@ ent-PrisonGuardPDA = КПК тюремщика
     .desc = Красный чтобы не видеть следов крови.
 ent-MartialArtistPDA = КПК мастера боевых искусств
     .desc = { ent-BoxerPDA.desc }
-ent-MailCarrierPDA = mail carrier PDA
-ent-GuardPDA = охрана КПК
+ent-MailCarrierPDA = КПК почтальона
+ent-GuardPDA = КПК охранника

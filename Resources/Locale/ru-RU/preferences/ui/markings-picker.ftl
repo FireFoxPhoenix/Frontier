@@ -27,6 +27,6 @@ markings-category-Overlay = Наложение
 marking-slot = Slot {$number}
 
 # Categories
-markings-category-Special = Особенный
-markings-category-UndergarmentTop = Нижнее белье (вверху)
-markings-category-UndergarmentBottom = Нижнее белье (внизу)
+markings-category-Special = Особое
+markings-category-UndergarmentTop = Нижнее белье (топ)
+markings-category-UndergarmentBottom = Нижнее белье (низ)

@@ -57,5 +57,5 @@ signal-port-description-logic-input = Входной порт, который п
 signal-port-name-timer = Таймер
 signal-port-description-timer = Запускает таймер отсчёта на устройстве.
 signal-port-description-logic-memory-input = Сигнал загрузки в ячейку памяти при активации.
-signal-port-name-logic-enable = Давать возможность
+signal-port-name-logic-enable = активация
 signal-port-description-logic-enable = Загружает входной сигнал в ячейку памяти только при ВЫСОКОМ уровне.

@@ -43,5 +43,5 @@ trait-german-name = Немецкий акцент
 trait-german-desc = Вы, кажется, родом из Космической Германии.
 trait-clumsy-name = Неуклюжий
 trait-clumsy-desc = Ты очень неуклюжий! Некоторые действия, например стрельба, даются сложнее.
-trait-painnumbness-name = Онемевший
-trait-painnumbness-desc = Вам не хватает чувства чувства боли, не зная, насколько вам больно.
+trait-painnumbness-name = Невосприимчивость к боли
+trait-painnumbness-desc = Вы не чувствуете боли и не осознаёте, насколько вы ранены.

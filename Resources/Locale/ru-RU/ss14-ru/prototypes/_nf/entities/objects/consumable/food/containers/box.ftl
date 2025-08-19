@@ -25,4 +25,4 @@ ent-FoodContainerEggEmpty = { ent-FoodContainerEgg }
     .desc = { ent-FoodContainerEgg.desc }
 ent-FoodBoxDonutEmpty = { ent-FoodBoxDonut }
     .desc = { ent-FoodBoxDonut.desc }
-ent-HappyHonkCargo = mccargo meal
+ent-HappyHonkCargo = Ланчбокс МакКарго

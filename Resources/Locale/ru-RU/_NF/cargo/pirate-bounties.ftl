@@ -31,6 +31,9 @@ pirate-bounty-item-plasmacanister = Канистра с плазмой
 pirate-bounty-item-contracrate = Ящик с контрабандой
 pirate-bounty-item-hydrotray = Лоток для гидропоники
 pirate-bounty-item-hypo = Гипоспрей
+pirate-bounty-item-diamond = Алмаз
+pirate-bounty-item-akms = АКМС
+
 pirate-bounty-description-generic = Вперёд, бездельник! Добудь мне это добро!
 pirate-bounty-item-diamond = Алмаз
 pirate-bounty-item-akms = AKMS

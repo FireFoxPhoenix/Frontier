@@ -20,4 +20,6 @@ player-panel-logs = Логи
 player-panel-delete = Удалить
 player-panel-rejuvenate = Вылечить
 player-panel-false = Нет
-player-panel-true = Даplayer-panel-follow = Следовать
+player-panel-true = Да
+player-panel-true = Да
+player-panel-follow = Следовать

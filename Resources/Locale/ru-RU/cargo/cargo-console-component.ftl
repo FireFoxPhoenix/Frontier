@@ -57,26 +57,26 @@ cargo-console-menu-account-action-button = Перевести
 cargo-console-menu-toggle-account-lock-button = Переключить лимит перевода
 cargo-console-menu-account-action-option-withdraw = Снять наличные
 cargo-console-menu-account-action-option-transfer = Перевести средства на {$code}
-cargo-console-fund-withdraw-broadcast = [bold]{$name} снял(а) {$amount} спесосов со счёта {$name1} [{$code1}][/bold]
-cargo-console-fund-transfer-broadcast = [bold]{$name} перевёл(а) {$amount} спесосов со счёта {$name1} [{$code1}] на счёт {$name2} [{$code2}][/bold]
+cargo-console-fund-withdraw-broadcast = [bold]{$name} снял(а) {$amount} кредитов со счёта {$name1} [{$code1}][/bold]
+cargo-console-fund-transfer-broadcast = [bold]{$name} перевёл(а) {$amount} кредитов со счёта {$name1} [{$code1}] на счёт {$name2} [{$code2}][/bold]
 cargo-console-fund-transfer-user-unknown = Неизвестный
 cargo-console-paper-reason-default = Не указана
 cargo-console-paper-approver-default = Самостоятельно
-cargo-funding-alloc-console-menu-title = Консоль распределения финансирования
+cargo-funding-alloc-console-menu-title = Консоль управления финансами
 cargo-funding-alloc-console-label-account = [bold]Счёт[/bold]
 cargo-funding-alloc-console-label-code = [bold]Код[/bold]
 cargo-funding-alloc-console-label-balance = [bold]Баланс[/bold]
 cargo-funding-alloc-console-label-cut = [bold]Распределение доходов (%)[/bold]
-cargo-funding-alloc-console-label-primary-cut = Доля карго от не-сейфовых источников (%):
-cargo-funding-alloc-console-label-lockbox-cut = Доля карго от продаж из сейфов (%):
-cargo-funding-alloc-console-label-help-non-adjustible = Карго получает {$percent}% прибыли от не-сейфовых продаж. Остальное распределяется как ниже:
-cargo-funding-alloc-console-label-help-adjustible = Остаток от не-сейфовых источников распределяется как указано ниже:
+cargo-funding-alloc-console-label-primary-cut = Доля карго от продаж не из ящиков отдела (%):
+cargo-funding-alloc-console-label-lockbox-cut = Доля карго от продаж из ящиков отдела (%):
+cargo-funding-alloc-console-label-help-non-adjustible = Карго получает {$percent}% прибыли от продаж не из ящиков отделов. Остальное распределяется как ниже:
+cargo-funding-alloc-console-label-help-adjustible = Остаток от источников не из ящиков отделов распределяется как указано ниже:
 cargo-funding-alloc-console-button-save = Сохранить изменения
 cargo-funding-alloc-console-label-save-fail = [bold]Распределение доходов недействительно![/bold] [color=red]({$positive ->
 [1] +
 *[-1] -
 }{$val}%)[/color]
-cargo-acquisition-slip-body = [head=3]Детали актива[/head]
+cargo-acquisition-slip-body = [head=3]Детали заказа[/head]
 {"[bold]Продукт:[/bold]"} {$product}
 {"[bold]Описание:[/bold]"} {$description}
 {"[bold]Цена за единицу:[/bold"}] ${$unit}

@@ -80,5 +80,5 @@ alerts-offer-name = Получить
 alerts-offer-desc = Кто-то передаёт вам предмет.
 alerts-walking-name = Ходьба
 alerts-walking-desc = Вы идете, двигаясь медленно.
-alerts-adrenaline-name = [color=red]Adrenaline[/color]
+alerts-adrenaline-name = [color=red]Адреналин[/color]
 alerts-adrenaline-desc = Вы полны адреналина: боль не замедлит вас.

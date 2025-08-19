@@ -20,5 +20,5 @@ nf-salvage-faction-argocytes = Аргоциты
 nf-salvage-faction-dinosaurs = Динозавры
 nf-salvage-faction-mercenaries = Наемники
 nf-salvage-faction-explorers = Исследователи
-nf-salvage-faction-silicons = Взбунтовавшиеся ИИ
+nf-salvage-faction-silicons = Сбойный ИИ
 nf-salvage-faction-punks = Панки

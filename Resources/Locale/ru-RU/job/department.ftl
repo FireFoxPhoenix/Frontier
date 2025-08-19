@@ -7,4 +7,4 @@ department-Security = Служба безопасности
 department-Science = Научный отдел
 department-Specific = На определённых станциях
 department-CentralCommand = Центральное Командование
-department-Silicon = Искусственный Интеллект
+department-Silicon = Силиконы
