@@ -16,3 +16,8 @@ chat-radio-freelance = Фриланс
 # not headset but whatever
 chat-radio-handheld = Портативный
 chat-radio-binary = Двоичный
+<<<<<<< Updated upstream
+=======
+chat-radio-xenoborg = Ксеноборг
+chat-radio-mothership = Материнский корабль
+>>>>>>> Stashed changes

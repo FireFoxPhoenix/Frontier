@@ -28,3 +28,8 @@ reagent-name-table-salt = столовая соль
 reagent-desc-table-salt = Хлорид натрия, широко известный как соль, часто используется в качестве пищевой приправы или для мгновенного уничтожения мозговых червей.
 reagent-name-syrup = сироп
 reagent-desc-syrup = Вкуснейший сироп, получаемый из древесного сока, и который по своим свойствам липче клея.
+<<<<<<< Updated upstream
+=======
+reagent-name-coldsauce = холодящий соус
+reagent-desc-coldsauce = Заставляет язык онеметь.
+>>>>>>> Stashed changes

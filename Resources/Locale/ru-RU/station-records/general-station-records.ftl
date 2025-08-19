@@ -15,3 +15,8 @@ general-station-record-dna-filter = ДНК
 general-station-record-console-search-records = Поиск
 general-station-record-console-reset-filters = Сброс
 general-station-record-console-delete = Удалить
+<<<<<<< Updated upstream
+=======
+general-station-record-job-filter = Должность
+general-station-record-species-filter = Раса
+>>>>>>> Stashed changes

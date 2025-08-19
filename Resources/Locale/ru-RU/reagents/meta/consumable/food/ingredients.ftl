@@ -24,3 +24,8 @@ reagent-name-oil = масло
 reagent-desc-oil = Используется поварами для приготовления пищи.
 reagent-name-capsaicin-oil = капсаициновое масло
 reagent-desc-capsaicin-oil = Капсаициновое масло - это ингредиент, содержащийся в различных сортах острого перца.
+<<<<<<< Updated upstream
+=======
+reagent-name-frost-oil = Морозное масло
+reagent-desc-frost-oil = Морозное масло — это ингредиент, содержащийся в перце чилли, редкой мутации перца.
+>>>>>>> Stashed changes

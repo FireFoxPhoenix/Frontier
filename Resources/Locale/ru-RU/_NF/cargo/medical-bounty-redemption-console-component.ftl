@@ -16,4 +16,10 @@ medical-bounty-redemption-redeem-label-not-alive = Тело должно быт�
 medical-bounty-redemption-redeem-label-valid-bounty = Сумма: {$amount}.
 medical-bounty-redemption-ui-sell-button = Обменять
 medical-bounty-console-flavor-left = Относитесь ко всем телам как к членам своей семьи.
+<<<<<<< Updated upstream
 medical-bounty-console-flavor-right = v3.1
+=======
+medical-bounty-console-flavor-right = v3.1
+medical-bounty-redemption-success-to-station = Вознаграждение получено! Средства доставлены на счёт станции
+medical-bounty-redemption-redeem-label-valid-bounty-to-station = Стоимость: {$amount} (оплачено на счёт станции).
+>>>>>>> Stashed changes

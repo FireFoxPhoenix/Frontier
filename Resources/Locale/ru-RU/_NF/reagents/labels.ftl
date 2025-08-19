@@ -46,4 +46,9 @@ reagent-label-vermouth = [bold]Вермут[/bold]
 reagent-label-vodka = [bold]Водка[/bold]
 reagent-label-water = [bold]Вода[/bold]
 reagent-label-whiskey = [bold]Виски[/bold]
+<<<<<<< Updated upstream
 reagent-label-wine = [bold]Вино[/bold]
+=======
+reagent-label-wine = [bold]Вино[/bold]
+reagent-label-mead = [bold]Мёд[/bold]
+>>>>>>> Stashed changes

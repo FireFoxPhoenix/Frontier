@@ -51,3 +51,9 @@ gun-revolver-insert = Заряжен
 gun-revolver-spin = Вращать барабан
 gun-revolver-spun = Барабан вращается
 gun-speedloader-empty = Спидлоадер пуст
+<<<<<<< Updated upstream
+=======
+gun-magazine-fired-empty = Партронов не осталось!
+
+# SelectiveFire
+>>>>>>> Stashed changes

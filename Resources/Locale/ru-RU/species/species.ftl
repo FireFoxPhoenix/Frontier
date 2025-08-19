@@ -9,3 +9,10 @@ species-name-arachnid = Арахнид
 species-name-moth = Ниан
 species-name-skeleton = Скелет
 species-name-vox = Вокс
+<<<<<<< Updated upstream
+=======
+species-name-gingerbread = Пряничный человечек
+
+## Misc species things
+snail-hurt-by-salt-popup = Соль жжётся, как кислота!
+>>>>>>> Stashed changes

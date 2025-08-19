@@ -60,4 +60,11 @@ spellbook-event-summon-magic-description = Размещает перед каж�
 spellbook-upgrade-fireball-name = Улучшение Огненного шара
 spellbook-upgrade-fireball-description = Позволяет улучшить Огненный шар до максимального 3-го уровня!
 spellbook-upgrade-jaunt-name = Улучшение Эфирной прогулки
+<<<<<<< Updated upstream
 spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
+=======
+spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
+spellbook-knock-name = Стук
+spellbook-knock-desc = Открывает все шлюзы, ящики и шкафчики поблизости.
+spellbook-polymorph-spider-name = Полиморф паука
+>>>>>>> Stashed changes

@@ -4,3 +4,8 @@ guidebook-placeholder-text-2 = Если вы новичок, то начните
 guidebook-filter-placeholder-text = Фильтр
 guidebook-monkey-unspin = Отперевернуть обезьяну
 guidebook-monkey-disco = Диско обезьяна
+<<<<<<< Updated upstream
+=======
+guidebook-parser-error = Ошибка синтаксиса
+guidebook-error-message = Сообщение об ошибке
+>>>>>>> Stashed changes

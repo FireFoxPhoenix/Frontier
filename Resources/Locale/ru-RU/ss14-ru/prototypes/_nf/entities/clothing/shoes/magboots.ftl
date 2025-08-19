@@ -8,3 +8,7 @@ ent-ClothingShoesBootsMagPirate = пиратские магнитные сапо
     .desc = Магнитные сапоги, используемые во время работы вне корабля, чтобы оставаться надёжно прикреплённым к поверхности.
 ent-ClothingShoesBootsMagGaloshes = магнитные галоши
     .desc = Лучший помощник уборщика в любой ситуации.
+<<<<<<< Updated upstream
+=======
+ent-ClothingShoesBootsMagCombat = Боевые магнитные сапоги
+>>>>>>> Stashed changes
