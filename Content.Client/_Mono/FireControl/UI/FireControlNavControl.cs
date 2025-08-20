@@ -269,7 +269,7 @@ public sealed class FireControlNavControl : BaseShuttleControl
 
             if (ShowIFF)
             {
-                var labelName = _shuttles.GetIFFLabel(grid, self: false, iff);
+                var labelName = _shuttles.GetIFFLabel(grid, self: false, iff, viewerGridUid: ourGridId); // Forge-Change
                 if (labelName != null)
                 {
                     var gridBounds = grid.Comp.LocalAABB;
