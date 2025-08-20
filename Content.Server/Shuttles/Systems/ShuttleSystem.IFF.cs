@@ -170,10 +170,18 @@ public sealed partial class ShuttleSystem
             if (xform.GridUid != gridUid)
                 continue;
 
+            // Forge-Change start
+            var flagsForUi = component.Flags;
+            if (xform.GridUid.HasValue && IsSameFaction(gridUid, xform.GridUid.Value))
+            {
+                _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
+            }
+            // Forge-Change end
+
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = comp.AllowedFlags,
-                Flags = component.Flags,
+                Flags = _flags // Forge-Change
                 HideEndTime = stealth?.HideEndTime, // Forge-Change
                 HideCooldownEndTime = stealth?.HideCooldownEndTime, // Forge-Change
             });
