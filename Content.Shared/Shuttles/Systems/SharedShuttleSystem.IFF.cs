@@ -53,7 +53,7 @@ public abstract partial class SharedShuttleSystem
 
         return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
     }
-        
+
     /// <summary>
     /// Sets the color for this grid to appear as on radar.
     /// </summary>
@@ -167,7 +167,7 @@ public abstract partial class SharedShuttleSystem
         component.ReadOnly = readOnly;
     }
     // End Frontier
-    
+
     // Forge Method
     public bool IsSameFaction(EntityUid a, EntityUid b)
     {
@@ -176,9 +176,9 @@ public abstract partial class SharedShuttleSystem
 
         if (TryComp<ShuttleFactionComponent>(a, out var fa) && TryComp<ShuttleFactionComponent>(b, out var fb))
         {
-            if (string.IsNullOrEmpty(fa.FactionId) || string.IsNullOrEmpty(fb.FactionId))
+            if (string.IsNullOrEmpty(fa.Faction) || string.IsNullOrEmpty(fb.Faction))
                 return false;
-            return fa.FactionId == fb.FactionId;
+            return fa.Faction == fb.Faction;
         }
 
         return false;

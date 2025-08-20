@@ -158,7 +158,7 @@ public sealed partial class ShuttleSystem
                 _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
             }
             // Forge-Change end
-            
+
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = component.AllowedFlags,
@@ -180,7 +180,7 @@ public sealed partial class ShuttleSystem
                 continue;
 
             // Forge-Change start
-            var flagsForUi = component.Flags;
+            var _flags = component.Flags;
             if (xform.GridUid.HasValue && IsSameFaction(gridUid, xform.GridUid.Value))
             {
                 _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
