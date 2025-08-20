@@ -190,7 +190,7 @@ public sealed partial class ShuttleSystem
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = comp.AllowedFlags,
-                Flags = _flags // Forge-Change
+                Flags = _flags, // Forge-Change
                 HideEndTime = stealth?.HideEndTime, // Forge-Change
                 HideCooldownEndTime = stealth?.HideCooldownEndTime, // Forge-Change
             });
