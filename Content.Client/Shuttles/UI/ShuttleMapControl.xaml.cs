@@ -346,9 +346,9 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
             // Rudimentary IFF for now, if IFF hiding on then we don't show on the map at all
             // Forge-Check
-            if (EntManager.TryGetComponent(grid, out iffComp) && (iffComp.Flags & IFFFlags.Hide) != 0x0)
+            if (EntManager.TryGetComponent(grid, out iffComp) && (iffComp.Flags & IFFFlags.Hide) != 0x0;
             {
-                if (_shuttleEntity == null || (grid.Owner != _shuttleEntity && !_shuttles.IsSameFaction(grid, _shuttleEntity.Value)))
+                if (_shuttleEntity == null || !_shuttles.IsSameFaction(grid.Owner, _shuttleEntity.Value))
                     continue;
             }
 
