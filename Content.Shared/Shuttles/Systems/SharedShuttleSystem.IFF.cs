@@ -27,6 +27,7 @@ public abstract partial class SharedShuttleSystem
         return component.Color;
     }
 
+    // A lot of Forge-Changes
     public string? GetIFFLabel(EntityUid gridUid, bool self = false, IFFComponent? component = null, EntityUid? viewerGridUid = null)
     {
         var entName = MetaData(gridUid).EntityName;
@@ -36,21 +37,32 @@ public abstract partial class SharedShuttleSystem
             return entName;
         }
 
-        // Forge check
-        if (viewerGridUid.HasValue && IsSameFaction(gridUid, viewerGridUid.Value))
+        if (Resolve(gridUid, ref component, false))
         {
-            var _suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
-            return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + _suffix;
+            if ((component.Flags & IFFFlags.Hide) != 0x0)
+            {
+                if (viewerGridUid.HasValue && !IsSameFaction(gridUid, viewerGridUid.Value))
+                {
+                    return null;
+                }
+
+                var _suffix = GetServiceFlagsSuffix(component.ServiceFlags);
+                return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + _suffix;
+            }
+
+            if ((component.Flags & IFFFlags.HideLabel) != 0x0)
+            {
+                if (viewerGridUid.HasValue && !IsSameFaction(gridUid, viewerGridUid.Value))
+                {
+                    return null;
+                }
+
+                var _suffix = GetServiceFlagsSuffix(component.ServiceFlags);
+                return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + _suffix;
+            }
         }
 
-        if (Resolve(gridUid, ref component, false) && (component.Flags & (IFFFlags.HideLabel | IFFFlags.Hide)) != 0x0)
-        {
-            return null;
-        }
-
-        // Frontier
         var suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
-
         return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
     }
 
