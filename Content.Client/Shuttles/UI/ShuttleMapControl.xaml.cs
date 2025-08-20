@@ -373,8 +373,8 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
                 continue;
 
             // Force drawing it at this point.
-            var iffText = _shuttles.GetIFFLabel(grid, self: true, component: iffComp, viewerGridUid: _shuttleEntity);
-
+            var iffText = _shuttles.GetIFFLabel(grid, self: true, component: iffComp, viewerGridUid: _shuttleEntity); // Forge-Change 
+            
             if (string.IsNullOrEmpty(iffText))
                 continue;
 
