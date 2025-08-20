@@ -27,13 +27,19 @@ public abstract partial class SharedShuttleSystem
         return component.Color;
     }
 
-    public string? GetIFFLabel(EntityUid gridUid, bool self = false, IFFComponent? component = null)
+    public string? GetIFFLabel(EntityUid gridUid, bool self = false, IFFComponent? component = null, EntityUid? viewerGridUid = null)
     {
         var entName = MetaData(gridUid).EntityName;
 
         if (self)
         {
             return entName;
+        }
+
+        if (viewerGridUid.HasValue && IsSameFaction(gridUid, viewerGridUid.Value))
+        {
+            var suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
+            return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
         }
 
         if (Resolve(gridUid, ref component, false) && (component.Flags & (IFFFlags.HideLabel | IFFFlags.Hide)) != 0x0)
@@ -46,7 +52,7 @@ public abstract partial class SharedShuttleSystem
 
         return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
     }
-
+        
     /// <summary>
     /// Sets the color for this grid to appear as on radar.
     /// </summary>
@@ -160,4 +166,20 @@ public abstract partial class SharedShuttleSystem
         component.ReadOnly = readOnly;
     }
     // End Frontier
+    
+    // Forge Method
+    public bool IsSameFaction(EntityUid a, EntityUid b)
+    {
+        if (a == b)
+            return true;
+
+        if (TryComp<ShuttleFactionComponent>(a, out var fa) && TryComp<ShuttleFactionComponent>(b, out var fb))
+        {
+            if (string.IsNullOrEmpty(fa.FactionId) || string.IsNullOrEmpty(fb.FactionId))
+                return false;
+            return fa.FactionId == fb.FactionId;
+        }
+
+        return false;
+    }
 }
