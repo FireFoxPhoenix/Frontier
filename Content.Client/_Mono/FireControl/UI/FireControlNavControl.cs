@@ -255,8 +255,8 @@ public sealed class FireControlNavControl : BaseShuttleControl
 
             var gridBody = bodyQuery.GetComponent(gUid);
             EntManager.TryGetComponent<IFFComponent>(gUid, out var iff);
-
-            if (!_shuttles.CanDraw(gUid, gridBody, iff))
+ 
+            if (!_shuttles.CanDraw(gUid, gridBody, iff, viewerGridUid: ourGridId)) // Forge-Change
                 continue;
 
             var curGridToWorld = _transform.GetWorldMatrix(gUid);
