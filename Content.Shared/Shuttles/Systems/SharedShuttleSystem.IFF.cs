@@ -39,8 +39,8 @@ public abstract partial class SharedShuttleSystem
         // Forge check
         if (viewerGridUid.HasValue && IsSameFaction(gridUid, viewerGridUid.Value))
         {
-            var suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
-            return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
+            var _suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
+            return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + _suffix;
         }
 
         if (Resolve(gridUid, ref component, false) && (component.Flags & (IFFFlags.HideLabel | IFFFlags.Hide)) != 0x0)
