@@ -150,10 +150,19 @@ public sealed partial class ShuttleSystem
         else
         {
             TryComp<ShuttleStealthComponent>(xform.GridUid, out var stealth); // Forge-Change
+
+            // Forge-Change start
+            var _flags = iff.Flags;
+            if (xform.GridUid.HasValue && IsSameFaction(xform.GridUid.Value, xform.GridUid.Value))
+            {
+                _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
+            }
+            // Forge-Change end
+            
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = component.AllowedFlags,
-                Flags = iff.Flags,
+                Flags = _flags, // Forge-Change
                 HideEndTime = stealth?.HideEndTime, // Forge-Change
                 HideCooldownEndTime = stealth?.HideCooldownEndTime, // Forge-Change
             });
