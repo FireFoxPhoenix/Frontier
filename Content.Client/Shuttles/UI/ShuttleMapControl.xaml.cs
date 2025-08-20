@@ -345,11 +345,11 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             IFFComponent? iffComp = null;
 
             // Rudimentary IFF for now, if IFF hiding on then we don't show on the map at all
-            if (grid.Owner != _shuttleEntity &&
-                EntManager.TryGetComponent(grid, out iffComp) &&
-                (iffComp.Flags & IFFFlags.Hide) != 0x0)
+            // Forge-Check
+            if (EntManager.TryGetComponent(grid, out iffComp) && (iffComp.Flags & IFFFlags.Hide) != 0x0)
             {
-                continue;
+                if (_shuttleEntity == null || (grid.Owner != _shuttleEntity && !_shuttles.IsSameFaction(grid, _shuttleEntity.Value)))
+                    continue;
             }
 
             var gridColor = _shuttles.GetIFFColor(grid, self: _shuttleEntity == grid.Owner, component: iffComp);
@@ -373,7 +373,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
                 continue;
 
             // Force drawing it at this point.
-            var iffText = _shuttles.GetIFFLabel(grid, self: true, component: iffComp);
+            var iffText = _shuttles.GetIFFLabel(grid, self: true, component: iffComp, viewerGridUid: _shuttleEntity);
 
             if (string.IsNullOrEmpty(iffText))
                 continue;
