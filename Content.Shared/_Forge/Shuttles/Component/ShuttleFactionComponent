@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared.Shuttles.Components
 {
     [RegisterComponent]
-    public sealed class ShuttleFactionComponent : Component
+    public partial sealed class ShuttleFactionComponent : Component
     {
         [DataField("faction")]
         public string Faction = string.Empty;
