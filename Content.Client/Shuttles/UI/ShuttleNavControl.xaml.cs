@@ -224,7 +224,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             var gridBody = bodyQuery.GetComponent(gUid);
             EntManager.TryGetComponent<IFFComponent>(gUid, out var iff);
 
-            if (!_shuttles.CanDraw(gUid, gridBody, iff))
+            if (!_shuttles.CanDraw(gUid, gridBody, iff, viewerGridUid: ourGridId)) // Forge-Change
                 continue;
 
             var curGridToWorld = _transform.GetWorldMatrix(gUid);
@@ -239,19 +239,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             var labelName = _shuttles.GetIFFLabel(grid, self: false, iff, viewerGridUid: ourGridId); // Forge-Change
 
             var isPlayerShuttle = iff != null && (iff.Flags & IFFFlags.IsPlayerShuttle) != 0x0;
-            var shouldDrawIFF = ShowIFF && labelName != null; // Forge-Change
-
-            if (iff != null && (iff.Flags & (IFFFlags.HideLabel | IFFFlags.Hide)) != 0x0)
-            {
-                if (ourGridId.HasValue && !_shuttles.IsSameFaction(gUid, ourGridId.Value))
-                {
-                    shouldDrawIFF = false;
-                }
-                else
-                {
-                    shouldDrawIFF = true;
-                }
-            }
+            var shouldDrawIFF = ShowIFF && labelName != null; // Forge-Change может лучше вернуть как было
 
             if (IFFFilter != null)
             {
