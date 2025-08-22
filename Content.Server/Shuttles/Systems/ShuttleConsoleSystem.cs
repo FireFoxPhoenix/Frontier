@@ -176,12 +176,14 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             {
                 args.Cancel();
                 _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
+                return;
             }
 
             if (!HasComp<BecomesStationComponent>(griduid))
             {
                 args.Cancel();
                 _popup.PopupEntity(Loc.GetString("not-becomes-station"), uid);
+                return;
             }
 
             if (!TryPilot(args.User, uid))
