@@ -178,7 +178,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
                 _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
             }
 
-            if (!HasComp<BecomesStationComponent>(gridUid))
+            if (!HasComp<BecomesStationComponent>(griduid))
             {
                 args.Cancel();
                 _popup.PopupEntity(Loc.GetString("not-becomes-station"), uid);
@@ -349,12 +349,6 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 //            {
 //                args.Cancel();
 //                _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid)
-//            }
-//
-//            if (!HasComp<BecomesStationComponent>(gridUid))
-//            {
-//                args.Cancel();
-//                _popup.PopupEntity(Loc.GetString("not-becomes-station"), uid);
 //            }
 //
 //            if (!TryPilot(args.User, uid))
