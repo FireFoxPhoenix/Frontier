@@ -26,6 +26,7 @@ using Content.Shared.Access.Systems; // Frontier
 using Content.Shared.Construction.Components; // Frontier
 using Content.Shared._NF.Shuttles.Events; // Frontier
 using System.Linq; // Frontier
+using Content.Server.Station.Components; // Forge-Change
 using Robust.Shared.Map.Components; // Frontier
 
 namespace Content.Server.Shuttles.Systems;
@@ -171,16 +172,21 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             var mapGridComp = Comp<MapGridComponent>(griduid.Value);
             var tiles = _map.GetAllTiles(griduid.Value, mapGridComp).ToList();
             var tilesCount = tiles.Count;
-            if (tilesCount > 20)
-            {
-                if (!TryPilot(args.User, uid))
-                    args.Cancel();
-            }
-            else
+            if (tilesCount < 20)
             {
                 args.Cancel();
                 _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
             }
+
+            if (!HasComp<BecomesStationComponent>(gridUid))
+            {
+                args.Cancel();
+                _popup.PopupEntity(Loc.GetString("not-becomes-station"), uid);
+            }
+
+            if (!TryPilot(args.User, uid))
+                args.Cancel();
+            
         }
         // Frontier end
     }
@@ -339,16 +345,20 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 //            var mapGridComp = Comp<MapGridComponent>(griduid.Value);
 //            var tiles = _map.GetAllTiles(griduid.Value, mapGridComp).ToList();
 //            var tilesCount = tiles.Count;
-//            if (tilesCount > 15)
-//            {
-//                if (!TryPilot(args.User, uid))
-//                    args.Cancel();
-//            }
-//            else
+//            if (tilesCount < 20)
 //            {
 //                args.Cancel();
-//                _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
+//                _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid)
 //            }
+//
+//            if (!HasComp<BecomesStationComponent>(gridUid))
+//            {
+//                args.Cancel();
+//                _popup.PopupEntity(Loc.GetString("not-becomes-station"), uid);
+//            }
+//
+//            if (!TryPilot(args.User, uid))
+//                args.Cancel();
 //        }
 
         while (query.MoveNext(out var uid, out var comp))
