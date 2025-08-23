@@ -153,3 +153,102 @@
       RawScrapTech: 1000 # 10 sheet
   - type: StaticPrice
     price: 2000
+
+# Forge-Change start
+- type: entity
+  id: ScrapBrokenMachineBase
+  parent: BaseScrapLarge
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 3000 # 30 sheets
+      Plasma: 1000 # 10 sheets
+      Plastic: 2000 # 20 sheets
+      Silver: 1000 # 10 sheets
+      RawScrap: 1500 # 15 sheets
+      RawScrapTech: 300 # 3 sheet
+      
+- type: entity
+  id: ScrapBrokenMachineAutolathe
+  parent: ScrapBrokenMachineBase
+  name: ruined autolathe
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: autolathe
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineGyroscope
+  parent: ScrapBrokenMachineBase
+  name: ruined gyroscope
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: gyroscope
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineImprinter
+  parent: ScrapBrokenMachineBase
+  name: ruined imprinter
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: imprinter
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineProtolathe
+  parent: ScrapBrokenMachineBase
+  name: ruined protolathe
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: protolathe
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineSmes
+  parent: ScrapBrokenMachineBase
+  name: ruined smes
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: smes
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineSubstation
+  parent: ScrapBrokenMachineBase
+  name: ruined substation
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: substation
+      map: [ "base" ]
+
+- type: entity
+  id: ScrapBrokenMachineThruster
+  parent: ScrapBrokenMachineBase
+  name: ruined thruster
+  description: This machine is beyond repair, but you could likely extract some materials out of it.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Materials/Scrap/broken_machines.rsi
+    layers:
+    - state: thruster
+      map: [ "base" ]
+# Forge-Change end
