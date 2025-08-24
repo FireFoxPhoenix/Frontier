@@ -1,4 +1,4 @@
-ent-ClothingUniformJumpsuitMailCarrier = юбка почтальона
+ent-ClothingUniformJumpsuitMailCarrier = комбинезон почтальона
     .desc = Вражеские псины повсюду.
 ent-ClothingUniformJumpskirtMailCarrier = юбка почтальона
     .desc = Вражеские псины повсюду.
