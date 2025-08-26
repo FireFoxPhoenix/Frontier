@@ -15,8 +15,8 @@
   description: Среднегабаритный шаттл наёмников, созданный для выполнения опасных целей.
   price: 75900
   category: Small
-  group: MercenarytInterview
-  shuttlePath: /Maps/Forge/Shuttles/MercenarytInterview/Corvet.yml
+  group: Mercenary
+  shuttlePath: /Maps/Forge/Shuttles/MercenaryInterview/Corvet.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -25,7 +25,7 @@
 - type: gameMap
   id: Corvet
   mapName: 'SBI Корвет'
-  mapPath: /Maps/Forge/Shuttles/MercenarytInterview/Corvet.yml
+  mapPath: /Maps/Forge/Shuttles/MercenaryInterview/Corvet.yml
   minPlayers: 0
   stations:
     Corvet:
@@ -39,4 +39,4 @@
         - type: StationJobs
           availableJobs:
             PilotInterview: [ 0, 0 ]
-            MercenarytInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

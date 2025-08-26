@@ -17,8 +17,8 @@
   description: Малогабаритный шаттл для наёмников, рекомендуемый состав экипажа 1 человек.
   price: 40000
   category: Small
-  group: MercenarytInterview
-  shuttlePath: /Maps/Forge/Shuttles/MercenarytInterview/owl.yml
+  group: Mercenary
+  shuttlePath: /Maps/Forge/Shuttles/MercenaryInterview/owl.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -26,7 +26,7 @@
 - type: gameMap
   id: Owl
   mapName: 'SBI Сова'
-  mapPath: /Maps/Forge/Shuttles/MercenarytInterview/owl.yml
+  mapPath: /Maps/Forge/Shuttles/MercenaryInterview/owl.yml
   minPlayers: 0
   stations:
     Owl:
