@@ -16,6 +16,7 @@
   price: 45000 # 15% t2.
   category: Medium
   group: Medical
+  access: Medical
   shuttlePath: /Maps/Forge/Shuttles/Medical/druid.yml
   guidebookPage: ShipyardDruid
   class:
@@ -39,4 +40,4 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            paraMedicialInterview: [ 0, 0 ]
+            paraMedicalInterview: [ 0, 0 ]

@@ -264,8 +264,6 @@
       state: shipyard_medical
     - map: ["computerLayerKeys"]
       state: telesci_key
-  - type: ShipyardConsole # Forge-Change
-    newAccessLevels: [Medical]
 
 - type: entity
   id: ComputerShipyardSr
