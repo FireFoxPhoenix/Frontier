@@ -16,8 +16,8 @@
   description: Крупногабаритный шаттл для наёмников, рекомендуемый состав экипажа 4 человека.
   price: 195500
   category: Small
-  group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/Mercenary/dreadnought.yml
+  group: MercenarytInterview
+  shuttlePath: /Maps/Forge/Shuttles/MercenarytInterview/dreadnought.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -25,7 +25,7 @@
 - type: gameMap
   id: Dreadnought
   mapName: 'SBI Дредноут'
-  mapPath: /Maps/Forge/Shuttles/Mercenary/dreadnought.yml
+  mapPath: /Maps/Forge/Shuttles/MercenarytInterview/dreadnought.yml
   minPlayers: 0
   stations:
     Dreadnought:
@@ -38,5 +38,5 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Pilot: [ 0, 0 ]
-            Mercenary: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenarytInterview: [ 0, 0 ]

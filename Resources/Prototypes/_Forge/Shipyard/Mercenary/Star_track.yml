@@ -15,8 +15,8 @@
   description: Крупногабаритный шаттл для наёмников, рекомендуемый состав экипажа 4 человека.
   price: 239500
   category: Small
-  group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/Mercenary/Star_track.yml
+  group: MercenarytInterview
+  shuttlePath: /Maps/Forge/Shuttles/MercenarytInterview/Star_track.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -24,7 +24,7 @@
 - type: gameMap
   id: Star_track
   mapName: 'SBI Энтерпрайз'
-  mapPath: /Maps/Forge/Shuttles/Mercenary/Star_track.yml
+  mapPath: /Maps/Forge/Shuttles/MercenarytInterview/Star_track.yml
   minPlayers: 0
   stations:
     Star_track:
@@ -37,5 +37,5 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Pilot: [ 0, 0 ]
-            Mercenary: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenarytInterview: [ 0, 0 ]

@@ -15,8 +15,8 @@
   description: Малогабаритный шаттл для наёмников, рекомендуемый состав экипажа 2 человека.
   price: 46000
   category: Small
-  group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/Mercenary/crown.yml
+  group: MercenarytInterview
+  shuttlePath: /Maps/Forge/Shuttles/MercenarytInterview/crown.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -24,7 +24,7 @@
 - type: gameMap
   id: Crown
   mapName: 'SBI Ворон'
-  mapPath: /Maps/Forge/Shuttles/Mercenary/crown.yml
+  mapPath: /Maps/Forge/Shuttles/MercenarytInterview/crown.yml
   minPlayers: 0
   stations:
     Crown:
@@ -37,6 +37,6 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Contractor: [ 0, 0 ]
-            Pilot: [ 0, 0 ]
-            Mercenary: [ 0, 0 ]
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenarytInterview: [ 0, 0 ]
