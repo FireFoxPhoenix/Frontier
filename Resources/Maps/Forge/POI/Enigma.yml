@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/12/2025 12:48:47
-  entityCount: 1655
+  time: 08/28/2025 08:29:39
+  entityCount: 1665
 maps: []
 grids:
 - 1
@@ -1240,11 +1240,6 @@ entities:
       parent: 1
 - proto: AirlockMaint
   entities:
-  - uid: 41
-    components:
-    - type: Transform
-      pos: 2.5,-6.5
-      parent: 1
   - uid: 42
     components:
     - type: Transform
@@ -1259,6 +1254,11 @@ entities:
       parent: 1
 - proto: AirlockSyndicateGlassLocked
   entities:
+  - uid: 41
+    components:
+    - type: Transform
+      pos: 2.5,-6.5
+      parent: 1
   - uid: 44
     components:
     - type: Transform
@@ -3442,6 +3442,56 @@ entities:
     - type: Transform
       pos: -10.5,-15.5
       parent: 1
+  - uid: 1656
+    components:
+    - type: Transform
+      pos: -15.5,1.5
+      parent: 1
+  - uid: 1657
+    components:
+    - type: Transform
+      pos: -15.5,2.5
+      parent: 1
+  - uid: 1658
+    components:
+    - type: Transform
+      pos: -15.5,3.5
+      parent: 1
+  - uid: 1659
+    components:
+    - type: Transform
+      pos: -15.5,4.5
+      parent: 1
+  - uid: 1660
+    components:
+    - type: Transform
+      pos: -15.5,5.5
+      parent: 1
+  - uid: 1661
+    components:
+    - type: Transform
+      pos: -15.5,6.5
+      parent: 1
+  - uid: 1662
+    components:
+    - type: Transform
+      pos: -15.5,7.5
+      parent: 1
+  - uid: 1663
+    components:
+    - type: Transform
+      pos: -15.5,8.5
+      parent: 1
+  - uid: 1664
+    components:
+    - type: Transform
+      pos: -15.5,9.5
+      parent: 1
+  - uid: 1665
+    components:
+    - type: Transform
+      pos: -15.5,10.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 446
@@ -5088,6 +5138,8 @@ entities:
     - type: Transform
       pos: 12.5,-15.5
       parent: 1
+    missingComponents:
+    - Anchorable
 - proto: DefaultStationBeaconArmory
   entities:
   - uid: 748
@@ -5552,7 +5604,7 @@ entities:
       pos: -5.5,-2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2934.3857
+      secondsUntilStateChange: -3145.819
       state: Closing
     - type: DeviceNetwork
       deviceLists:

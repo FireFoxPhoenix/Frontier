@@ -16,7 +16,7 @@
   price: 46000
   category: Small
   group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/MercenaryInterview/crown.yml
+  shuttlePath: /Maps/Forge/Shuttles/Mercenary/crown.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -24,7 +24,7 @@
 - type: gameMap
   id: Crown
   mapName: 'SBI Ворон'
-  mapPath: /Maps/Forge/Shuttles/MercenaryInterview/crown.yml
+  mapPath: /Maps/Forge/Shuttles/Mercenary/crown.yml
   minPlayers: 0
   stations:
     Crown:

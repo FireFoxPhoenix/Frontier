@@ -17,7 +17,7 @@
   price: 195500
   category: Small
   group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/MercenaryInterview/dreadnought.yml
+  shuttlePath: /Maps/Forge/Shuttles/Mercenary/dreadnought.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -25,7 +25,7 @@
 - type: gameMap
   id: Dreadnought
   mapName: 'SBI Дредноут'
-  mapPath: /Maps/Forge/Shuttles/MercenaryInterview/dreadnought.yml
+  mapPath: /Maps/Forge/Shuttles/Mercenary/dreadnought.yml
   minPlayers: 0
   stations:
     Dreadnought:

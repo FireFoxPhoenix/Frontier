@@ -18,7 +18,7 @@
   price: 40000
   category: Small
   group: Mercenary
-  shuttlePath: /Maps/Forge/Shuttles/MercenaryInterview/owl.yml
+  shuttlePath: /Maps/Forge/Shuttles/Mercenary/owl.yml
   addComponents:
   - type: MercenaryBountyDatabase
     bounties: []
@@ -26,7 +26,7 @@
 - type: gameMap
   id: Owl
   mapName: 'SBI Сова'
-  mapPath: /Maps/Forge/Shuttles/MercenaryInterview/owl.yml
+  mapPath: /Maps/Forge/Shuttles/Mercenary/owl.yml
   minPlayers: 0
   stations:
     Owl:
