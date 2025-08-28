@@ -5061,7 +5061,7 @@ entities:
     - type: Transform
       pos: 0.5,-7.5
       parent: 1
-- proto: CryogenicSleepUnitSpawnerLateJoin
+- proto: CryogenicSleepUnit
   entities:
   - uid: 745
     components:
