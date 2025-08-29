@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: -
+# Discord: -
+# License: CC-BY-NC-ND-3.0
+# Corvax_frontier
+
+# Maintainer Info
+# GitHub: https://github.com/mersen-tyn
+# Discord: mersen
+
+# Shuttle Notes:
+
+- type: pointOfInterest
+  id: Centcomm
+  parent: BasePOI
+  name: 'ЦК'
+  minimumDistance: 750
+  maximumDistance: 1000
+  spawnGroup: NewMapsgGrid
+  gridPath: /Maps/Forge/Outpost/Centcomm.yml
+  addComponents:
+  - type: ProtectedGrid
+    preventArtifactTriggers: True
+    preventExplosions: True
+    preventEmpEvents: True
+    preventRCDUse: True
+    preventFloorPlacement: True
+    preventFloorRemoval: True
+    killHostileMobs: True
+    noGridCollision: True
+
+- type: gameMap
+  id: Centcomm
+  mapName: ЦК
+  mapPath: /Maps/Forge/Outpost/Centcomm.yml
+  minPlayers: 0
+  stations:
+    Centcomm:
+      stationProto: RecordsFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ЦК'
+        - type: StationJobs
+          availableJobs: {}

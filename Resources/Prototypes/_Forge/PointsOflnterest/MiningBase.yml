@@ -1,6 +1,6 @@
 # Author Info
 # GitHub: -
-# Discord: autsaider_m - MiningBase, t4k_dnh - NewMiningBase
+# Discord: t4k_dnh
 # License: CC-BY-NC-ND-3.0
 # Corvax_frontier
 
@@ -17,8 +17,7 @@
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
-#  gridPath: /Maps/Forge/POI/MiningBase.yml
-  gridPath: /Maps/Forge/POI/NewMiningBase.yml
+  gridPath: /Maps/Forge/POI/MiningBase.yml
   addComponents:
   - type: IFF
     color: "#a68614"
@@ -38,8 +37,7 @@
 - type: gameMap
   id: MiningBase
   mapName: 'База Шахтёров'
-#  mapPath: /Maps/Forge/POI/MiningBase.yml
-  mapPath: /Maps/Forge/POI/NewMiningBase.yml
+  mapPath: /Maps/Forge/POI/MiningBase.yml
   minPlayers: 0
   stations:
     MiningBase:
