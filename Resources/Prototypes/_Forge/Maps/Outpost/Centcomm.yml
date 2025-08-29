@@ -5,19 +5,19 @@
 # Corvax_frontier
 
 # Maintainer Info
-# GitHub: https://github.com/mersen-tyn
-# Discord: mersen
+# GitHub: https://github.com/FireFoxPhoenix
+# Discord: FireFoxPhoenix
 
 # Shuttle Notes:
 
 - type: pointOfInterest
   id: Centcomm
   parent: BasePOI
-  name: 'ЦК'
+  name: 'Центральное командование'
   minimumDistance: 750
   maximumDistance: 1000
   spawnGroup: NewMapsgGrid
-  gridPath: /Maps/Forge/Outpost/Centcomm.yml
+  gridPath: /Maps/Forge/Outpost/CentComm.yml
   addComponents:
   - type: ProtectedGrid
     preventArtifactTriggers: True
@@ -31,14 +31,14 @@
 
 - type: gameMap
   id: Centcomm
-  mapName: ЦК
-  mapPath: /Maps/Forge/Outpost/Centcomm.yml
+  mapName: Центральное Командование
+  mapPath: /Maps/Forge/Outpost/CentComm.yml
   minPlayers: 0
   stations:
     Centcomm:
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'ЦК'
+          mapNameTemplate: 'Центральное Командование'
         - type: StationJobs
           availableJobs: {}
