@@ -59001,15 +59001,6 @@ entities:
     - type: Transform
       pos: -49.447075,0.68463683
       parent: 1
-- proto: WeaponLauncherRocket
-  entities:
-  - uid: 4310
-    components:
-    - type: Transform
-      parent: 5308
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 4478
     components:
     - type: Transform
