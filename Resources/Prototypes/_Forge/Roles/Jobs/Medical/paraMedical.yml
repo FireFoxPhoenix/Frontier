@@ -68,3 +68,7 @@
 #  equipment:
 #    jumpsuit: ClothingUniformJumpsuitPilot
 #    shoes: ClothingShoesBootsPilot
+
+- type: chameleonOutfit
+  id: paraMedicalChameleonOutfit
+  job: paraMedical
