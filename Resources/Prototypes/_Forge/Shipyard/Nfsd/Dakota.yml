@@ -24,7 +24,7 @@
 #   addComponents:
 #   - type: ShuttleFaction
 #     faction: NFSD
-  
+
 # - type: gameMap
 #   id: Dakota
 #   mapName: 'NSF Дакота'

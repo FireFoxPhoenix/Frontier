@@ -157,7 +157,7 @@ public abstract partial class SharedShuttleSystem : EntitySystem
         {
             return viewerGridUid.HasValue && IsSameFaction(gridUid, viewerGridUid.Value);
         }
-        
+
         return true; // Forge-Change
     }
 
