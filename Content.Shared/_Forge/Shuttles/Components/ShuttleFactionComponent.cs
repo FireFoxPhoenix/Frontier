@@ -2,10 +2,11 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Shuttles.Components
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class ShuttleFactionComponent : Component
     {
-        [DataField("faction")]
+        [DataField("faction"), AutoNetworkedField]
+        [ViewVariables(VVAccess.ReadWrite)]
         public string Faction = string.Empty;
     }
 }

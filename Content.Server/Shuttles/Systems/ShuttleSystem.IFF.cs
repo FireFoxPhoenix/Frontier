@@ -151,18 +151,10 @@ public sealed partial class ShuttleSystem
         {
             TryComp<ShuttleStealthComponent>(xform.GridUid, out var stealth); // Forge-Change
 
-            // Forge-Change start
-            var _flags = iff.Flags;
-            if (xform.GridUid.HasValue && IsSameFaction(xform.GridUid.Value, xform.GridUid.Value))
-            {
-                _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
-            }
-            // Forge-Change end
-
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = component.AllowedFlags,
-                Flags = _flags, // Forge-Change
+                Flags = iff.Flags,
                 HideEndTime = stealth?.HideEndTime, // Forge-Change
                 HideCooldownEndTime = stealth?.HideCooldownEndTime, // Forge-Change
             });
@@ -179,18 +171,10 @@ public sealed partial class ShuttleSystem
             if (xform.GridUid != gridUid)
                 continue;
 
-            // Forge-Change start
-            var _flags = component.Flags;
-            if (xform.GridUid.HasValue && IsSameFaction(gridUid, xform.GridUid.Value))
-            {
-                _flags &= ~(IFFFlags.Hide | IFFFlags.HideLabel);
-            }
-            // Forge-Change end
-
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = comp.AllowedFlags,
-                Flags = _flags, // Forge-Change
+                Flags = component.Flags,
                 HideEndTime = stealth?.HideEndTime, // Forge-Change
                 HideCooldownEndTime = stealth?.HideCooldownEndTime, // Forge-Change
             });

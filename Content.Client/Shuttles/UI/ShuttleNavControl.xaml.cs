@@ -241,6 +241,14 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             var isPlayerShuttle = iff != null && (iff.Flags & IFFFlags.IsPlayerShuttle) != 0x0;
             var shouldDrawIFF = ShowIFF && labelName != null; // Forge-Change может лучше вернуть как было
 
+            if (ourGridId == null && iff != null && (iff.Flags & IFFFlags.HideLabel) != 0x0)
+            {
+                // When in space, ourGridId is null and GetIFFLabel doesn't properly check HideLabel.
+                // So we do it manually.
+                if (!_shuttles.IsSameFaction(gUid, _coordinates.Value.EntityId))
+                    shouldDrawIFF = false;
+            }
+
             if (IFFFilter != null)
             {
                 shouldDrawIFF &= IFFFilter(gUid, grid.Comp, iff);
