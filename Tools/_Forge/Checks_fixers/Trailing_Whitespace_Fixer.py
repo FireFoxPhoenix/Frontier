@@ -9,7 +9,7 @@ import os
 
 # Settings
 TARGET_FOLDERS = ['Prototypes', 'Maps', 'Textures']
-TARGET_EXTENSIONS = ['.ftl', '.yml', '.json']
+TARGET_EXTENSIONS = ['.ftl', '.yml']
 EXCLUDED_FOLDERS = ['.git', 'bin', 'Packages', 'RobustToolbox']
 EXCLUDED_EXTENSIONS = ['.meta', '.png', '.jpg', '.jpeg', '.gif', '.wav', '.mp3', '.ogg', '.dll', '.exe']
 MARKER_FILE = 'SpaceStation14.sln'
@@ -50,8 +50,12 @@ def remove_trailing_whitespace(file_path: str) -> bool:
 def check_all_files(folder: str):
     for root, dirs, files in os.walk(folder):
         if any(folder in root for folder in TARGET_FOLDERS):
+            if any(excluded in root for excluded in EXCLUDED_FOLDERS):
+                continue
             for file in files:
                 if any(file.endswith(ext) for ext in TARGET_EXTENSIONS):
+                    if any(excluded in root for excluded in EXCLUDED_FOLDERS):
+                        continue
                     file_path = os.path.join(root, file)
                     if remove_trailing_whitespace(file_path):
                         file_path = os.path.relpath(file_path, start=main_folder)
