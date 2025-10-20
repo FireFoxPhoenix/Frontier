@@ -53,8 +53,8 @@ def check_all_files(folder: str):
             if any(excluded in root for excluded in EXCLUDED_FOLDERS):
                 continue
             for file in files:
-                if any(file.endswith(ext) for ext in TARGET_EXTENSIONS):
-                    if any(excluded in root for excluded in EXCLUDED_FOLDERS):
+                if any(file.endswith(extension) for extension in TARGET_EXTENSIONS):
+                    if any(file.endswith(excluded) for excluded in EXCLUDED_EXTENSIONS):
                         continue
                     file_path = os.path.join(root, file)
                     if remove_trailing_whitespace(file_path):
