@@ -248,6 +248,27 @@ public sealed partial class SalvageSystem
                                 Log.Error($"Could not get DefaultMap EntityUID, shuttle {shuttleUid} may be stuck on expedition.");
                                 continue;
                             }
+                            
+                            EntityUid? targetPOI = null;
+
+                            if (TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp))
+                            {
+                                if (shuttleComp.TargetPoi != null)
+                                {
+                                    var l = new SortedList<float, EntityUid>();
+                                    var worldPos = _transform.GetWorldPosition(transform);
+                                    foreach (var (otherUid, _) in EntityManager.GetAllComponents("BecomesStationComponent")) // need to check
+                                    {
+                                        //if (!_xformQuery.TryGetComponent(otherUid, out var compXform) || compXform.MapID != mapId)
+                                        //    continue;
+                                        if (!TryComp<BecomesStationComponent>(otherUid, out var becomesStation) || becomesStation.Id != shuttleComp.TargetPOI)
+                                            continue;
+                                        var dist = (_transform.GetWorldPosition(compXform) - worldPos).LengthSquared();
+                                        l.TryAdd(dist, otherUid);
+                                    }
+                                    targetPOI = l.Count > 0 ? l.First().Value : null;
+                                }
+                            }
 
                             // Destination generator parameters (move to CVAR?)
                             int numRetries = 20; // Maximum number of retries
@@ -283,8 +304,15 @@ public sealed partial class SalvageSystem
                                 // No good position yet, pick another random position.
                                 dropLocation = _random.NextVector2(minRange, maxRange);
                             }
-
-                            _shuttle.FTLToCoordinates(shuttleUid, shuttle, new EntityCoordinates(mapUid.Value, dropLocation), 0f, ftlTime, TravelTime);
+                            
+                            if (targetPOI == null)
+                            {
+                                _shuttle.FTLToCoordinates(shuttleUid, shuttle, new EntityCoordinates(mapUid.Value, dropLocation), 0f, ftlTime, TravelTime);
+                            }
+                            else
+                            {
+                                // FtlToDock
+                            }
                             // End Frontier:  try to find a potential destination for ship that doesn't collide with other grids.
                             //_shuttle.FTLToDock(shuttleUid, shuttle, member, ftlTime); // Frontier: use above instead
                         }
