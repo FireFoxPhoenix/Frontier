@@ -305,7 +305,7 @@ public sealed partial class SalvageSystem
                             }
                             else
                             {
-                                _shuttle.FTLToDock(shuttleUid, shuttle, targetPOI, 0f, ftlTime, TravelTime);
+                                _shuttle.FTLToDock(shuttleUid, shuttle, targetPOI.Value, 0f, ftlTime);
                             }
                             // End Frontier:  try to find a potential destination for ship that doesn't collide with other grids.
                             //_shuttle.FTLToDock(shuttleUid, shuttle, member, ftlTime); // Frontier: use above instead
