@@ -55,6 +55,9 @@ public sealed partial class SalvageExpeditionConsoleComponent : Component
     /// </summary>
     [DataField]
     public bool Debug = false;
+
+    [DataField]
+    public string? TargetPoi = null;
     // End Frontier: 
 }
 
