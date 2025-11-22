@@ -250,7 +250,7 @@ public sealed partial class SalvageSystem
                             }
 
                             EntityUid? targetPOI = null;
-                            
+
                             if (TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp) && !string.IsNullOrEmpty(shuttleComp.TargetPOI))
                             {
                                 if (int.TryParse(shuttleComp.TargetPOI, out var PoiId))
@@ -261,18 +261,20 @@ public sealed partial class SalvageSystem
                                         targetPOI = entityId;
                                     }
                                 }
-                            if (targetPOI == null)
-                            {
-                                var poiQuery = AllEntityQuery<BecomesStationComponent, TransformComponent>();
-                                while (poiQuery.MoveNext(out var poiUid, out var becomesStation, out var poiXform))
+                                if (targetPOI == null)
                                 {
-                                    if (becomesStation.Id == shuttleComp.TargetPOI && poiXform.MapID == _gameTicker.DefaultMap)
+                                    var poiQuery = AllEntityQuery<BecomesStationComponent, TransformComponent>();
+                                    while (poiQuery.MoveNext(out var poiUid, out var becomesStation, out var poiXform))
                                     {
-                                        targetPOI = poiUid;
-                                        break;
+                                        if (becomesStation.Id == shuttleComp.TargetPOI && poiXform.MapID == _gameTicker.DefaultMap)
+                                        {
+                                            targetPOI = poiUid;
+                                            break;
+                                        }
                                     }
                                 }
                             }
+
 
                             // Destination generator parameters (move to CVAR?)
                             int numRetries = 20; // Maximum number of retries
