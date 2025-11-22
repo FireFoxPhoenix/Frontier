@@ -1,0 +1,30 @@
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._Forge.BinderConsole.BUI;
+
+[NetSerializable, Serializable]
+public sealed class ShuttleBinderInterfaceState : BoundUserInterfaceState
+{
+    public readonly string? CurrentPOI;
+    public readonly string? MapInfo;
+    public readonly string? ShuttleInfo;
+    public readonly bool HasInsertedMap;
+    public readonly bool CanBind;
+    public readonly bool CanUnbind;
+
+    public ShuttleBinderInterfaceState(
+        string? currentPOI,
+        string? mapInfo,
+        string? shuttleInfo,
+        bool hasInsertedMap,
+        bool canBind,
+        bool canUnbind)
+    {
+        CurrentPOI = currentPOI;
+        MapInfo = mapInfo;
+        ShuttleInfo = shuttleInfo;
+        HasInsertedMap = hasInsertedMap;
+        CanBind = canBind;
+        CanUnbind = canUnbind;
+    }
+}
