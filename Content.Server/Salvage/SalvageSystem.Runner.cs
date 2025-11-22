@@ -251,25 +251,19 @@ public sealed partial class SalvageSystem
                             
                             EntityUid? targetPOI = null;
 
-                            if (TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp))
+                            if (TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp) && shuttleComp.TargetPOI != null)
                             {
-                                if (shuttleComp.TargetPoi != null)
+                                var poiQuery = AllEntityQuery<BecomesStationComponent, TransformComponent>();
+                                while (poiQuery.MoveNext(out var poiUid, out var becomesStation, out var poiXform))
                                 {
-                                    var l = new SortedList<float, EntityUid>();
-                                    var worldPos = _transform.GetWorldPosition(transform);
-                                    foreach (var (otherUid, _) in EntityManager.GetAllComponents("BecomesStationComponent")) // need to check
+                                    if (becomesStation.Id == shuttleComp.TargetPOI && poiXform.MapID == _gameTicker.DefaultMap)
                                     {
-                                        //if (!_xformQuery.TryGetComponent(otherUid, out var compXform) || compXform.MapID != mapId)
-                                        //    continue;
-                                        if (!TryComp<BecomesStationComponent>(otherUid, out var becomesStation) || becomesStation.Id != shuttleComp.TargetPOI)
-                                            continue;
-                                        var dist = (_transform.GetWorldPosition(compXform) - worldPos).LengthSquared();
-                                        l.TryAdd(dist, otherUid);
+                                        targetPOI = poiUid;
+                                        break;
                                     }
-                                    targetPOI = l.Count > 0 ? l.First().Value : null;
                                 }
                             }
-
+                            
                             // Destination generator parameters (move to CVAR?)
                             int numRetries = 20; // Maximum number of retries
                             float minDistance = 200f; // Minimum distance from another object, in meters
