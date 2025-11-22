@@ -248,7 +248,7 @@ public sealed partial class SalvageSystem
                                 Log.Error($"Could not get DefaultMap EntityUID, shuttle {shuttleUid} may be stuck on expedition.");
                                 continue;
                             }
-                            
+
                             EntityUid? targetPOI = null;
 
                             if (TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp) && shuttleComp.TargetPOI != null)
@@ -263,7 +263,7 @@ public sealed partial class SalvageSystem
                                     }
                                 }
                             }
-                            
+
                             // Destination generator parameters (move to CVAR?)
                             int numRetries = 20; // Maximum number of retries
                             float minDistance = 200f; // Minimum distance from another object, in meters
@@ -298,7 +298,7 @@ public sealed partial class SalvageSystem
                                 // No good position yet, pick another random position.
                                 dropLocation = _random.NextVector2(minRange, maxRange);
                             }
-                            
+
                             if (targetPOI == null)
                             {
                                 _shuttle.FTLToCoordinates(shuttleUid, shuttle, new EntityCoordinates(mapUid.Value, dropLocation), 0f, ftlTime, TravelTime);
