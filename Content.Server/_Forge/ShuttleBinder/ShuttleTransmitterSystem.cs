@@ -187,7 +187,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             var stationUid = FindStationForBeacon(beaconUid.Value);
             if (stationUid != null)
             {
-                shuttle.TargetPOI = stationUid;
+                shuttle.TargetPOI = stationUid.Value.ToString();
                 _popup.PopupCoordinates($"Shuttle target set", xform.Coordinates);
             }
             else
