@@ -78,6 +78,6 @@
   id: ShuttleExpeditionBeaconPOI
   suffix: POI
   components:
-  - type: GodMode
+  - type: Godmode
   - type: DisableToolUse
     anchoring: True
