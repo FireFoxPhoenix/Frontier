@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseItem
+  id: ShuttleTransmitter
+  name: shuttle transmitter
+  description: A device that can be linked to navigation beacons and installed on shuttles for automated return.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/signaller.rsi
+    state: signaller
+  - type: UseDelay
+  - type: StaticPrice
+    price: 40
+  - type: ShuttleTransmitter
