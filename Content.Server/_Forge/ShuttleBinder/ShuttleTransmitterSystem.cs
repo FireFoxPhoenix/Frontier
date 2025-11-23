@@ -24,7 +24,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         {
             UpdateShuttleTarget(uid, component.LinkedBeacon);
         }
-        else if (args.OldParent != null && args.OldParent.Value.IsValid() && 
+        else if (args.OldParent != null && args.OldParent.Value.IsValid() &&
                  TryComp<TransformComponent>(args.OldParent, out var oldXform) &&
                  oldXform.GridUid != null && HasComp<ShuttleComponent>(oldXform.GridUid.Value))
         {
