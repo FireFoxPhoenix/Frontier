@@ -1,13 +1,19 @@
 using Content.Shared._Forge.ShuttleBinder.Components;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Popups;
 
 namespace Content.Server._Forge.ShuttleBinder;
 
 public sealed class ShuttleBeaconSystem : EntitySystem
 {
+    [Dependency] private readonly ShuttleTransmitterSystem _transmitterSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<ShuttleBeaconComponent, ComponentStartup>(OnBeaconStartup);
         SubscribeLocalEvent<ShuttleBeaconComponent, ComponentShutdown>(OnBeaconShutdown);
+        SubscribeLocalEvent<ShuttleBeaconComponent, InteractUsingEvent>(OnBeaconInteractUsing);
     }
 
     private void OnBeaconStartup(EntityUid uid, ShuttleBeaconComponent component, ComponentStartup args)
@@ -19,16 +25,27 @@ public sealed class ShuttleBeaconSystem : EntitySystem
     private void OnBeaconShutdown(EntityUid uid, ShuttleBeaconComponent component, ComponentShutdown args)
     {
         component.Active = false;
+
+        var query = EntityQueryEnumerator<ShuttleTransmitterComponent>();
+        while (query.MoveNext(out var transmitterUid, out var transmitter))
+        {
+            if (transmitter.LinkedBeacon == uid)
+            {
+                _transmitterSystem.UnlinkFromBeacon(transmitterUid, transmitter);
+            }
+        }
     }
 
-    public EntityUid? FindBeaconById(string beaconId)
+    private void OnBeaconInteractUsing(EntityUid uid, ShuttleBeaconComponent component, InteractUsingEvent args)
     {
-        var query = EntityQueryEnumerator<ShuttleBeaconComponent>();
-        while (query.MoveNext(out var uid, out var beacon))
+        if (args.Handled)
+            return;
+
+        if (TryComp<ShuttleTransmitterComponent>(args.Used, out var transmitter))
         {
-            if (beacon.Active && beacon.BeaconId == beaconId)
-                return uid;
+            _transmitterSystem.LinkToBeacon(args.Used, uid, transmitter);
+            _popup.PopupEntity($"Transmitter linked to beacon");
+            args.Handled = true;
         }
-        return null;
     }
 }
