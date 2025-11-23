@@ -14,16 +14,57 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         SubscribeLocalEvent<ShuttleTransmitterComponent, ComponentStartup>(OnTransmitterStartup);
         SubscribeLocalEvent<ShuttleTransmitterComponent, ComponentShutdown>(OnTransmitterShutdown);
         SubscribeLocalEvent<ShuttleTransmitterComponent, ActivateInWorldEvent>(OnTransmitterActivate);
+        SubscribeLocalEvent<ShuttleComponent, ComponentStartup>(OnShuttleStartup);
+    }
+
+    private void OnShuttleStartup(EntityUid shuttleUid, ShuttleComponent shuttle, ComponentStartup args)
+    {
+        shuttle.TargetPOI = null;
+        Dirty(shuttleUid, shuttle);
     }
 
     private void OnTransmitterStartup(EntityUid uid, ShuttleTransmitterComponent component, ComponentStartup args)
     {
-        UpdateShuttleTarget(uid, component.LinkedBeacon);
+        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null)
+            return;
+
+        var shuttleUid = xform.GridUid.Value;
+        var activeTransmitter = FindActiveTransmitter(shuttleUid);
+        
+        if (activeTransmitter != null && activeTransmitter != uid)
+        {
+            component.LinkedBeacon = null;
+            _popup.PopupEntity("Another transmitter is already active on this shuttle. Activate this one to make it active.", uid);
+        }
+        else
+        {
+            UpdateShuttleTarget(uid, component.LinkedBeacon);
+        }
     }
 
     private void OnTransmitterShutdown(EntityUid uid, ShuttleTransmitterComponent component, ComponentShutdown args)
     {
-        UpdateShuttleTarget(uid, null);
+        if (component.LinkedBeacon != null)
+        {
+            if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null)
+                return;
+
+            var shuttleUid = xform.GridUid.Value;
+            var nextTransmitter = FindNextTransmitter(shuttleUid, uid);
+            
+            if (nextTransmitter != null && TryComp<ShuttleTransmitterComponent>(nextTransmitter, out var nextComponent))
+            {
+                UpdateShuttleTarget(nextTransmitter.Value, nextComponent.LinkedBeacon);
+            }
+            else
+            {
+                if (TryComp<ShuttleComponent>(shuttleUid, out var shuttle))
+                {
+                    shuttle.TargetPOI = null;
+                    Dirty(shuttleUid, shuttle);
+                }
+            }
+        }
     }
 
     private void OnTransmitterActivate(EntityUid uid, ShuttleTransmitterComponent component, ActivateInWorldEvent args)
@@ -31,16 +72,69 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null)
+            return;
+
+        var shuttleUid = xform.GridUid.Value;
+
         if (component.LinkedBeacon != null)
         {
             UnlinkFromBeacon(uid, component);
             _popup.PopupEntity("Transmitter unlinked from beacon");
+
+            var nextTransmitter = FindNextTransmitter(shuttleUid, uid);
+            if (nextTransmitter != null && TryComp<ShuttleTransmitterComponent>(nextTransmitter, out var nextComponent))
+            {
+                UpdateShuttleTarget(nextTransmitter.Value, nextComponent.LinkedBeacon);
+            }
         }
         else
         {
-            _popup.PopupEntity("Transmitter is not linked to any beacon. Use it on a beacon to link.");
+            MakeTransmitterActive(uid, component, shuttleUid);
+            _popup.PopupEntity("Transmitter activated", uid, args.User);
         }
+        
         args.Handled = true;
+    }
+
+    private void MakeTransmitterActive(EntityUid transmitterUid, ShuttleTransmitterComponent component, EntityUid shuttleUid)
+    {
+        var query = EntityQueryEnumerator<ShuttleTransmitterComponent, TransformComponent>();
+        while (query.MoveNext(out var otherUid, out var otherComponent, out var otherXform))
+        {
+            if (otherXform.GridUid == shuttleUid && otherUid != transmitterUid)
+            {
+                if (TryComp<ShuttleComponent>(shuttleUid, out var shuttle))
+                {
+                    shuttle.TargetPOI = null;
+                    Dirty(shuttleUid, shuttle);
+                }
+            }
+        }
+
+        UpdateShuttleTarget(transmitterUid, component.LinkedBeacon);
+    }
+
+    private EntityUid? FindActiveTransmitter(EntityUid shuttleUid)
+    {
+        var query = EntityQueryEnumerator<ShuttleTransmitterComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var component, out var xform))
+        {
+            if (xform.GridUid == shuttleUid && component.LinkedBeacon != null)
+                return uid;
+        }
+        return null;
+    }
+
+    private EntityUid? FindNextTransmitter(EntityUid shuttleUid, EntityUid excludeUid)
+    {
+        var query = EntityQueryEnumerator<ShuttleTransmitterComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var component, out var xform))
+        {
+            if (xform.GridUid == shuttleUid && uid != excludeUid && component.LinkedBeacon != null)
+                return uid;
+        }
+        return null;
     }
 
     public void LinkToBeacon(EntityUid transmitterUid, EntityUid beaconUid, ShuttleTransmitterComponent? component = null)
@@ -49,7 +143,12 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             return;
 
         component.LinkedBeacon = beaconUid;
-        UpdateShuttleTarget(transmitterUid, beaconUid);
+
+        if (TryComp<TransformComponent>(transmitterUid, out var xform) && xform.GridUid != null)
+        {
+            MakeTransmitterActive(transmitterUid, component, xform.GridUid.Value);
+        }
+        
         Dirty(transmitterUid, component);
     }
 
@@ -79,6 +178,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             if (stationUid != null)
             {
                 shuttle.TargetPOI = stationUid;
+                _popup.PopupEntity($"Shuttle target set");
             }
             else
             {
@@ -89,6 +189,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         {
             shuttle.TargetPOI = null;
         }
+   
         Dirty(shuttleUid, shuttle);
     }
 
@@ -101,8 +202,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         
         //if (TryComp<BecomesStationComponent>(gridUid, out _))
         //    return gridUid;
-        return gridUid;
 
-        //return null;
+        return gridUid;
     }
 }
