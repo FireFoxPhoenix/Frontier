@@ -1,6 +1,7 @@
 using Content.Shared._Forge.ShuttleBinder.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Content.Shared.Interaction;
 
 namespace Content.Server._Forge.ShuttleBinder;
 
