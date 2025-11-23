@@ -44,7 +44,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         if (activeTransmitter != null && activeTransmitter != uid)
         {
             component.LinkedBeacon = null;
-            _popup.PopupEntity("Another transmitter is already active on this shuttle. Activate this one to make it active.", uid);
+            _popup.PopupCoordinates("Another transmitter is already active on this shuttle. Activate this one to make it active.", xform.Coordinates);
         }
         else
         {
@@ -90,7 +90,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         if (component.LinkedBeacon != null)
         {
             UnlinkFromBeacon(uid, component);
-            _popup.PopupEntity("Transmitter unlinked from beacon");
+            _popup.PopupEntity("Transmitter unlinked from beacon", args.User);
 
             var nextTransmitter = FindNextTransmitter(shuttleUid, uid);
             if (nextTransmitter != null && TryComp<ShuttleTransmitterComponent>(nextTransmitter, out var nextComponent))
@@ -101,7 +101,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         else
         {
             MakeTransmitterActive(uid, component, shuttleUid);
-            _popup.PopupEntity("Transmitter activated", uid, args.User);
+            _popup.PopupEntity("Transmitter activated", args.User);
         }
 
         args.Handled = true;
@@ -188,7 +188,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             if (stationUid != null)
             {
                 shuttle.TargetPOI = stationUid;
-                _popup.PopupEntity($"Shuttle target set");
+                _popup.PopupCoordinates($"Shuttle target set", xform.Coordinates);
             }
             else
             {
