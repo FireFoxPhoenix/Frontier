@@ -2,6 +2,7 @@ using Content.Shared._Forge.ShuttleBinder.Components;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Content.Shared.Interaction;
 
 namespace Content.Server._Forge.ShuttleBinder;
 
@@ -38,7 +39,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
 
         var shuttleUid = xform.GridUid.Value;
         var activeTransmitter = FindActiveTransmitter(shuttleUid);
-        
+
         if (activeTransmitter != null && activeTransmitter != uid)
         {
             component.LinkedBeacon = null;
@@ -59,7 +60,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
 
             var shuttleUid = xform.GridUid.Value;
             var nextTransmitter = FindNextTransmitter(shuttleUid, uid);
-            
+
             if (nextTransmitter != null && TryComp<ShuttleTransmitterComponent>(nextTransmitter, out var nextComponent))
             {
                 UpdateShuttleTarget(nextTransmitter.Value, nextComponent.LinkedBeacon);
@@ -101,7 +102,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             MakeTransmitterActive(uid, component, shuttleUid);
             _popup.PopupEntity("Transmitter activated", uid, args.User);
         }
-        
+
         args.Handled = true;
     }
 
@@ -156,7 +157,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         {
             MakeTransmitterActive(transmitterUid, component, xform.GridUid.Value);
         }
-        
+
         Dirty(transmitterUid, component);
     }
 
@@ -176,7 +177,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             return;
 
         var shuttleUid = xform.GridUid.Value;
-        
+
         if (!TryComp<ShuttleComponent>(shuttleUid, out var shuttle))
             return;
 
