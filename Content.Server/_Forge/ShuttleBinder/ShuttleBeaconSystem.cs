@@ -45,7 +45,7 @@ public sealed class ShuttleBeaconSystem : EntitySystem
         if (TryComp<ShuttleTransmitterComponent>(args.Used, out var transmitter))
         {
             _transmitterSystem.LinkToBeacon(args.Used, uid, transmitter);
-            _popup.PopupEntity($"Transmitter linked to beacon");
+            _popup.PopupEntity($"Transmitter linked to beacon", args.User);
             args.Handled = true;
         }
     }
