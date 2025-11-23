@@ -7,7 +7,7 @@ namespace Content.Shared._Forge.BinderConsole.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedShuttleBinderSystem))]
 public sealed partial class ShuttleBinderComponent : Component
 {
-    public static string TargetMapSlotId = "POIShuttleBinder-targetMap";
+    public static string TargetMapSlotId = "ShuttleBinder-targetMap";
 
     [DataField]
     public ItemSlot TargetMapSlot = new();
