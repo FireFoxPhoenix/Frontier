@@ -200,7 +200,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             shuttle.TargetPOI = null;
         }
 
-        Dirty(shuttleUid, shuttle);
+        //Dirty(shuttleUid, shuttle);
     }
 
     private EntityUid? FindStationForBeacon(EntityUid beaconUid)
