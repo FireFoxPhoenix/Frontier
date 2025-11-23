@@ -3,6 +3,7 @@ using Content.Shared.Shuttles.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Interaction;
+using Content.Server.Shuttles.Components;
 
 namespace Content.Server._Forge.ShuttleBinder;
 
