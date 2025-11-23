@@ -14,13 +14,21 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         SubscribeLocalEvent<ShuttleTransmitterComponent, ComponentStartup>(OnTransmitterStartup);
         SubscribeLocalEvent<ShuttleTransmitterComponent, ComponentShutdown>(OnTransmitterShutdown);
         SubscribeLocalEvent<ShuttleTransmitterComponent, ActivateInWorldEvent>(OnTransmitterActivate);
-        SubscribeLocalEvent<ShuttleComponent, ComponentStartup>(OnShuttleStartup);
+        SubscribeLocalEvent<ShuttleTransmitterComponent, EntParentChangedMessage>(OnParentChanged);
     }
 
-    private void OnShuttleStartup(EntityUid shuttleUid, ShuttleComponent shuttle, ComponentStartup args)
+    private void OnParentChanged(EntityUid uid, ShuttleTransmitterComponent component, ref EntParentChangedMessage args)
     {
-        shuttle.TargetPOI = null;
-        Dirty(shuttleUid, shuttle);
+        if (args.Transform.GridUid != null && HasComp<ShuttleComponent>(args.Transform.GridUid.Value))
+        {
+            UpdateShuttleTarget(uid, component.LinkedBeacon);
+        }
+        else if (args.OldParent != null && args.OldParent.Value.IsValid() && 
+                 TryComp<TransformComponent>(args.OldParent, out var oldXform) &&
+                 oldXform.GridUid != null && HasComp<ShuttleComponent>(oldXform.GridUid.Value))
+        {
+            UpdateShuttleTarget(uid, null);
+        }
     }
 
     private void OnTransmitterStartup(EntityUid uid, ShuttleTransmitterComponent component, ComponentStartup args)
@@ -189,7 +197,7 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
         {
             shuttle.TargetPOI = null;
         }
-   
+
         Dirty(shuttleUid, shuttle);
     }
 
@@ -199,9 +207,6 @@ public sealed class ShuttleTransmitterSystem : EntitySystem
             return null;
 
         var gridUid = beaconXform.GridUid.Value;
-        
-        //if (TryComp<BecomesStationComponent>(gridUid, out _))
-        //    return gridUid;
 
         return gridUid;
     }
