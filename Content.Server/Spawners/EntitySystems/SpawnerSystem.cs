@@ -1,6 +1,7 @@
 using Content.Server.Spawners.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Mobs.Components;
 
 namespace Content.Server.Spawners.EntitySystems;
 
@@ -43,13 +44,75 @@ public sealed class SpawnerSystem : EntitySystem
         if (!_random.Prob(component.Chance))
             return;
 
-        var number = _random.Next(component.MinimumEntitiesSpawned, component.MaximumEntitiesSpawned);
+        // Forge-Change start
+        CleanupSpawnedEntities(uid, component);
+        
+        var aliveEntitiesCount = CountAliveEntities(component);
+        
+        if (aliveEntitiesCount >= component.MaximumEntitiesPerGrid)
+            return;
+        
+        var maxAllowedEntities = component.MaximumEntitiesPerGrid - aliveEntitiesCount;
+        var maxToSpawn = Math.Min(component.MaximumEntitiesSpawned, maxAllowedEntities);
+        
+        if (maxToSpawn < component.MinimumEntitiesSpawned)
+            return;
+
+        var number = _random.Next(component.MinimumEntitiesSpawned, maxToSpawn);
+        // Forge-Change end
         var coordinates = Transform(uid).Coordinates;
 
         for (var i = 0; i < number; i++)
         {
             var entity = _random.Pick(component.Prototypes);
-            SpawnAtPosition(entity, coordinates);
+            var spawned = SpawnAtPosition(entity, coordinates); // Forge-Change
+            component.SpawnedEntities.Add(spawned); // Forge-Change
         }
     }
+
+    // Forge-Change start
+    private void CleanupSpawnedEntities(EntityUid spawnerUid, TimedSpawnerComponent component)
+    {
+        var toRemove = new List<EntityUid>();
+        
+        foreach (var entityUid in component.SpawnedEntities)
+        {
+            if (!Exists(entityUid))
+            {
+                toRemove.Add(entityUid);
+            }
+        }
+        
+        foreach (var entityUid in toRemove)
+        {
+            component.SpawnedEntities.Remove(entityUid);
+        }
+    }
+
+    private int CountAliveEntities(TimedSpawnerComponent component)
+    {
+        var count = 0;
+        
+        foreach (var entityUid in component.SpawnedEntities)
+        {
+            if (!Exists(entityUid))
+                continue;
+            
+            if (TryComp<MobStateComponent>(entityUid, out var mobState))
+            {
+                if (mobState.CurrentState == MobState.Alive || 
+                    mobState.CurrentState == MobState.Critical)
+                {
+                    count++;
+                }
+            }
+            else
+            {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+    // Forge-Change end
 }
