@@ -50,6 +50,13 @@ public sealed partial class TimedSpawnerComponent : Component, ISerializationHoo
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan NextFire = TimeSpan.Zero;
+    
+    // Forge-Change start
+    [DataField("maximumEntitiesPerGrid")]
+    public int MaximumEntitiesPerGrid { get; private set; } = 0;
+    
+    public HashSet<EntityUid> SpawnedEntities { get; set; } = new();
+    // Forge-Change end
 
     void ISerializationHooks.AfterDeserialization()
     {
