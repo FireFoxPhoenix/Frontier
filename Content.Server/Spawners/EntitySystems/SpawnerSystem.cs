@@ -1,7 +1,8 @@
 using Content.Server.Spawners.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Components; // Forge-Change
+using Content.Shared.Mobs; // Forge-Change
 
 namespace Content.Server.Spawners.EntitySystems;
 
@@ -46,15 +47,15 @@ public sealed class SpawnerSystem : EntitySystem
 
         // Forge-Change start
         CleanupSpawnedEntities(uid, component);
-        
+
         var aliveEntitiesCount = CountAliveEntities(component);
-        
+
         if (aliveEntitiesCount >= component.MaximumEntitiesPerGrid)
             return;
-        
+
         var maxAllowedEntities = component.MaximumEntitiesPerGrid - aliveEntitiesCount;
         var maxToSpawn = Math.Min(component.MaximumEntitiesSpawned, maxAllowedEntities);
-        
+
         if (maxToSpawn < component.MinimumEntitiesSpawned)
             return;
 
@@ -74,7 +75,7 @@ public sealed class SpawnerSystem : EntitySystem
     private void CleanupSpawnedEntities(EntityUid spawnerUid, TimedSpawnerComponent component)
     {
         var toRemove = new List<EntityUid>();
-        
+
         foreach (var entityUid in component.SpawnedEntities)
         {
             if (!Exists(entityUid))
@@ -82,7 +83,7 @@ public sealed class SpawnerSystem : EntitySystem
                 toRemove.Add(entityUid);
             }
         }
-        
+
         foreach (var entityUid in toRemove)
         {
             component.SpawnedEntities.Remove(entityUid);
@@ -92,15 +93,15 @@ public sealed class SpawnerSystem : EntitySystem
     private int CountAliveEntities(TimedSpawnerComponent component)
     {
         var count = 0;
-        
+
         foreach (var entityUid in component.SpawnedEntities)
         {
             if (!Exists(entityUid))
                 continue;
-            
+
             if (TryComp<MobStateComponent>(entityUid, out var mobState))
             {
-                if (mobState.CurrentState == MobState.Alive || 
+                if (mobState.CurrentState == MobState.Alive ||
                     mobState.CurrentState == MobState.Critical)
                 {
                     count++;
@@ -111,7 +112,7 @@ public sealed class SpawnerSystem : EntitySystem
                 count++;
             }
         }
-        
+
         return count;
     }
     // Forge-Change end
