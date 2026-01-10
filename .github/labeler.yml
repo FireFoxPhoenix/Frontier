@@ -75,6 +75,7 @@
     - all-globs-to-any-file:
       - "!Resources/Maps/_Forge/**/*.yml"
       - "!Resources/Prototypes/Maps/_Forge/**/*.yml"
+      - "!.github/**/*.yml"
 
 ":earth_africa: Миграция Файлов :earth_africa:":
 - changed-files:
