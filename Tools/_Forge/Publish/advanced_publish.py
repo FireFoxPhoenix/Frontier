@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
+
 """
 Продвинутый паблиш с параллельной загрузкой и аргументами
 Github: FireFoxPhoenix
 """
-
-#!/usr/bin/env python3
 
 import argparse
 import requests
@@ -12,6 +12,7 @@ import subprocess
 import threading
 import logging
 import sys
+from discord_webhook import DiscordWebhook, DiscordEmbed
 from typing import Iterable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -22,12 +23,13 @@ logger = logging.getLogger(__name__)
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.corvaxforge.ru/"
+ROBUST_CDN_URL = "https://cdn.corvaxforge.ru/" # добавить в аругмент
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--fork-id", required=True)
-    parser.add_argument("--publish-token")
+    parser.add_argument("--publish-token", required=True)
+    parser.add_argument("--publish-webhook", required=False, default=None)
     parser.add_argument("--max-workers", type=int, default=4)
     parser.add_argument("--pool-connections", type=int, default=3)
     parser.add_argument("--pool-maxsize", type=int, default=10)
@@ -37,6 +39,7 @@ def main():
     args = parser.parse_args()
     fork_id = args.fork_id
     publish_token = args.publish_token
+    publish_webhook = args.publish_webhook
     max_workers = args.max_workers
     pool_connections = args.pool_connections
     pool_maxsize = args.pool_maxsize
@@ -53,7 +56,15 @@ def main():
     publish_token = os.environ[publish_token]
     if not publish_token:
         logger.critical(f"Publish token is empty")
-        sys.exit(1)   
+        sys.exit(1)
+
+    if publish_webhook is not None and publish_webhook not in os.environ:
+        publish_webhook = None
+        logger.warning("Publish webhook not found")
+    publish_webhook = os.environ[publish_token]
+    if not publish_webhook:
+        publish_webhook = None
+        logger.warning(f"Publish webhook is empty")
     
     #if "GITHUB_SHA" not in os.environ:
     #    logger.critical("GITHUB_SHA environment variable not set")
@@ -162,6 +173,8 @@ def create_session(publish_token: str, pool_connections: int, pool_maxsize: int,
     session.mount("http://", adapter)
     session.headers = { "Authorization": f"Bearer {publish_token}" }
     return session
+
+def send_message(
 
 if __name__ == '__main__':
     main()
