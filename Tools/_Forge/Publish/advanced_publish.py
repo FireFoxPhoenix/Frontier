@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Продвинутый паблиш с параллельной загрузкой и аргументами
+Продвинутый паблиш с параллельной загрузкой, аргументами и публикацией статуса паблиша в дискорд
 Github: FireFoxPhoenix
 """
 
@@ -45,18 +45,6 @@ def main():
     pool_maxsize = args.pool_maxsize
     max_retries = args.max_retries
     release_dir = args.release_dir
-    
-    if fork_id == "" or fork_id == None:
-        logger.critical("Fork id was not entered")
-        raise KeyError()
-    
-    if publish_token not in os.environ:
-        logger.critical("Publish token not found")
-        sys.exit(1)
-    publish_token = os.environ[publish_token]
-    if not publish_token:
-        logger.critical(f"Publish token is empty")
-        sys.exit(1)
 
     if publish_webhook is not None and publish_webhook not in os.environ:
         publish_webhook = None
@@ -65,6 +53,24 @@ def main():
     if not publish_webhook:
         publish_webhook = None
         logger.warning(f"Publish webhook is empty")
+    
+    if fork_id == "" or fork_id == None:
+        message = "Fork id was not entered"
+        logger.critical(message)
+        send_discord_message(message, "Critical", "ffa500", publish_webhook)
+        raise KeyError()
+    
+    if publish_token not in os.environ:
+        message = "Publish token not found"
+        logger.critical(message)
+        send_discord_message(message, "Critical", "ffa500", publish_webhook)
+        sys.exit(1)
+    publish_token = os.environ[publish_token]
+    if not publish_token:
+        message = f"Publish token is empty"
+        logger.critical(message)
+        send_discord_message(message, "Critical", "ffa500", publish_webhook)
+        sys.exit(1)
     
     #if "GITHUB_SHA" not in os.environ:
     #    logger.critical("GITHUB_SHA environment variable not set")
@@ -84,7 +90,9 @@ def main():
 
     files = list(get_files_to_publish(release_dir))
     if not files:
-        logger.warning("No files found to publish")
+        message = "No files found to publish"
+        logger.warning(message)
+        send_discord_message(message, "Warning", "ffff00", publish_webhook)
         
     logger.info(f"Uploading {len(files)} files using {max_workers} parallel workers...")
     successful = 0
@@ -103,18 +111,23 @@ def main():
                 failed += 1
                 logger.warning(f"Failed to publish {os.path.basename(file_path)}: {e}")
     if failed:
-        logger.warning(f"Upload completed with {failed} failures")
+        message = f"Upload completed with {failed} failures"
+        logger.warning(message)
+        send_discord_message(message, "Warning", "ffff00", publish_webhook)
         # sys.exit(1)
     else:
-        logger.info(f"All {successful} files uploaded successfully")
+        message = f"All {successful} files uploaded successfully"
+        logger.info(message)
+        # send_discord_message(message, "Info", "03b2f8", publish_webhook)
     
     logger.info("Finishing publish...")
     data = { "version": version }
     headers = { "Content-Type": "application/json" }
     resp = session.post(f"{ROBUST_CDN_URL}fork/{fork_id}/publish/finish", json=data, headers=headers)
     resp.raise_for_status()
-    logger.info("Publish completed")
-
+    message = "Publish completed"
+    logger.info(message)
+    send_discord_message(message, "Info", "03b2f8", publish_webhook)
 
 def get_files_to_publish(release_dir: str) -> Iterable[str]:
     try:
@@ -127,7 +140,6 @@ def get_files_to_publish(release_dir: str) -> Iterable[str]:
     except PermissionError:
         logger.error(f"No permission to read directory '{release_dir}'")
         return []
-
 
 def get_engine_version() -> str:
     try:
@@ -174,7 +186,20 @@ def create_session(publish_token: str, pool_connections: int, pool_maxsize: int,
     session.headers = { "Authorization": f"Bearer {publish_token}" }
     return session
 
-def send_message(
+def send_discord_message(message: str, status: str, color: str = "00ff00", publish_webhook: str = None):
+    if publish_webhook is None:
+        return
+    webhook = DiscordWebhook(
+        url=publish_webhook,
+        username="Publish Status"
+    )
+    embed = DiscordEmbed(
+        title="Publish Status",
+        color=color
+    )
+    embed.add_embed_field(name=status, value=message)
+    webhook.add_embed(embed)
+    response = webhook.execute()
 
 if __name__ == '__main__':
     main()
