@@ -46,7 +46,7 @@ def main():
     max_retries = args.max_retries
     release_dir = args.release_dir
 
-    if publish_webhook is not None and publish_webhook not in os.environ:
+    if publish_webhook and publish_webhook not in os.environ:
         publish_webhook = None
         logger.warning("Publish webhook not found")
     publish_webhook = os.environ[publish_token]
@@ -187,19 +187,27 @@ def create_session(publish_token: str, pool_connections: int, pool_maxsize: int,
     return session
 
 def send_discord_message(message: str, status: str, color: str = "00ff00", publish_webhook: str = None):
-    if publish_webhook is None:
+    if not publish_webhook:
         return
-    webhook = DiscordWebhook(
-        url=publish_webhook,
-        username="Publish Status"
-    )
-    embed = DiscordEmbed(
-        title="Publish Status",
-        color=color
-    )
-    embed.add_embed_field(name=status, value=message)
-    webhook.add_embed(embed)
-    response = webhook.execute()
+    try:
+        webhook = DiscordWebhook(
+            url=publish_webhook,
+            username="Publish Status",
+            rate_limit_retry=True
+        )
+        embed = DiscordEmbed(
+            title="Publish",
+            color=color
+        )
+        embed.add_embed_field(name=status, value=message)
+        embed.set_timestamp()
+        webhook.add_embed(embed)
+        response = webhook.execute()
+        if not response.status_code in [200, 204]:
+            logger.warning("The Discord message was not sent")
+    except Exception as e:
+        logger.error(f"The Discord message was not sent: {e}")
+        return
 
 if __name__ == '__main__':
     main()
